@@ -4,7 +4,7 @@ A repository that contains explanations and (custom) implementations of the most
 # The Goal
 Hi friend, welcome 🎉.
 
-This simple goal of this project is to help people understand the internals of the most popular data structures. It is my hope that by reading the README's for each structure as well as looking through various implementations, the people who make the time to visit this repo will gain an intuitive understanding.
+This simple goal of this project is to help people understand the internals of the most popular data structures. It is my hope that by reading the READMEs for each data structure as well as looking through various implementations, the people who make the time to visit this repo will gain an intuitive understanding.
 
 ## Exploring The Project
 This project wasn't written as a deployable service (Ever seen a project with multiple lang files in one module? Link me 🌝). To explore the project:
