@@ -9,7 +9,7 @@ This simple goal of this project is to help people understand the internals of t
 ## Exploring The Project
 This project wasn't written as a deployable service (Ever seen a project with multiple lang files in one module? Link me 🌝). To explore the project:
 * Clone the repo (or fork it so that you can update easily)
-* Study the README's and the implementations for the data structure you want to know more about in the language(s) of your choice
+* Study the READMEs and the implementations for the data structure you want to know more about in the language(s) of your choice
 * Try running the code in a separate project that is setup for the language(s) of your choice
 * Enjoy your life
 
