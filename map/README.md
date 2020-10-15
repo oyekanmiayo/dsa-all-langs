@@ -6,6 +6,8 @@ Some important operations for a map include:
 * delete(key) - remove a key and it's associated value from the map
 * get(key) - retrieve the associated value of a key from the map 
 
+*PS: An **array** is the underlying data structure used by a map.*
+
 ## Internals
 So how does (storing a value in a) map work?
 1. Generate a hash (a.k.a memory address) for key, using a hash function
@@ -17,7 +19,7 @@ Let's explain **Hash Function** and **Collision** a bit more.
 ### Hash Function
 A hash function is a function that generates a (smaller) code for a given value by applying a known algorithm. The code that is generated represents the hash, which for us also doubles as the memory location where the value we want to store in our map will actually be stored. 
 
-A lot of language implementations (e.g. Java, C# et al) use **prime numbers** in their algorithms to generate hashes. The reason for this is because a prime number is unique - its only factors are 1 and itself. This means that prime numbers give us the best chance of generating a unique hash.
+A lot of language implementations (e.g. Java, C# et al) use **prime numbers** in their algorithms to generate hashes. The reason for this is because a prime number is unique - its only factors are 1 and itself. This means that prime numbers give us the best chance of generating a unique hash. Prime numbers are also used as initial sizes for the internal arrays because they return more unique remainder values for each key (so better distribution).
 
 ### Collision
 A collision happens when a hash function maps two (or more) different values to the same hash. This is inevitable as long as the hash space is smaller than the value space (e.g. Imagine we want to generate hashes for 0 - 2000, but our hashes can only be within 0 - 20. We will definitely encounter collisions). 
