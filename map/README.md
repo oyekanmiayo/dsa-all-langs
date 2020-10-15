@@ -37,7 +37,7 @@ When handling collision, we want our strategies to answer two questions:
    
    In the Java implemenation in this repository, a LinkedList is used because it's simple enough to add to and traverse and delete from. Additionally, since we assume that our hash function is very good, the number of items in each buckets should so small that the time to search the LinkedList is trivial - this is why the time complexity for retrieving from a map is popularly constant or O(1) (amortized). 
    
-   *PS: If there are too many items in a bucket, this is the cue to improve the hash function.*
+   *PS: If there are too many items in a bucket, this is the cue to use a bigger array or improve the hash function.*
 
 2. **Open Addressing**: If there's a collision at the address (or hash or index), then we find the next available address to
 place the value. The reason why this is called "Open Addressing" is because it's possible that the address the value is
