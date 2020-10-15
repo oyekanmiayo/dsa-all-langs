@@ -59,7 +59,7 @@ Time complexities for the operations mentioned [here](https://github.com/oyekanm
    | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)             | Constant Time/O(1) |
 
-* `delete(key)` - time to find address (always constant) + time to delete from bucket
+* `delete(key)` - time to find address (always constant) + time to delete from bucket (depends on the data structure)
 
    | Time to find address | Bucket             | Time to delete from bucket | Worst Case for `delete(K key)` | Amortized Time     |
    |----------------------|--------------------|----------------------------|--------------------------------|--------------------|
@@ -67,7 +67,7 @@ Time complexities for the operations mentioned [here](https://github.com/oyekanm
    | Constant Time/O(1)   | LinkedList         | Constant Time/O(1)         | Constant Time/O(1)             | Constant Time/O(1) |
    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN)   | Logarithmic Time/O(LogN)       | Constant Time/O(1) |
    
-* `get(key)` - time to find address (always constant) + time to retrieve from bucket when index is not known
+* `get(key)` - time to find address (always constant) + time to retrieve from bucket when index is not known (depends on the data structure)
 
    | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `get(K key)` | Amortized Time     |
    |----------------------|--------------------|--------------------------|-----------------------------|--------------------|
