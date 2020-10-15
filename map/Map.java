@@ -118,3 +118,12 @@ class Map<K, V> {
         return (key.hashCode() * PRIME) % entries.length;
     }
 }
+
+/**
+ * The Map object will be instantiated and called as such:
+ * Map<Integer, String> obj = new Map<>();
+ * obj.put(1, 'Ayo');
+ * System.out.println(obj.get(1)) # Ayo
+ * obj.delete(1);
+ * System.out.println(obj.get(1)) # null
+ */
