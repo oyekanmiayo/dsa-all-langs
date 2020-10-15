@@ -1,6 +1,6 @@
 ## Introduction
 
-The **Map** is used to store mappings between two objects: a key and value pair. When you query a map with a key, you should get its associated value.
+A **Map** is a data structure that is used to store mappings between two objects: a key and value pair. When you query a map with a key, you should get its associated value.
 
 Some important operations for a map include:
 * put(key, value) - add a key-value mapping to the map
