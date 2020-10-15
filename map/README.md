@@ -43,7 +43,7 @@ When handling collision, we want our strategies to answer two questions:
 place the value. The reason why this is called "Open Addressing" is because it's possible that the address the value is
 stored in isn't the hash.
 
-   Implementations: Linear Probing (+1), Quadratic Probing & Double Hashing
+   Implementations: [Linear Probing](https://en.wikipedia.org/wiki/Linear_probing), [Quadratic Probing](https://en.wikipedia.org/wiki/Quadratic_probing) & [Double Hashing](https://en.wikipedia.org/wiki/Double_hashing).
 
 3. **2-Choice Hashing**: Here we compute the hash for a value using two hash functions and insert the value into the address
 with less collisions.
