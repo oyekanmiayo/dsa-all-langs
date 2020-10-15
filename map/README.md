@@ -37,13 +37,13 @@ When handling collision, we want our strategies to answer two questions:
    
    In the Java implemenation in this repository, a LinkedList is used because it's simple enough to add to and traverse and delete from. Additionally, since we assume that our hash function is very good, the number of items in each buckets should so small that the time to search the LinkedList is trivial - this is why the time complexity for retrieving from a map is popularly constant or O(1) (amortized). 
    
-   *PS: If there are too many items in a bucket, this is the cue to improve the hash function.*
+   *PS: If there are too many items in a bucket, this is the cue to use a bigger array or improve the hash function.*
 
 2. **Open Addressing**: If there's a collision at the address (or hash or index), then we find the next available address to
 place the value. The reason why this is called "Open Addressing" is because it's possible that the address the value is
 stored in isn't the hash.
 
-   Implementations: Linear Probing (+1), Quadratic Probing & Double Hashing
+   Implementations: [Linear Probing](https://en.wikipedia.org/wiki/Linear_probing), [Quadratic Probing](https://en.wikipedia.org/wiki/Quadratic_probing) & [Double Hashing](https://en.wikipedia.org/wiki/Double_hashing).
 
 3. **2-Choice Hashing**: Here we compute the hash for a value using two hash functions and insert the value into the address
 with less collisions.
@@ -52,7 +52,7 @@ with less collisions.
 ## Other Definitions
 * **Amortized Time**: Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time. Read more [here](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
 
-* **Load Factor**: The number of entries per bucket
+* **Load Factor**: The number of allowed entries per bucket. This isn't necessarily equal to the capacity of the bucket.
 
 ## References
 1. [Computer Science Distilled](https://www.amazon.co.uk/Computer-Science-Distilled-Computational-Problems/dp/0997316020/ref=sr_1_1?adgrpid=52658140545&dchild=1&gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr6bz1aEFd_X517mpcZBAGaDJaeg-WARxB6mwEMMtupTPnTGI0a-1SIaAmH5EALw_wcB&hvadid=259122221401&hvdev=c&hvlocint=9041110&hvlocphy=1010294&hvnetw=g&hvqmt=e&hvrand=6311385300851562426&hvtargid=kwd-297429021778&hydadcr=17613_1817768&keywords=computer+science+distilled&qid=1602170396&sr=8-1&tag=googhydr-21)
