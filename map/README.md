@@ -62,3 +62,5 @@ with less collisions.
 3. [Seperate Chaining (a technique to handle collisions)](https://en.wikipedia.org/wiki/Hash_table#Separate_chaining)
 
 4. [Amortized Time Complexity of Algorithms](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
+
+5. [How hashmaps work in Java](https://howtodoinjava.com/java/collections/hashmap/how-hashmap-works-in-java/)
