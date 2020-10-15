@@ -51,8 +51,7 @@ with less collisions.
 ## Time Complexity
 Time complexities for the operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-map-impl/map#introduction)
 
-* `put(key, value)`
-Formula: time to find address (always constant) + time to traverse bucket (depends on the data structure)
+* `put(key, value)` - time to find address (always constant) + time to traverse bucket (depends on the data structure)
 
    | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `put(K key, V value)` | Amortized Time     |
    |----------------------|--------------------|--------------------------|--------------------------------------|--------------------|
@@ -60,8 +59,7 @@ Formula: time to find address (always constant) + time to traverse bucket (depen
    | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)             | Constant Time/O(1) |
 
-* `delete(key)`
-Formula: time to find address (always constant) + time to delete from bucket
+* `delete(key)` - time to find address (always constant) + time to delete from bucket
 
    | Time to find address | Bucket             | Time to delete from bucket | Worst Case for `delete(K key)` | Amortized Time     |
    |----------------------|--------------------|----------------------------|--------------------------------|--------------------|
@@ -69,8 +67,7 @@ Formula: time to find address (always constant) + time to delete from bucket
    | Constant Time/O(1)   | LinkedList         | Constant Time/O(1)         | Constant Time/O(1)             | Constant Time/O(1) |
    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN)   | Logarithmic Time/O(LogN)       | Constant Time/O(1) |
    
-* `get(key)`
-Formula: time to find address (always constant) + time to retrieve from bucket when index is not known
+* `get(key)` - time to find address (always constant) + time to retrieve from bucket when index is not known
 
    | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `get(K key)` | Amortized Time     |
    |----------------------|--------------------|--------------------------|-----------------------------|--------------------|
