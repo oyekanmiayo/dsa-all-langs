@@ -33,7 +33,7 @@ When handling collision, we want our strategies to answer two questions:
    
    Some data structures that could be used as buckets include Lists (linear search), LinkedLists (linear search), Binary Search Trees (logarithmic search) and so on.
    
-   In the Java implemenation in this repository, I use a LinkedList because it's simple enough to add to and traverse and delete from. Additionally, since we assume that our hash function is very good, the number of items in each buckets should so small that the time to search the LinkedList is trivial - this is why the time complexity for retrieving from a map is popularly constant or O(1) (amortized). 
+   In the Java implemenation in this repository, a LinkedList is used because it's simple enough to add to and traverse and delete from. Additionally, since we assume that our hash function is very good, the number of items in each buckets should so small that the time to search the LinkedList is trivial - this is why the time complexity for retrieving from a map is popularly constant or O(1) (amortized). 
    
    *PS: If there are too many items in a bucket, this is the cue to improve the hash function.*
 
