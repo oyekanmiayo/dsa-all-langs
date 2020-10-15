@@ -2,9 +2,9 @@
 A **Map** is a data structure that is used to store mappings between two objects: a key and value pair. When you query a map with a key, you should get its associated value.
 
 Some important operations for a map include:
-* put(key, value) - add a key-value mapping to the map
-* delete(key) - remove a key and it's associated value from the map
-* get(key) - retrieve the associated value of a key from the map 
+* `put(key, value)` - add a key-value mapping to the map
+* `delete(key)` - remove a key and it's associated value from the map
+* `get(key)` - retrieve the associated value of a key from the map 
 
 *PS: An **array** is the underlying data structure used by a map.*
 
@@ -47,6 +47,36 @@ stored in isn't the hash.
 
 3. **2-Choice Hashing**: Here we compute the hash for a value using two hash functions and insert the value into the address
 with less collisions.
+
+## Time Complexity
+Time complexities for the operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-map-impl/map#introduction)
+
+* `put(key, value)`
+Formula: time to find address (always constant) + time to traverse bucket (depends on the data structure)
+
+   | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `put(K key, V value)` | Amortized Time     |
+   |----------------------|--------------------|--------------------------|--------------------------------------|--------------------|
+   | Constant Time/O(1)   | List               | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
+   | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
+   | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)             | Constant Time/O(1) |
+
+* `delete(key)`
+Formula: time to find address (always constant) + time to delete from bucket
+
+   | Time to find address | Bucket             | Time to delete from bucket | Worst Case for `delete(K key)` | Amortized Time     |
+   |----------------------|--------------------|----------------------------|--------------------------------|--------------------|
+   | Constant Time/O(1)   | List               | Linear Time/O(N)           | Linear Time/O(N)               | Constant Time/O(1) |
+   | Constant Time/O(1)   | LinkedList         | Constant Time/O(1)         | Constant Time/O(1)             | Constant Time/O(1) |
+   | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN)   | Logarithmic Time/O(LogN)       | Constant Time/O(1) |
+   
+* `get(key)`
+Formula: time to find address (always constant) + time to retrieve from bucket when index is not known
+
+   | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `get(K key)` | Amortized Time     |
+   |----------------------|--------------------|--------------------------|-----------------------------|--------------------|
+   | Constant Time/O(1)   | List               | Linear Time/O(N)         | Linear Time/O(N)            | Constant Time/O(1) |
+   | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)            | Constant Time/O(1) |
+   | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)    | Constant Time/O(1) |
 
 
 ## Other Definitions
