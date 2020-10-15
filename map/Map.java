@@ -2,6 +2,20 @@
  * @author: Ayomide Oyekanmi
  */
 class Map<K, V> {
+
+    /** 
+     * This represents the template for the object that is stored at memory addresses
+     */
+    class Entry<K, V>{
+        K key;
+        V value;
+        Entry<K, V> next;
+
+        public Entry(K key, V value){
+            this.key = key;
+            this.value = value;
+        }
+    }
     
     // Prime used to increase chances of generating unique keys
     private final int PRIME = 31;
@@ -102,19 +116,5 @@ class Map<K, V> {
     private int getHashForKey(K key){
         // Non-standard hash algorithm ;)
         return (key.hashCode() * PRIME) % entries.length;
-    }
-
-    /** 
-     * This represents the template for the object that is stored at memory addresses
-     */
-    class Entry<K, V>{
-        K key;
-        V value;
-        Entry<K, V> next;
-
-        public Entry(K key, V value){
-            this.key = key;
-            this.value = value;
-        }
     }
 }
