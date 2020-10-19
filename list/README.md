@@ -56,6 +56,7 @@ How does reversing the order (`reverse()`) of a list work?
 
 ## Time Complexity
 
+
 ## Other Definitions
 * **Comparator**: In electronics, a comparator is a device that compares two voltages or currents and outputs a digital signal indicating which is larger (Read more [here](https://en.wikipedia.org/wiki/Comparator)). This works in a similar way in programming: a comparator is a function that compares two objects and outputs a integer indicating which is larger. 
 
