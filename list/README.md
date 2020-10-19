@@ -15,11 +15,11 @@ An **array** is the underlying data structure used by a List. One important diff
 
 How does inserting at item (`add(e)`) in a list work?
 1. Check if the underlying array is filled
-2. If it is not, 
-    a. insert element **e** in the next available index in the array
-3. If it is, 
-    a. copy all elements in the current underlying array to a bigger array
-    b. insert element **e** in the next available index in the new, bigger array
+2. If it is not,
+    * insert element **e** in the next available index in the array
+3. If it is,
+    * copy all elements in the current underlying array to a bigger array
+    * insert element **e** in the next available index in the new, bigger array
 
 How does inserting an item at an index (`add(n, e)`) in a list work?
 1. Check if the underlying array is filled
