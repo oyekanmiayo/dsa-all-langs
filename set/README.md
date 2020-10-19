@@ -1,14 +1,13 @@
 ## Introduction
 The Set represents unordered groups of unique items (as in mathematical sets). They’re used when the order of items you need to store is meaningless, or if you must ensure **no items in the group occurs more than once**. The most common Set operations are:
-• `add(e)`: add an item to the set or produce an error if the item is already in the set,
-• `list()`: list the items in the set,
-• `delete(e)`: remove an item from the set.
+* `add(e)`: add an item to the set or produce an error if the item is already in the set.
+* `list()`: list the items in the set.
+* `delete(e)`: remove an item from the set.
+
 *excerpt from Computer Science Distilled*
 
-*PS: An **array** is the underlying data structure used by a set.*
-
 ## Internals
-The Set's internal implementation is very similar to that of the Map's. The difference is that the Set does not store any key-value mappings, it stores an independent object i.e. whatever object is passed in :). It is important that the objects to be stored in a set are **immutable**.
+The Set's internal implementation is very similar to that of the Map's, and like the Map, an **array** is the underlying data structure used by a Set. The difference is that the Set does not store any key-value mappings, it stores an independent object i.e. whatever object is passed in :). It is important that the objects to be stored in a set are **immutable**.
 
 How does storing an object (`add(e)`) in a set work?
 1. Generate a hash (a.k.a index for the underlying array) for the object (or element) **e**, using a hash function
