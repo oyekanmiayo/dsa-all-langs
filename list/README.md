@@ -51,8 +51,7 @@ How does retrieving a sublist (`slice(start, end)`) from a list work?
 2. Insert all elements from start to end in existing list to new list
 
 How does reversing the order (`reverse()`) of a list work?
-1. Create a new list the same size as the existing list
-2. Insert elements in reverse into the new list and return it
+1. Reverse elements in the underlying array 
 
 ## Time Complexity
 Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#introduction). We consider the worst cases.
@@ -87,11 +86,10 @@ Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structure
    |-----------------------|-----------------------------------------------------------------------------|------------------------------------|
    | Linear Time/O(N)      | Linear Time/O(K), K = size of slice. K can be equal to N in the worst case. | Linear Time/O(N)                   |
    
-* `reverse()`: time to traverse list + time to insert items into new list
-   | Time to traverse list | Time to insert items into new list | Worst Case for `reverse()` |
-   |-----------------------|------------------------------------|----------------------------|
-   | Linear Time/O(N)      | Linear Time/O(N)                   | Linear Time/O(N)           |
-
+* `reverse()`: time to reverse elements in the underlying array 
+   | Time to reverse elements in array | Worst Case for `reverse()` |
+   |-----------------------------------|----------------------------|
+   | Linear Time/O(N)                  | Linear Time/O(N)           |
 
 ## Other Definitions
 * **Comparator**: In electronics, a comparator is a device that compares two voltages or currents and outputs a digital signal indicating which is larger (Read more [here](https://en.wikipedia.org/wiki/Comparator)). This works in a similar way in programming: a comparator is a function that compares two objects and outputs a integer indicating which is larger. 
