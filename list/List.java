@@ -20,9 +20,9 @@ class List<E> {
             createBiggerArray();
         }
 
-        // insert element at the next available index
+        // Insert element at the next available index
         entries[currIdx] = element;
-        // increment to next available index
+        // Increment to next available index
         currIdx++;
     }
 
@@ -49,7 +49,7 @@ class List<E> {
 
         // Insert element into `free` index n
         entries[n] = element;
-        // increment to next available index
+        // Increment to next available index
         currIdx++;
     }
 
@@ -66,7 +66,7 @@ class List<E> {
             entriesTwo[i] = entries[i];
         }
 
-        // point `entries` variable to now reference new array
+        // Point `entries` variable to now reference new array
         entries = entriesTwo;
     }
 
@@ -77,20 +77,27 @@ class List<E> {
      * @return returns removed element
      */
     public E remove(int n){
+        // Checks if index is within range
         if(n >= entries.length){
             throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" start, len));
         }
 
         E element = entries[n];
+        // Removes reference to element at index n from underlying array
         entries[n] = null;
 
+        // Create movingIdx to help move elements backward by one index
         int movingIdx = n;
         while(movingIdx < currIdx - 1){
             entries[movingIdx] = entries[movingIdx + 1];
             movingIdx++;
         }
 
+        // Since elements have been moved backwards by index, 
+        // then the next available index must be updated
         currIdx--;
+
+        // Return removed element
         return element;
     }
 
@@ -101,9 +108,11 @@ class List<E> {
      * @return returns retrieved element
      */
     public E get(int n){
+        // Checks if index is within range
         if(n >= entries.length){
             throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" start, len));
         }
+
         return entries[n];
     }
 
@@ -111,6 +120,7 @@ class List<E> {
      * Sorts element in List in ascending order
      */
     public void sort(){
+        // Sort using quicksort or mergesort
         Collections.sort(self);
     }
 
@@ -123,10 +133,13 @@ class List<E> {
      */
     public List<E> slice(int start, int end){
         int len = entries.length
+
+        // Checks if start index is within range
         if(start >= len){
             throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" start, len));
         }
 
+        // Checks if end index is within range
         if(end >= len){
             throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" end, len));
         }
