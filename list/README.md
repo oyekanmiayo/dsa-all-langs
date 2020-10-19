@@ -68,7 +68,15 @@ Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structure
    | Linear Time/O(N)                | Linear Time/O(N)                        | Constant Time/O(1)             | Linear Time/O(N)          |
    
 * `remove(n)`: time to remove reference to item at index + time to move items backward by one index
+   | Time to remove reference to item at index | Time to move items backward by one index | Worst Case for `remove(n)` |
+   |-------------------------------------------|------------------------------------------|----------------------------|
+   | Constant Time/O(1)                        | Linear Time/O(N)                         | Linear Time/O(N)           |
+   
 * `get(n)`: time to retrieve item from an index
+   | Time to retrieve item from an index | Worst Case for `get(n)` |
+   |-------------------------------------|-------------------------|
+   | Constant Time/O(1)                  | Constant Time/O(1)      |
+   
 * `sort()`: time to sort items in ascending/descending order, using the most efficient sorting algorithms
 * `slice(start, end)`: time to traverse list
 * `reverse()`: time to traverse list + time to insert items into new list
