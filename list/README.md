@@ -78,7 +78,11 @@ Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structure
    | Constant Time/O(1)                  | Constant Time/O(1)      |
    
 * `sort()`: time to sort items in ascending/descending order, using the most efficient sorting algorithms
-* `slice(start, end)`: time to traverse list
+   | Time to sort items using most efficient algorithms | Worst Case for `sort()`    |
+   |----------------------------------------------------|----------------------------|
+   | Linearithmic Time/O(NlogN)                         | Linearithmic Time/O(NlogN) |
+   
+* `slice(start, end)`: time to traverse original list + time to insert sliced items in new list
 * `reverse()`: time to traverse list + time to insert items into new list
 
 
