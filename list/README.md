@@ -55,6 +55,23 @@ How does reversing the order (`reverse()`) of a list work?
 2. Insert elements in reverse into the new list and return it
 
 ## Time Complexity
+Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#introduction). We consider the worst cases.
+
+* `add(e)`: time to copy items to new array, if current array is filled + time to insert item into index
+   | Time to copy items to new array | Time to insert item into index | Worst Case for `add(e)` |
+   |---------------------------------|--------------------------------|-------------------------|
+   | Linear Time/O(N)                | Constant Time/O(1)             | Linear Time/O(N)        |
+   
+* `add(n, e)`: time to copy items to new array, if current array is filled + time to move items forward by one index + time to insert item into index
+   | Time to copy items to new array | Time to move items forward by one index | Time to insert item into index | Worst Case for `add(n,e)` |
+   |---------------------------------|-----------------------------------------|--------------------------------|---------------------------|
+   | Linear Time/O(N)                | Linear Time/O(N)                        | Constant Time/O(1)             | Linear Time/O(N)          |
+   
+* `remove(n)`: time to remove reference to item at index + time to move items backward by one index
+* `get(n)`: time to retrieve item from an index
+* `sort()`: time to sort items in ascending/descending order, using the most efficient sorting algorithms
+* `slice(start, end)`: time to traverse list
+* `reverse()`: time to traverse list + time to insert items into new list
 
 
 ## Other Definitions
