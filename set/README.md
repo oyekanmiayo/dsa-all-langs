@@ -3,9 +3,9 @@ The Set represents unordered groups of unique items (as in mathematical sets). T
 * `add(e)`: add an item to the set or produce an error if the item is already in the set.
 * `contains(e)`: checks if an item exists in a set
 * `list()`: list the items in the set.
-* `remove(e)`: remove an item from the set.
+* `remove(e)`: remove an item from the set.<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/set#references)</sup>
 
-*excerpt from Computer Science Distilled*
+###### PS: Operations can be named differently in different languages
 
 ## Internals
 The Set's internal implementation is very similar to that of the Map's, and like the Map, an **array** is the underlying data structure used by a Set. The difference is that the Set does not store any key-value mappings, it stores an independent object i.e. whatever object is passed in :). It is important that the objects to be stored in a set are **immutable**.
