@@ -1,5 +1,5 @@
 ## Introduction
-A List is a data structure that is used to store objects. In languages like Java, all elements in a list need to be of the same type, however, in other languages like Ruby, elements of different types can be in the same list. What's special about a List is the flexibility it provides. Some common operations include:
+A List is a data structure that is used to store elements. In languages like Java, all elements in a list need to be of the same type, however, in other languages like Ruby, elements of different types can be in the same list. What's special about a List is the flexibility it provides. Some common operations include:
 * `add(e)`: insert item **e** at the end of the list
 * `add(n, e)`: insert item **e** at index **n**
 * `remove(n)`: remove the item at index **n**
