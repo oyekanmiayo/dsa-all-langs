@@ -5,14 +5,25 @@ Some important operations for a map include:
 * `put(key, value)` - add a key-value mapping to the map
 * `delete(key)` - remove a key and it's associated value from the map
 * `get(key)` - retrieve the associated value of a key from the map 
+*excerpt from Computer Science Distilled*
 
 *PS: An **array** is the underlying data structure used by a map.*
 
 ## Internals
-So how does (storing a value in a) map work?
-1. Generate a hash (a.k.a memory address) for key, using a hash function
-2. Store value at the hash (a.k.a memory address)
+How does storing a value (`put(key, value)`) in a map work?
+1. Generate a hash (a.k.a memory address) for **key**, using a hash function
+2. Store **value** at the hash (a.k.a memory address)
 3. Handle collision, if necessary
+
+How does removing a value (`delete(key)`) from a map work?
+1. Generate hash (a.k.a memory address) for **key**, using a hash function
+2. Delete **value**  at hash (if there's no collision)
+3. If there's a collision, traverse bucket to find the correct object and delete it
+
+How does retrieving a value (`get(key)`) from a map work?
+1. Generate hash (a.k.a memory address) for **key**, using a hash function
+2. Get **value**  at hash (if there's no collision)
+3. If there's a collision, traverse bucket to find the correct object and get it
 
 Let's explain **Hash Function** and **Collision** a bit more.
 
@@ -91,3 +102,6 @@ Time complexities for the operations mentioned [here](https://github.com/oyekanm
 4. [Amortized Time Complexity of Algorithms](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
 
 5. [How hashmaps work in Java](https://howtodoinjava.com/java/collections/hashmap/how-hashmap-works-in-java/)
+
+## Author(s)
+* [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
