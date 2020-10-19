@@ -49,7 +49,7 @@ How does reversing the order (`reverse()`) of a list work?
 1. Reverse elements in the underlying array 
 
 ## Time Complexity
-Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#introduction). We consider the worst cases.
+Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#introduction). We consider the worst cases.
 
 * `add(e)`: time to copy items to new array, if current array is filled + time to insert item into index
    | Time to copy items to new array | Time to insert item into index | Worst Case for `add(e)` |
