@@ -24,6 +24,8 @@ How does deleting an object (`delete(e)`) from a set work?
 2. Delete object (or element) **e**  at the index, if there's no collision
 3. If there's a collision, traverse bucket at index to find the correct object and delete it
 
+See explanation for **Hashing** and **Collision** [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/map#internals)
+
 ## Time Complexity
 
 ## Author(s)
