@@ -38,7 +38,7 @@ class Map<K, V> {
 
         //Store value, if there's no collision
         if(entries[hash] == null) {
-            entries[hash] = new Entry<>();
+            entries[hash] = new Entry<>(key, value);
             return;
         } 
 

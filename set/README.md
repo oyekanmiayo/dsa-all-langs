@@ -21,7 +21,9 @@ How does checking if an object (`contains(e)`) is in a set work?
 2. Check if object (or element) **e** exists at index. It is this step that ensure uniqueness in a set. It is for this step that immutability is important. To check if an object exists at an element, we traverse the bucket until we find it.
 
 How does listing all the values (`list()`) in a set work?
-1. Print out all the objects (or elements) at each index of the array
+1. Traverse each index in the underlying array
+2. At each index's bucket and add each element found to a list
+2. Return list
 *PS: This operation doesn't list out the elements in the order they were inserted - this is why we say sets are unordered. It lists them according to their location in the underlying array, which is based on the hash that was generated for each element.*
 
 How does removing an object (`remove(e)`) from a set work?
