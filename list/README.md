@@ -6,7 +6,7 @@ A List is a data structure that is used to store elements. In languages like Jav
 * `get(n)`: get the item at position **n**
 * `sort()`: sort the items in the list
 * `slice(start, end)`: return a sub-list slice starting at the position start up until the position end
-* `reverse()`: reverse the order of the list
+* `reverse()`: reverse the order of the list <sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#references)</sup>
 
 ###### PS: Operations can be named differently in different languages
 
@@ -96,7 +96,8 @@ Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structure
 ## Other Definitions
 * **Comparator**: In electronics, a comparator is a device that compares two voltages or currents and outputs a digital signal indicating which is larger (Read more [here](https://en.wikipedia.org/wiki/Comparator)). This works in a similar way in programming: a comparator is a function that compares two objects and outputs a integer indicating which is larger. 
 
-## References
+## Reference(s)
+1. [Computer Science Distilled](https://www.amazon.co.uk/Computer-Science-Distilled-Computational-Problems/dp/0997316020/ref=sr_1_1?adgrpid=52658140545&dchild=1&gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr6bz1aEFd_X517mpcZBAGaDJaeg-WARxB6mwEMMtupTPnTGI0a-1SIaAmH5EALw_wcB&hvadid=259122221401&hvdev=c&hvlocint=9041110&hvlocphy=1010294&hvnetw=g&hvqmt=e&hvrand=6311385300851562426&hvtargid=kwd-297429021778&hydadcr=17613_1817768&keywords=computer+science+distilled&qid=1602170396&sr=8-1&tag=googhydr-21)
 
 ## Author(s)
 * [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
