@@ -23,14 +23,9 @@ How does inserting at item (`add(e)`) in a list work?
 
 How does inserting an item at an index (`add(n, e)`) in a list work?
 1. Check if the underlying array is filled
-2. If it is,
-    * create new, bigger array
-    * copy elements from old array into bigger array until index **n - 1**
-    * insert element **e** at index **n**
-    * copy remaining elements from old array into new array
-3. If it is not,
-    * move elements from index **n** forward by one index
-    * insert element **e** at index **n**
+2. If it is, copy all elements in the current underlying array to a bigger array
+3. Move elements from index **n** forward by one index
+4. Insert element **e** at index **n**
 
 ###### PS: This is an opinionated implementation. It might be implemented differently depending on the programming language you use.
 
