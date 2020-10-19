@@ -13,8 +13,8 @@ This project wasn't written as a deployable service (Ever seen a project with mu
 * Try running the code in a separate project that is setup for the language(s) of your choice
 * Enjoy your life
 
-## Authors
-* **Ayomide Oyekanmi**
+## Author(s)
+* [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
 
 ## License
 
