@@ -32,13 +32,32 @@ How does inserting an item at an index (`add(n, e)`) in a list work?
     * move elements from index **n** forward by one index
     * insert element **e** at index **n**
 
+###### PS: This is an opinionated implementation. It might be implemented differently depending on the programming language you use.
+
 How does removing an item (`remove(n)`) from a list work?
+1. Remove reference to item by setting index **n** to null
+2. Move elements from index **n+1** to the end backward by one index
+
 How does retrieving an item (`get(n)`) from a list work?
+1. Check if index exists, if it doesn't, return null
+2. Return element at index **n**
+
 How does sorting (`sort()`) a list work?
+1. Sort elements in ascending or descending order
+*If the elements are complex objects, the are sorted based on custom comparators*
+
 How does retrieving a sublist (`slice(start, end)`) from a list work?
+1. Create a new list that is the size of the slice being requested
+2. Insert all elements from start to end in existing list to new list
+
 How does reversing the order (`reverse()`) of a list work?
+1. Create a new list the same size as the existing list
+2. Insert elements in reverse into the new list and return it
 
 ## Time Complexity
+
+## Other Definitions
+* **Comparator**: In electronics, a comparator is a device that compares two voltages or currents and outputs a digital signal indicating which is larger (Read more [here](https://en.wikipedia.org/wiki/Comparator)). This works in a similar way in programming: a comparator is a function that compares two objects and outputs a integer indicating which is larger. 
 
 ## References
 
