@@ -4,7 +4,7 @@
 class Map<K, V> {
 
     /** 
-     * This represents the template for the object that is stored at memory addresses
+     * This represents the template for the object that is stored at the underlying array's indexes
      */
     class Entry<K, V>{
         K key;

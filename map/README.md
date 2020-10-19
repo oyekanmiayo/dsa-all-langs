@@ -42,7 +42,7 @@ When handling collision, we want our strategies to answer two questions:
 #### Strategies to handle collision:
 1. **Separate Chaining**: We keep buckets at an address to handle collision i.e. instead of just storing one value at an index, we use a bucket so that we can store multiple values at that index. Doing this helps us solve the **storage** part of the collision problem. 
 
-   Technically, a *bucket* is just an abstraction that translates to "any data structure that can help with storage". So these structure already come with inbuilt     mechanism to solve the **retrieval** part of the collision problem. This means that the worst case to fetch a value from a Map that has buckets at addresses =        time to find address (always constant) + time to traverse bucket (depends on the data structure).
+   Technically, a *bucket* is just an abstraction that translates to "any data structure that can help with storage". So these structure already come with inbuilt     mechanisms to solve the **retrieval** part of the collision problem. This means that the worst case to fetch a value from a Map that has buckets at addresses =        time to find address (always constant) + time to traverse bucket (depends on the data structure).
    
    Some data structures that could be used as buckets include Lists (linear search), LinkedLists (linear search), Binary Search Trees (logarithmic search) and so on.
    
