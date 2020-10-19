@@ -82,8 +82,15 @@ Time Complexities mentioned [here](https://github.com/oyekanmiayo/data-structure
    |----------------------------------------------------|----------------------------|
    | Linearithmic Time/O(NlogN)                         | Linearithmic Time/O(NlogN) |
    
-* `slice(start, end)`: time to traverse original list + time to insert sliced items in new list
+* `slice(start, end)`: time to traverse original list + time to insert sliced items into new list
+   | Time to traverse list | Time to insert sliced items into list                                       | Worst Case for `slice(start, end)` |
+   |-----------------------|-----------------------------------------------------------------------------|------------------------------------|
+   | Linear Time/O(N)      | Linear Time/O(K), K = size of slice. K can be equal to N in the worst case. | Linear Time/O(N)                   |
+   
 * `reverse()`: time to traverse list + time to insert items into new list
+   | Time to traverse list | Time to insert items into new list | Worst Case for `reverse()` |
+   |-----------------------|------------------------------------|----------------------------|
+   | Linear Time/O(N)      | Linear Time/O(N)                   | Linear Time/O(N)           |
 
 
 ## Other Definitions
