@@ -54,7 +54,15 @@ How does removing an item from a specific position (`removeAtPosition(n)`) in a 
 Time complexities for operations mentioned [here]()
 
 * `addFirst(e)`: time to create new node + time to change head reference
+   | Time to create new node | Time to change head reference | Worst Case for `addFirst(e)` |
+   |-------------------------|-------------------------------|------------------------------|
+   | Constant Time/O(1)      | Constant Time/O(1)            | Constant Time/O(1)           |
+
 * `addLast(e)`: time to create new node + time to traverse linkedlist + time to change tail's reference
+   | Time to create new node | Time to traverse linkedlist | Time to change tail's reference | Worst Case for `addLast(e)` |
+   |-------------------------|-----------------------------|---------------------------------|-----------------------------|
+   | Constant Time/O(1)      | Linear Time/O(N)            | Constant Time/O(1)              | Linear Time/O(N)            |
+
 * `addAtPosition(n, e)`: time to create new node + time to traverse linkedlist + time to insert item at position **n**
 * `removeFirst()`: time to remove current head reference
 * `removeLast()`: time to traverse linkedlist + time to remove tail's reference
