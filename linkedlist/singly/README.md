@@ -64,9 +64,24 @@ Time complexities for operations mentioned [here]()
    | Constant Time/O(1)      | Linear Time/O(N)            | Constant Time/O(1)              | Linear Time/O(N)            |
 
 * `addAtPosition(n, e)`: time to create new node + time to traverse linkedlist + time to insert item at position **n**
+   | Time to create new node | Time to traverse linkedlist | Time to insert item at position n | Worst Case for `addAtPosition(n, e)` |
+   |-------------------------|-----------------------------|-----------------------------------|--------------------------------------|
+   | Constant Time/O(1)      | Linear Time/O(N)            | Constant Time/O(1)                | Linear Time/O(N)                     |
+
 * `removeFirst()`: time to remove current head reference
+   | Time to remove current head reference | Worst Case for `removeFirst()` |
+   |---------------------------------------|--------------------------------|
+   | Constant Time/O(1)                    | Constant Time/O(1)             |
+
 * `removeLast()`: time to traverse linkedlist + time to remove tail's reference
-* `removeAtPosition(n)`: time to traverse linkedlist + time to remove reference to item at position **n**
+   | Time to traverse linkedlist | Time to remove tail's reference | Worst Case for `removeLast()` |
+   |-----------------------------|---------------------------------|-------------------------------|
+   | Linear Time/O(N)            | Constant Time/O(1)              | Linear Time/O(N)              |
+
+* `removeAtPosition(n)`: time to traverse linkedlist + time to remove references to the item at position **n**
+   | Time to traverse linkedlist | Time to remove references to item at position n | Worst Case for `removeAtPosition(n)` |
+   |-----------------------------|-------------------------------------------------|--------------------------------------|
+   | Linear Time/O(N)            | Constant Time/O(1)                              | Linear Time/O(N)                     |
 
 ## Other Definitions
 
