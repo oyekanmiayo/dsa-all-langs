@@ -51,6 +51,14 @@ How does removing an item from a specific position (`removeAtPosition(n)`) in a 
     * If there is a preceding node, we set the preceding node's pointer to the following node of the node to be removed. This ensures that nothing references the node to be removed, and that it will be garbage collected
 
 ## Time Complexity
+Time complexities for operations mentioned [here]()
+
+* `addFirst(e)`: time to create new node + time to change head reference
+* `addLast(e)`: time to create new node + time to traverse linkedlist + time to change tail's reference
+* `addAtPosition(n, e)`: time to create new node + time to traverse linkedlist + time to insert item at position **n**
+* `removeFirst()`: time to remove current head reference
+* `removeLast()`: time to traverse linkedlist + time to remove tail's reference
+* `removeAtPosition(n)`: time to traverse linkedlist + time to remove reference to item at position **n**
 
 ## Other Definitions
 
