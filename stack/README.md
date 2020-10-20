@@ -36,6 +36,10 @@ Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo
 
 ### Array as underlying structure
 * `push(e)`: time to copy elements to bigger array + time to insert item at index
+  | Time to copy elements to bigger array | Time to insert item at index | Worst Case for `push(e)` | Amortized Time for `push(e)` |
+  |---------------------------------------|------------------------------|--------------------------|------------------------------|
+  | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)              | Constant Time/O(1)           |
+  
 * `pop()`: time to remove item from index
 * `peek()`: time to retrieve item from index
 
