@@ -7,10 +7,13 @@ Picture a pile of papers. You can put a sheet onto the top of the pile, or take 
 Processing data this way is know as **LIFO (Last-In, First-Out)**; we only ever remove items from the top, which always has the stack’s most recent insertion. The Stack is an important data type that occurs in many algorithms. For example, to implement the “undo” feature in your text editor, every edition you make is pushed onto a stack. Should you want to undo, the text editor pops an edition from the stack and reverts it.<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/stack#references)</sup>
 
 ## Internals
-An **array** is the underlying data structure used by a Stack.
+We can use an **array** or a **linkedlist** as the underlying data structure used by a Stack. Since arrays have a fixed size, if the number of elements being inserted into the stack exceeds this size, we will need to copy out all elements into a bigger array. Using a linkedlist helps avoid this extra overhead. We will consider the internals for both underlying structures
 
+### Array as underlying structure
 How does inserting an item (`push(e)`) into a stack work?
-1. Insert item in next available index in underlying array
+1. Check if size limit of underlying array has been reached
+2. If it has, copy all elements in the current underlying array to a bigger array
+3. Insert item in next available index in underlying array
 
 How does removing an item (`pop()`) from a stack work?
 1. Retrieve item from the last filled index in the underlying array and remove the reference to it
@@ -18,9 +21,28 @@ How does removing an item (`pop()`) from a stack work?
 How does retrieving the top item (`peek()`) from a stack work?
 1. Retrieve item from the last filled index in the underlying array
 
+### Linkedlist as underlying structure
+How does inserting an item (`push(e)`) into a stack work?
+1. Add element to tail of the linkedlist
+
+How does removing an item (`pop()`) from a stack work?
+1. Remove element from tail of the linkedlist
+
+How does retrieving the top item (`peek()`) from a stack work?
+1. Return element at the tail of the linkedlist
 
 ## Time Complexity
 Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#introduction).
+
+### Array as underlying structure
+* `push(e)`: time to copy elements to bigger array + time to insert item at index
+* `pop()`: time to remove item from index
+* `peek()`: time to retrieve item from index
+
+### Linkedlist as underlying structure
+* `push(e)`: time to add item to tail of the linkedlist
+* `pop()`: time to remove element from tail of the linkedlist
+* `peek()`: time to return element at the tail of the linkedlist
 
 ## Author(s)
 * [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
