@@ -90,5 +90,7 @@ Time complexities for operations mentioned [here]()
 
 2. [What is a singly linked list?](https://www.educative.io/edpresso/what-is-a-singly-linked-list)
 
+3. [Garbage Collection in Programming](https://www.freecodecamp.org/news/a-guide-to-garbage-collection-in-programming/)
+
 ## Author(s)
 * [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
