@@ -40,8 +40,15 @@ Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo
   |---------------------------------------|------------------------------|--------------------------|------------------------------|
   | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)              | Constant Time/O(1)           |
   
-* `pop()`: time to remove item from index
+* `pop()`: time to remove item reference from index
+  | Time to remove item reference from index | Worst Case for `pop()`  |
+  |------------------------------------------|-------------------------|
+  | Constant Time/O(1)                       | Constant Time/O(1)      |
+
 * `peek()`: time to retrieve item from index
+  | Time to retrieve item from index | Worst Case for `peek()` |
+  |----------------------------------|-------------------------|
+  | Constant Time/O(1)               | Constant Time/O(1)      |
 
 ### Linkedlist as underlying structure
 * `push(e)`: time to add item to tail of the linkedlist
