@@ -1,4 +1,5 @@
 ## Introduction
+With Linked Lists, items are stored in a chain of cells that don’t need to be at sequential memory addresses (as it is in arrays). Memory for each cell is allocated as needed. Each cell has a pointer indicating the address of the next cell in the chain. A cell with an empty pointer marks the end of the chain.
 
 ## Internals
 
