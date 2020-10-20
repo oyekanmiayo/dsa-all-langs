@@ -1,7 +1,10 @@
+/**
+ * @author: Ayomide Oyekanmi
+ */
 class List<E> {
-    E[] entries;
+    private E[] entries;
     // This variable keeps track of the next free index
-    int currIdx = 0;
+    private int currIdx = 0;
 
     List(){
         // Using a random initial size of 16
