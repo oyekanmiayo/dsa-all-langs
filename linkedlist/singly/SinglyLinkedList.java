@@ -17,10 +17,12 @@ class SinglyLinkedList<E> {
 
     private Node<E> head;
     private Node<E> tail;
+    private int size;
 
     public SinglyLinkedList(){ 
         head = null;
         tail = null;
+        size = 0;
     }
 
     /**
@@ -40,6 +42,9 @@ class SinglyLinkedList<E> {
         if(tail == null){
             tail = head;
         }
+
+        // Increment size
+        size++;
     }
 
     /**
@@ -58,21 +63,84 @@ class SinglyLinkedList<E> {
         node.next = new Node(element);
         // Set new node as new tail node
         tail = node.next;
+
+        // Increment size
+        size++;
     }
 
     public void addAtPosition(int n, E element){
+        if (n > size - 1){
+            IllegalArgumentException("No such position");
+        }
 
+        if (n == 0){
+            addFirst(element);
+            return;
+        }
+
+        int index = 0;
+        Node<E> prev = null;
+        Node<E> node = head;
+        Node<E> newNode = new Node(element);
+
+        // node != null check is not necessary because we already check if given index is valid
+        // using if (n > size - 1) 
+        while(count <= n && node != null){
+            if(count == n){
+                break;
+            }
+
+            prev = node;
+            node = node.next;
+        }
+
+        prev.next =  newNode;
+        newNode.next = node;
     }
 
     public E removeFirst(){
+        if(head == null){
+            throw new NoSuchElementException();
+        }
 
+        if(head.next == null){
+            head = null;
+            tail = null;
+            return;
+        }
+
+        size--;
+        Node<E> nodeToRemove = head;
+        head = head.next;
+
+        return nodeToRemove;
     }
 
     public E removeLast(){
+        if (tail == null){
+            throw new NoSuchElementException();
+        }
 
+        if(head.next == null){
+            head = null;
+            tail = null;
+            return;
+        }
+
+        size--;
+        Node<E> prev = null;
+        Node<E> node = head;
+        while(node.next != null){
+            prev = node;
+            node = node.next;
+        }
+
+        prev.next = null;
+        node = null;
+        tail = prev;
     }
 
     public E removeAtPosition(int n){
-
+        
     }
 }

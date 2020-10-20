@@ -26,7 +26,7 @@ How does adding an item to the back (`addLast(e)` of a singly linkedlist work?
 4. Set new node as tail
 
 How does adding an item to a specific position (`addAtPosition(n, e)`) in a singly linkedlist work?
-1. Starting at head node, traverse the linkedlist until position **n** is reached
+1. Starting at head node, traverse the linkedlist until position **n** is reached. Keep track of the **preceding node**
 2. Create a new node to wrap element **e** 
 3. Follow the insertion step for the condition that applies:
     * If there will be no node preceding the new node at position **n**, it means new node is the new head. Therefore, follow steps to `addFirst(e)` above
@@ -45,9 +45,9 @@ How does removing an item from the back (`removeLast()`) of a singly linkedlist 
 3. Set this node as tail
 
 How does removing an item from a specific position (`removeAtPosition(n)`) in a singly linkedlist work?
-1. Starting at head node, traverse the linkedlist until position **n - 1** is reached
+1. Starting at head node, traverse the linkedlist until position **n** is reached. Keep track of the **preceding node**
 2. Follow the removal step for the condition that applies:
-    * If there there is no node at **n - 1** (a.k.a preceding node of node to be removed), it means the node being deleted is the head node. Therefore, follow steps to `removeFirst()` above
+    * If there there is no preceding node, it means the node being deleted is the head node. Therefore, follow steps to `removeFirst()` above
     * If there is a preceding node, we set the preceding node's pointer to the following node of the node to be removed. This ensures that nothing references the node to be removed, and that it will be garbage collected
 
 ## Time Complexity
