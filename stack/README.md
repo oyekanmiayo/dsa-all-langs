@@ -52,8 +52,19 @@ Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo
 
 ### Linkedlist as underlying structure
 * `push(e)`: time to add item to tail of the linkedlist
+  | Time to add item to tail of the linkedlist | Worst Case for `push(e)` |
+  |--------------------------------------------|--------------------------|
+  | Constant Time/O(1)                         | Constant Time/O(1)       |
+
 * `pop()`: time to remove element from tail of the linkedlist
+  | Time to remove element from tail of the linkedlist | Worst Case for `pop()` |
+  |----------------------------------------------------|------------------------|
+  | Constant Time/O(1)                                 | Constant Time/O(1)     |
+  
 * `peek()`: time to return element at the tail of the linkedlist
+  | Time to return element at the tail of the linkedlist | Worst Case for `peek()` |
+  |------------------------------------------------------|-------------------------|
+  | Constant Time/O(1)                                   | Constant Time/O(1)      |
 
 ## Author(s)
 * [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
