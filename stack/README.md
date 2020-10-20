@@ -32,7 +32,7 @@ How does retrieving the top item (`peek()`) from a stack work?
 1. Return element at the tail of the linkedlist
 
 ## Time Complexity
-Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/list#introduction).
+Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/stack#introduction).
 
 ### Array as underlying structure
 * `push(e)`: time to copy elements to bigger array + time to insert item at index
