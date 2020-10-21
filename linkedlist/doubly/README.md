@@ -24,7 +24,7 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
     - Set new node as head
 
 2. How does adding an item to the back (`addLast(e)` of a DLL work?
-    - Starting at head node, traverse the linkedlist until tail node is reached
+    - Get stored tail node reference
     - Create a new node to wrap element **e** 
     - Set the current tail node's **next** pointer to the new node
     - Set the new node's **previous** pointer to current tail node
@@ -51,7 +51,7 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
         - Set newHead as head
 
 5. How does removing an item from the back (`removeLast()`) of a DLL work?
-    - Starting at head, traverse  the list until current tail node is reached
+    - Get stored tail node reference
     - If tail node is the only node in the DLL, then set tail to null & head to null (because head == tail here)
     - Else,
         - Let's call current tails's previous node newTail (because it will be the new tail node)
@@ -70,17 +70,16 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
             ##### PS: Following these steps ensures that nothing references the node to be removed, and that it will be garbage collected
 
 ## Time Complexity
-Time complexities for operations mentioned [here]()
 
 * `addFirst(e)`: time to create new node + time to change head reference
    | Time to create new node | Time to change head's reference | Worst Case for `addFirst(e)` |
    |-------------------------|-------------------------------|------------------------------|
    | Constant Time/O(1)      | Constant Time/O(1)            | Constant Time/O(1)           |
 
-* `addLast(e)`: time to create new node + time to traverse linkedlist + time to change tail's reference
-   | Time to create new node | Time to traverse linkedlist | Time to change tail's reference | Worst Case for `addLast(e)` |
-   |-------------------------|-----------------------------|---------------------------------|-----------------------------|
-   | Constant Time/O(1)      | Linear Time/O(N)            | Constant Time/O(1)              | Linear Time/O(N)            |
+* `addLast(e)`: time to create new node + time to change tail's reference
+   | Time to create new node | Time to change tail's reference | Worst Case for `addLast(e)` |
+   |-------------------------|---------------------------------|-----------------------------|
+   | Constant Time/O(1)      | Constant Time/O(1)              | Constant Time/O(1)          |
 
 * `addAtPosition(n, e)`: time to create new node + time to traverse linkedlist + time to insert item at position **n**
    | Time to create new node | Time to traverse linkedlist | Time to insert item at position n | Worst Case for `addAtPosition(n, e)` |
@@ -92,15 +91,16 @@ Time complexities for operations mentioned [here]()
    |---------------------------------------|--------------------------------|
    | Constant Time/O(1)                    | Constant Time/O(1)             |
 
-* `removeLast()`: time to traverse linkedlist + time to remove tail's reference
-   | Time to traverse linkedlist | Time to remove tail's reference | Worst Case for `removeLast()` |
-   |-----------------------------|---------------------------------|-------------------------------|
-   | Linear Time/O(N)            | Constant Time/O(1)              | Linear Time/O(N)              |
+* `removeLast()`: time to remove tail's reference
+   | Time to remove tail's reference | Worst Case for `removeLast()` |
+   |---------------------------------|-------------------------------|
+   | Constant Time/O(1)              | Constant Time/O(1)            |
 
 * `removeAtPosition(n)`: time to traverse linkedlist + time to remove references to the item at position **n**
    | Time to traverse linkedlist | Time to remove references to item at position n | Worst Case for `removeAtPosition(n)` |
    |-----------------------------|-------------------------------------------------|--------------------------------------|
    | Linear Time/O(N)            | Constant Time/O(1)                              | Linear Time/O(N)                     |
+   
 ## Other Definitions
 
 ## Reference(s)
