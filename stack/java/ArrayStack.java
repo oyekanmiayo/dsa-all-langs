@@ -1,12 +1,12 @@
 /**
  * @author: Ayomide Oyekanmi
- * @notes: This implementation uses an array as the underlying data structure
+ * @notes: This implementation uses an **ARRAY** as the underlying data structure
  */
-class Stack<E> {
+class ArrayStack<E> {
     private int top;
     private E[] entries;
 
-    Stack(){
+    ArrayStack(){
         // Using a random initial size of 16
         entries = new E[16];
         top = -1;
