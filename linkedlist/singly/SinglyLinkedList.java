@@ -96,11 +96,7 @@ class SinglyLinkedList<E> {
         // Traverse till we get to position
         // PS: node != null check is not necessary because we already check if given index is valid
         // using if (n > size) 
-        while(index <= n && node != null){
-            if(index == n){
-                break;
-            }
-
+        while(index != n){
             prev = node;
             node = node.next;
         }
@@ -214,7 +210,7 @@ class SinglyLinkedList<E> {
         // Traverse till we get to position
         // PS: node != null check is not necessary because we already check if given index is valid
         // using if (n > size) 
-        while(index <= n && node != null){
+        while(index != n){
             prev = node;
             node = node.next;
         }

@@ -77,6 +77,9 @@ class DoublyLinkedList<E> {
 
         // Set new node as tail
         tail = newTail;
+
+        // Increment size
+        size++;
     }
 
     /**
@@ -86,7 +89,43 @@ class DoublyLinkedList<E> {
      * @param element represents element to be inserted into position n
      * @throws IllegalArgumentException if the position given does not exist for list
      */
-    public void addAtPosition(int n, E element){}
+    public void addAtPosition(int n, E element){
+        // Checks if position exists
+        if (n < 1 || n > size){
+            IllegalArgumentException("No such position");
+        }
+
+        // Checks if element to be added will be the new head
+        if (n == 1){
+            addFirst(element);
+            return;
+        }
+
+        int index = 1;
+        Node<E> node = head;
+        Node<E> newNode = new Node(element);
+
+        // Traverse till we get to position
+        // PS: node != null check is not necessary because we already check if given index is valid
+        // using if (n > size) 
+        while(index != n){
+            node = node.next;
+        }
+
+        Node<E> prev = node.prev;
+
+        // Set the preceding node's next pointer to the new node
+        prev.next =  newNode;
+        // Set new node's previous pointer to the preceding node
+        newNode.prev = prev;
+        // Set the new node's next pointer to the following node
+        newNode.next = node;
+        // Set the following node's previous pointer to the new node
+        node.prev = newNode;
+
+        // Increment size
+        size++;
+    }
 
     /**
      * Removes head of the list and returns it
