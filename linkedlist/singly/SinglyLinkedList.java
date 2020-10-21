@@ -125,6 +125,7 @@ class SinglyLinkedList<E> {
         if(head.next == null){
             head = null;
             tail = null;
+            size = 0;
             return;
         }
 
@@ -135,7 +136,7 @@ class SinglyLinkedList<E> {
         // Decrements size
         size--;
 
-        return nodeToRemove;
+        return nodeToRemove.element;
     }
 
     /**
@@ -174,7 +175,7 @@ class SinglyLinkedList<E> {
         // Decrements size
         size--;
 
-        return node;
+        return node.element;
     }
 
     /**
@@ -221,7 +222,7 @@ class SinglyLinkedList<E> {
         // Decrement size
         size--;
 
-        return node;
+        return node.element;
     }
 }
 

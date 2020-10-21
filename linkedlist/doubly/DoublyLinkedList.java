@@ -133,7 +133,38 @@ class DoublyLinkedList<E> {
      * @return returns removed element
      * @throws NoSuchElementException if list has no head i.e. the list is empty
      */
-    public E removeFirst(){}
+    public E removeFirst(){
+       // Checks if list is empty
+       if(head == null){
+           throw new NoSuchElementException();
+        }
+
+        // Check if there's only one element in the list
+        if(head.next == null){
+            head = null;
+            tail = null;
+            size = 0;
+            return;
+        }
+
+        // Current head node
+        Node<E> nodeToRemove = head;
+
+        Node<E> newHead = head.next;
+        // Set current head's next pointer to null
+        nodeToRemove.next = null;
+
+        // Set newHead's previous pointer to null
+        newHead.prev = null;
+
+        // Set newHead as head
+        head = newHead;
+
+        // Decrement size
+        size--;
+
+        return nodeToRemove.element;
+    }
 
     /**
      * Removes tail of the list and returns it
