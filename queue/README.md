@@ -62,8 +62,19 @@ We will consider the internals for both underlying structures.
 
 ### DLL as underlying structure
 * `enqueue(e)`: time to add element to front of DLL
+   | Time to add element to front of DLL | Worst Case for `enqueue(e)` |
+   |-------------------------------------|-----------------------------|
+   | Constant Time/O(1)                  | Constant Time/O(1)          |
+
 * `dequeue()`: time to remove element from back of DLL
+   | Time to remove element from back of DLL | Worst Case for `dequeue()`  |
+   |-----------------------------------------|-----------------------------|
+   | Constant Time/O(1)                      | Constant Time/O(1)          |
+
 * `peek()`: time to get element at the front of DLL
+   | Time to get element at the front of DLL | Worst Case for `peek()` |
+   |-----------------------------------------|-------------------------|
+   | Constant Time/O(1)                      | Constant Time/O(1)      |
 
 ## Reference(s)
 1. [Computer Science Distilled](https://www.amazon.co.uk/Computer-Science-Distilled-Computational-Problems/dp/0997316020/ref=sr_1_1?adgrpid=52658140545&dchild=1&gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr6bz1aEFd_X517mpcZBAGaDJaeg-WARxB6mwEMMtupTPnTGI0a-1SIaAmH5EALw_wcB&hvadid=259122221401&hvdev=c&hvlocint=9041110&hvlocphy=1010294&hvnetw=g&hvqmt=e&hvrand=6311385300851562426&hvtargid=kwd-297429021778&hydadcr=17613_1817768&keywords=computer+science+distilled&qid=1602170396&sr=8-1&tag=googhydr-21)
