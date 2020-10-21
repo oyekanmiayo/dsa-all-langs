@@ -1,9 +1,22 @@
 ## Introduction
-Doubly Linked Lists (DLL) are an extension of Singly Linked Lists with one main difference: Each of its nodes contains a pointer to the previous node as well as the next node. As you know from [here]() Singly Linked List (SLL) nodes only  contains pointers to  the next  node; this means that SLLs can only be traversed forward i.e. we cannot go back to a previous node if required <sup></sup>. 
+With Doubly Linked Lists (DLLs), items are stored in a chain of cells that don’t need to be at sequential memory addresses (as it is in arrays). Memory for each cell is allocated as needed. 
 
-The double pointers contained by each node in a DLL, makes it **bi-directional**. We can traverse both forward and backward.
+Each cell has two pointers: one indicates the address of the **previous cell** in the chain, and the other indicates the address of the **next cell** in the chain. A cell with an empty previous pointer marks the beginning of the chain while a cell with an empty next pointer marks end of the chain. 
+
+Because a DLL has the two pointers described in the previous paragraph
+
+The double pointers contained by each node in a DLL (as described in the previous paragraph) makes it **bi-directional**; We can traverse both forward and backward. This is the main difference between a DLL and a [Singly Linked List]() which can only be traversed in one direction - forward. Some operations on a DLL include:
+* `addFirst(e)`: Add item to the front of the list
+* `addLast(e)`: Add item to the back of the list
+* `addAtPosition(n, e)`: Add item at specific position **n** in the list
+* `removeFirst()`: Remove item from front of the list
+* `removeLast()`: Remove item at the end of the list
+* `removeAtPosition(n)`: Remove item at specific position **n** in the list
 
 ## Internals
+Each element in a linked list is a node. A single node contains data and a pointer to the next node. The first node in the linkedlist is called the **head** and the last node is called the **tail**.<sup>[2](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
+
+Linkedlists can be used to implement **Stacks**, **Lists** and **Queues**<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
 Because of the extra pointer, DLLs use more space than SLLs.
 
 ## Time Complexity
