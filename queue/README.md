@@ -7,13 +7,39 @@ The Queue is the Stack’s antagonist. It’s also used for storing and retrievi
 The Queue works by organizing data the **FIFO way (First-In, First-Out)**, because the first (and oldest) item that was inserted in the queue is always the first to leave the queue. Queues are used in many computing scenarios. If you are im- plementing an online pizza service, you will likely store the pizza orders in a queue<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/stack#references)</sup>.
 
 ## Internals
-We can use an **array** or a **linkedlist** as the underlying data structure used by a Queue. 
+We can use an **array** or a **doubly linked list (DLL)** as the underlying data structure used by a Queue. 
 
 Because arrays have a fixed size, they don't provide the optimal performance for enqueue & dequeue. When enqueuing, if the array has reached its maximum size, we will need to copy out all elements into a bigger array. Additionally, everytime dequeuing is done, all elements need to shift by one index. 
 
-Because of how linkedlists [work](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/linkedlist), it provides constant time for enqueuing and dequeuing. 
+Because of how doubly linked lists [work](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/linkedlist/doubly), it provides constant time for enqueuing and dequeuing. 
 
 We will consider the internals for both underlying structures.
+
+### Operation Details
+
+#### Array as underlying structure
+1. How does inserting an item (`enqueue(e)`) into a queue work?
+    * Check if size limit of underlying array has been reached
+    * If it has, copy all elements in the current underlying array to a bigger array
+    * Insert item in next available index in underlying array
+
+2. How does removing an item (`dequeue()`) from a queue work?
+    * Remove item at index 0 in the underlying array 
+    * Shift all the elements left by one index
+    * Return removed item 
+
+3. How does retrieving the top item (`peek()`) from a stack work?
+    * Retrieve item at index 0 in the underlying array 
+
+#### DLL as underlying structure
+1. How does inserting an item (`enqueue(e)`) into a queue work?
+    * Add item to back of list by calling [`addLast(element)`](https://github.com/oyekanmiayo/data-structures-all-langs/blob/main/linkedlist/doubly/java/DoublyLinkedList.java#L63) on the DLL
+
+2. How does removing an item (`dequeue()`) from a queue work?
+    * Remove item from front of list by calling [`removeFirst()`](https://github.com/oyekanmiayo/data-structures-all-langs/blob/main/linkedlist/doubly/java/DoublyLinkedList.java#L136) on the DLL
+
+3. How does retrieving the item at the front (`peek()`) from a queue work?
+    * Return the head of the DLL
 
 ## Time Complexity
 
