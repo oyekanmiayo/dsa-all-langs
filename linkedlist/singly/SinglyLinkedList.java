@@ -227,3 +227,16 @@ class SinglyLinkedList<E> {
         return node;
     }
 }
+
+/**
+ * The SinglyLinkedList object will be instantiated and called as such:
+ * SinglyLinkedList<String> obj = new SinglyLinkedList<>();
+ * obj.addFirst('Ayo'); # Ayo
+ * obj.addFirst('Yuwa'); # Yuwa -> Ayo
+ * obj.addLast('Jess'); # Yuwa -> Ayo -> Jess
+ * obj.addLast('Shay'); # Yuwa -> Ayo -> Jess -> Shay
+ * obj.addAtPosition(3, 'Vee') # Yuwa -> Ayo -> Vee -> Jess -> Shay
+ * obj.removeFirst() # Ayo -> Vee -> Jess -> Shay
+ * obj.removeLast() # Ayo -> Vee -> Jess
+ * obj.removeAtPosition(2) # Ayo -> Jess
+ */
