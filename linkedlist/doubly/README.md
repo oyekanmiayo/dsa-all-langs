@@ -1,7 +1,10 @@
 ## Introduction
-With Linked Lists, items are stored in a chain of cells that don’t need to be at sequential memory addresses (as it is in arrays). Memory for each cell is allocated as needed. Each cell has a pointer indicating the address of the next cell in the chain. A cell with an empty pointer marks the end of the chain.
+Doubly Linked Lists (DLL) are an extension of Singly Linked Lists with one main difference: Each of its nodes contains a pointer to the previous node as well as the next node. As you know from [here]() Singly Linked List (SLL) nodes only  contains pointers to  the next  node; this means that SLLs can only be traversed forward i.e. we cannot go back to a previous node if required <sup></sup>. 
+
+The double pointers contained by each node in a DLL, makes it **bi-directional**. We can traverse both forward and backward.
 
 ## Internals
+Because of the extra pointer, DLLs use more space than SLLs.
 
 ## Time Complexity
 
