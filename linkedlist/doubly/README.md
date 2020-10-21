@@ -23,12 +23,14 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
     - Set the current head's **previous** pointer to new node, if current head exists
     - Set new node as head
 
-2. How does adding an item to the back (`addLast(e)` of a DLL work?
-    - Get stored tail node reference
-    - Create a new node to wrap element **e** 
-    - Set the current tail node's **next** pointer to the new node
-    - Set the new node's **previous** pointer to current tail node
-    - Set new node as tail
+2. How does adding an item to the back (`addLast(e)`) of a DLL work?
+    - If there is no tail node (i.e. the DLL is empty), call `addFirst(e)`
+    - Else,
+        * Get stored tail node reference
+        * Create a new node to wrap element **e** 
+        * Set the current tail node's **next** pointer to the new node
+        * Set the new node's **previous** pointer to current tail node
+        * Set new node as tail
 
 3. How does adding an item to a specific position (`addAtPosition(n, e)`) in a DLL work?
     - Starting at head node, traverse the linkedlist until position **n** is reached.
