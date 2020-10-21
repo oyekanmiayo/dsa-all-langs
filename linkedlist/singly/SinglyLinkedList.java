@@ -156,6 +156,7 @@ class SinglyLinkedList<E> {
         if(head.next == null){
             head = null;
             tail = null;
+            size = 0;
             return;
         }
 
@@ -203,7 +204,6 @@ class SinglyLinkedList<E> {
             return;
         }
 
-        
         int index = 1;
         Node<E> prev = null;
         Node<E> node = head;

@@ -172,7 +172,35 @@ class DoublyLinkedList<E> {
      * @return returns removed element
      * @throws NoSuchElementException if list has no tail i.e. the list is empty
      */
-    public E removeLast(){}
+    public E removeLast(){
+        // Checks if list is empty
+        if (tail == null){
+            throw new NoSuchElementException();
+        }
+
+        // Checks if tail is the only element in the list
+        if(tail.prev == null){
+            head = null;
+            tail = null;
+            size = 0;
+            return;
+        }
+
+        Node<E> nodeToRemove = tail;
+
+        Node<E> newTail = tail.prev;
+        // Set current tail's previous pointer to null
+        nodeToRemove.prev = null;
+        // Set newTail's next pointer to null
+        newTail.next = null;
+        // Set newTail as tail
+        tail = newTail;
+
+        // Decrement size
+        size--;
+
+        return nodeToRemove.element;
+    }
 
     /**
      * Removes element at position n in the list and returns it
@@ -181,5 +209,40 @@ class DoublyLinkedList<E> {
      * @return returns removed element
      * @throws IllegalArgumentException if the position given does not exist for list
      */
-    public E removeAtPosition(int n){}
+    public E removeAtPosition(int n){
+        // Checks if position exists
+        if (n < 1 || n > size){
+            IllegalArgumentException("No such position");
+        }
+
+        // Checks if element to be removed is head
+        if(n == 0){
+            removeFirst();
+            return;
+        }
+
+        // Checks if element to be removed is tail
+        if(n == size){
+            removeLast();
+            return;
+        }
+
+        int index = 1;
+        Node<E> node = head;
+
+        // Traverse till we get to position
+        // PS: node != null check is not necessary because we already check if given index is valid
+        // using if (n > size) 
+        while(index != n){
+            node = node.next;
+        }
+
+        Node<E> prev = node.prev;
+        // Set the previous node's next pointer to the next node
+        prev.next = node.next;
+        // Set the next node's previous pointer to the previous node
+        node.next.prev = prev;
+
+        return node.element;
+    }
 }
