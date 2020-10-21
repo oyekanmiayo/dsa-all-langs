@@ -32,14 +32,52 @@ class DoublyLinkedList<E> {
      * 
      * @param element element that the new node created wraps around
      */
-    public void addFirst(E element){}
+    public void addFirst(E element){
+         // Create new node to wrap element
+         Node<E> newHead = new Node(element);
+         // Set the new node's next pointer to the current head
+         newHead.next = head;
+
+         // Set the current head's previous pointer to new node, if current head exists
+         if (head != null){
+             head.prev = newHead;
+         }
+
+         // Set new node as head
+         head = newHead;
+ 
+         // If tail hasn't be set, tail is equal to head
+         if(tail == null){
+             tail = head;
+         }
+ 
+         // Increment size
+         size++;
+    }
 
     /**
      * Add element to back of the list, so that it becomes new tail node
      * 
      * @param element element that the new node created wraps around
      */
-    public void addLast(E element){}
+    public void addLast(E element){
+        if(tail == null){
+            addFirst(element);
+            return;
+        }
+
+        // Create new node to wrap element
+        Node<E> newTail = new Node(element);
+
+        // Set the current tail node's next pointer to the new node
+        tail.next = newTail;
+
+        // Set the new node's previous pointer to current tail node
+        newTail.prev = tail;
+
+        // Set new node as tail
+        tail = newTail;
+    }
 
     /**
      * At element at any position in the list
