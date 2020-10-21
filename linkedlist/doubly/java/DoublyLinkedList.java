@@ -167,6 +167,21 @@ class DoublyLinkedList<E> {
     }
 
     /**
+     * Returns head of the list
+     * 
+     * @return returns head element
+     * @throws NoSuchElementException if list has no head i.e. the list is empty
+     */
+    public E peek(){
+        // Checks if list is empty
+       if(head == null){
+           throw new NoSuchElementException();
+        }
+
+        return head.element;
+    }
+
+    /**
      * Removes tail of the list and returns it
      * 
      * @return returns removed element
