@@ -11,7 +11,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
 
 Because arrays have a fixed size, they don't provide the optimal performance for enqueue & dequeue. When enqueuing, if the array has reached its maximum size, we will need to copy out all elements into a bigger array. Additionally, everytime dequeuing is done, all elements need to shift by one index. 
 
-Because of how linkedlists [work](), it provides constant time for enqueuing and dequeuing. 
+Because of how linkedlists [work](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/linkedlist), it provides constant time for enqueuing and dequeuing. 
 
 We will consider the internals for both underlying structures.
 
