@@ -14,12 +14,12 @@ Each element in an SLL is wrapped by a node. A single node contains data and a p
 
 SLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
 
-How does adding an item to the front (`addFirst(e)`) of a singly linkedlist work?
+How does adding an item to the front (`addFirst(e)`) of an SLL work?
 1. Create new node to wrap element **e** 
 2. Set the new node's pointer to the current head
 3. Set new node as head
 
-How does adding an item to the back (`addLast(e)` of a singly linkedlist work?
+How does adding an item to the back (`addLast(e)` of an SLL work?
 1. Starting at head node, traverse the linkedlist until tail node is reached
 2. Create a new node to wrap element **e** 
 3. Set the current tail node's pointer to the new node

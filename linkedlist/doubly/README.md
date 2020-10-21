@@ -17,20 +17,20 @@ Each element in a DLL is wrapped by a node. A single node contains data, a point
 DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
 
 ### Operations' Details
-1. How does adding an item to the front (`addFirst(e)`) of a singly linkedlist work?
+1. How does adding an item to the front (`addFirst(e)`) of a DLL work?
     - Create new node to wrap element **e** 
     - Set the new node's **next** pointer to the current head, if current head exists
     - Set the current head's **previous** pointer to new node, if current head exists
     - Set new node as head
 
-2. How does adding an item to the back (`addLast(e)` of a singly linkedlist work?
+2. How does adding an item to the back (`addLast(e)` of a DLL work?
     - Starting at head node, traverse the linkedlist until tail node is reached
     - Create a new node to wrap element **e** 
     - Set the current tail node's **next** pointer to the new node
     - Set the new node's **previous** pointer to current tail node
     - Set new node as tail
 
-3. How does adding an item to a specific position (`addAtPosition(n, e)`) in an SLL work?
+3. How does adding an item to a specific position (`addAtPosition(n, e)`) in a DLL work?
     - Starting at head node, traverse the linkedlist until position **n** is reached.
     - Create a new node to wrap element **e** 
     - Follow the insertion step for the condition that applies:
@@ -42,6 +42,33 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
             - Set the new node's **next** pointer to the following node
         ##### PS: It is not possible to get a condition to `addLast(e)` here because technically that position does not exist yet. To add element to back of the list, call `addLast(e)` directly.
 
+4. How does removing an item from the front (`removeFirst()`) of a DLL work?
+    - If current head is the only node in the DLL, then set head to null
+    - Else,
+        - Let's call current head's next node newHead (because it will be the new head node)
+        - Set current head's **next** pointer to null
+        - Set newHead's **previous** pointer to null
+        - Set newHead as head
+
+5. How does removing an item from the back (`removeLast()`) of a DLL work?
+    - Starting at head, traverse  the list until current tail node is reached
+    - If tail node is the only node in the DLL, then set tail to null & head to null (because head == tail here)
+    - Else,
+        - Let's call current tails's previous node newTail (because it will be the new tail node)
+        - Set current tail's **previous** pointer to null
+        - Set newTail's **next** pointer to null
+        - Set newTail as tail
+
+6. How does removing an item from a specific position (`removeAtPosition(n)`) in an SLL work?
+    - Starting at head node, traverse the DLL until position **n** is reached
+    - Follow the removal step for the condition that applies:
+        * If node to be removed is the head, call `removeFirst()` above
+        * If node to be removed is the tail, call `removeLast()` above
+        * If node is a middle node (i.e. is has both previous and next nodes), then
+            * Set the previous node's **next** pointer to the next node
+            * Set the next node's **previous** pointer to the previous node
+            #### PS: Following these steps ensures that nothing references the node to be removed, and that it will be garbage collected
+            
 ## Time Complexity
 
 ## Other Definitions
