@@ -68,17 +68,24 @@ class SinglyLinkedList<E> {
         size++;
     }
 
+    /**
+     * At element at any position in the list
+     * 
+     * @param n represents position to insert element into.
+     * @param element represents element to be inserted into position n
+     * @throws IllegalArgumentException if the position given does not exist for list
+     */
     public void addAtPosition(int n, E element){
-        if (n > (size - 1)){
+        if (n > size){
             IllegalArgumentException("No such position");
         }
 
-        if (n == 0){
+        if (n == 1){
             addFirst(element);
             return;
         }
 
-        int index = 0;
+        int index = 1;
         Node<E> prev = null;
         Node<E> node = head;
         Node<E> newNode = new Node(element);
@@ -101,6 +108,12 @@ class SinglyLinkedList<E> {
         size++;
     }
 
+    /**
+     * Removes head of the list and returns it
+     * 
+     * @return returns removed element
+     * @throws NoSuchElementException if list has no head i.e. the list is empty
+     */
     public E removeFirst(){
         if(head == null){
             throw new NoSuchElementException();
@@ -119,6 +132,12 @@ class SinglyLinkedList<E> {
         return nodeToRemove;
     }
 
+    /**
+     * Removes tail of the list and returns it
+     * 
+     * @return returns removed element
+     * @throws NoSuchElementException if list has no tail i.e. the list is empty
+     */
     public E removeLast(){
         if (tail == null){
             throw new NoSuchElementException();
@@ -144,8 +163,15 @@ class SinglyLinkedList<E> {
         return node;
     }
 
+    /**
+     * Removes element at position n in the list and returns it
+     * 
+     * @param n position to remove element from
+     * @return returns removed element
+     * @throws IllegalArgumentException if the position given does not exist for list
+     */
     public E removeAtPosition(int n){
-        if (n > (size - 1)){
+        if (n > size){
             IllegalArgumentException("No such position");
         }
 
@@ -154,7 +180,7 @@ class SinglyLinkedList<E> {
             return;
         }
 
-        if(n == size - 1){
+        if(n == size){
             removeLast();
             return;
         }
