@@ -67,7 +67,7 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
         * If node is a middle node (i.e. is has both previous and next nodes), then
             * Set the previous node's **next** pointer to the next node
             * Set the next node's **previous** pointer to the previous node
-        #### PS: Following these steps ensures that nothing references the node to be removed, and that it will be garbage collected
+        ##### PS: Following these steps ensures that nothing references the node to be removed, and that it will be garbage collected
 
 ## Time Complexity
 
