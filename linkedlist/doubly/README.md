@@ -23,6 +23,25 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
     - Set the current head's **previous** pointer to new node, if current head exists
     - Set new node as head
 
+2. How does adding an item to the back (`addLast(e)` of a singly linkedlist work?
+    - Starting at head node, traverse the linkedlist until tail node is reached
+    - Create a new node to wrap element **e** 
+    - Set the current tail node's **next** pointer to the new node
+    - Set the new node's **previous** pointer to current tail node
+    - Set new node as tail
+
+3. How does adding an item to a specific position (`addAtPosition(n, e)`) in an SLL work?
+    - Starting at head node, traverse the linkedlist until position **n** is reached.
+    - Create a new node to wrap element **e** 
+    - Follow the insertion step for the condition that applies:
+        * If there will be no node preceding the new node at position **n**, it means new node is the new head. Therefore, follow steps to `addFirst(e)` above
+        * If there will be a preceding node and a following node for the new node at position **n**, then:
+            - Set the preceding node's **next** pointer to the new node
+            - Set new node's **previous** pointer to the preceding node
+            - Set the following node's **previous** pointer  to the new node
+            - Set the new node's **next** pointer to the following node
+        ##### PS: It is not possible to get a condition to `addLast(e)` here because technically that position does not exist yet. To add element to back of the list, call `addLast(e)` directly.
+
 ## Time Complexity
 
 ## Other Definitions
