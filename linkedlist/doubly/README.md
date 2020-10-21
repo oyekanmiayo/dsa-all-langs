@@ -12,10 +12,9 @@ The double pointers contained by each node in a DLL (as described in the previou
 * `removeAtPosition(n)`: Remove item at specific position **n** in the list
 
 ## Internals
-Each element in a linked list is a node. A single node contains data and a pointer to the next node. The first node in the linkedlist is called the **head** and the last node is called the **tail**.<sup>[2](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
+Each element in a DLL is wrapped by a node. A single node contains data, a pointer to the previous node and a pointer to the next node - because of the extra pointer, DLLs use more space that SLLs. The first node in the linkedlist is called the **head** and the last node is called the **tail**.
 
-Linkedlists can be used to implement **Stacks**, **Lists** and **Queues**<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
-Because of the extra pointer, DLLs use more space than SLLs.
+DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
 
 ## Time Complexity
 

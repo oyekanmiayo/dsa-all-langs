@@ -10,7 +10,7 @@ An SLL is a type of linked list that is **unidirectional**, that is, it can be t
 * `removeAtPosition(n)`: Remove item at specific position **n** in the list
 
 ## Internals
-Each element in an SLL is a node. A single node contains data and a pointer to the next node. The first node in the SLL is called the **head** and the last node is called the **tail**.<sup>[2](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
+Each element in an SLL is wrapped by a node. A single node contains data and a pointer to the next node. The first node in the SLL is called the **head** and the last node is called the **tail**.<sup>[2](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
 
 SLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-list-impl/linkedlist/singly#references)</sup>.
 
