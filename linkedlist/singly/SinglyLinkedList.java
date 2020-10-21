@@ -69,7 +69,7 @@ class SinglyLinkedList<E> {
     }
 
     public void addAtPosition(int n, E element){
-        if (n > size - 1){
+        if (n > (size - 1)){
             IllegalArgumentException("No such position");
         }
 
@@ -85,8 +85,8 @@ class SinglyLinkedList<E> {
 
         // node != null check is not necessary because we already check if given index is valid
         // using if (n > size - 1) 
-        while(count <= n && node != null){
-            if(count == n){
+        while(index <= n && node != null){
+            if(index == n){
                 break;
             }
 
@@ -96,6 +96,9 @@ class SinglyLinkedList<E> {
 
         prev.next =  newNode;
         newNode.next = node;
+
+        // Increment size
+        size++;
     }
 
     public E removeFirst(){
@@ -109,10 +112,10 @@ class SinglyLinkedList<E> {
             return;
         }
 
-        size--;
         Node<E> nodeToRemove = head;
         head = head.next;
 
+        size--;
         return nodeToRemove;
     }
 
@@ -127,7 +130,6 @@ class SinglyLinkedList<E> {
             return;
         }
 
-        size--;
         Node<E> prev = null;
         Node<E> node = head;
         while(node.next != null){
@@ -136,11 +138,39 @@ class SinglyLinkedList<E> {
         }
 
         prev.next = null;
-        node = null;
         tail = prev;
+
+        size--;
+        return node;
     }
 
     public E removeAtPosition(int n){
-        
+        if (n > (size - 1)){
+            IllegalArgumentException("No such position");
+        }
+
+        if(n == 0){
+            removeFirst();
+            return;
+        }
+
+        if(n == size - 1){
+            removeLast();
+            return;
+        }
+
+        int index = 0;
+        Node<E> prev = null;
+        Node<E> node = head;
+
+        while(index <= n && node != null){
+            prev = node;
+            node = node.next;
+        }
+
+        prev.next = node.next;
+
+        size--;
+        return node;
     }
 }
