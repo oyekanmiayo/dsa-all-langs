@@ -3,9 +3,7 @@ With Doubly Linked Lists (DLLs), items are stored in a chain of cells that donâ€
 
 Each cell has two pointers: one indicates the address of the **previous cell** in the chain, and the other indicates the address of the **next cell** in the chain. A cell with an empty previous pointer marks the beginning of the chain while a cell with an empty next pointer marks end of the chain. 
 
-Because a DLL has the two pointers described in the previous paragraph
-
-The double pointers contained by each node in a DLL (as described in the previous paragraph) makes it **bi-directional**; We can traverse both forward and backward. This is the main difference between a DLL and a [Singly Linked List]() which can only be traversed in one direction - forward. Some operations on a DLL include:
+The double pointers contained by each node in a DLL (as described in the previous paragraph) makes it **bi-directional**; We can traverse both forward and backward. This is the main difference between a DLL and a [Singly Linked List]() which can only be traversed in one direction: forward. Some operations on a DLL include:
 * `addFirst(e)`: Add item to the front of the list
 * `addLast(e)`: Add item to the back of the list
 * `addAtPosition(n, e)`: Add item at specific position **n** in the list
