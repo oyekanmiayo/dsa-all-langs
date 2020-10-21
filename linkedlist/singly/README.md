@@ -30,11 +30,11 @@ How does adding an item to a specific position (`addAtPosition(n, e)`) in a sing
 2. Create a new node to wrap element **e** 
 3. Follow the insertion step for the condition that applies:
     * If there will be no node preceding the new node at position **n**, it means new node is the new head. Therefore, follow steps to `addFirst(e)` above
-    * If there will be no node following the new node at position **n**, it means new node is the new tail. Therefore, follow steps to `addLast(e)` above
     * If there will be a preceding node and a following node for the new node at position **n**, then:
         - Set the preceding node's pointer to the new node
         - Set the new node's pointer to the following node
         - The two steps above perform the **insertion**
+    ##### PS: It is not possible to get a condition to `addLast(e)` here because the position does not exist yet. To add element to back of the list, call `addLast(e)` directly.
 
 How does removing an item from the front (`removeFirst()`) of a singly linkedlist work?
 1. Set head as the node the current head node points to

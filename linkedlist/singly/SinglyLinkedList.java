@@ -76,10 +76,12 @@ class SinglyLinkedList<E> {
      * @throws IllegalArgumentException if the position given does not exist for list
      */
     public void addAtPosition(int n, E element){
-        if (n > size){
+        // Checks if position exists
+        if (n < 1 || n > size){
             IllegalArgumentException("No such position");
         }
 
+        // Checks if element to be added will be the new head
         if (n == 1){
             addFirst(element);
             return;
@@ -90,8 +92,9 @@ class SinglyLinkedList<E> {
         Node<E> node = head;
         Node<E> newNode = new Node(element);
 
-        // node != null check is not necessary because we already check if given index is valid
-        // using if (n > size - 1) 
+        // Traverse till we get to position
+        // PS: node != null check is not necessary because we already check if given index is valid
+        // using if (n > size) 
         while(index <= n && node != null){
             if(index == n){
                 break;
@@ -101,6 +104,7 @@ class SinglyLinkedList<E> {
             node = node.next;
         }
 
+        // Update pointers to reference new node
         prev.next =  newNode;
         newNode.next = node;
 
@@ -115,20 +119,25 @@ class SinglyLinkedList<E> {
      * @throws NoSuchElementException if list has no head i.e. the list is empty
      */
     public E removeFirst(){
+        // Checks if list is empty
         if(head == null){
             throw new NoSuchElementException();
         }
 
+        // Checks if head element is the only element in the list
         if(head.next == null){
             head = null;
             tail = null;
             return;
         }
 
+        // Removes reference to head element
         Node<E> nodeToRemove = head;
         head = head.next;
 
+        // Decrements size
         size--;
+
         return nodeToRemove;
     }
 
@@ -139,16 +148,20 @@ class SinglyLinkedList<E> {
      * @throws NoSuchElementException if list has no tail i.e. the list is empty
      */
     public E removeLast(){
+        // Checks if list is empty
         if (tail == null){
             throw new NoSuchElementException();
         }
 
+        // Checks if tail is the only element in the list
+        // If head.next is null, it means head == tail :)
         if(head.next == null){
             head = null;
             tail = null;
             return;
         }
 
+        // Traverses to the end of the list
         Node<E> prev = null;
         Node<E> node = head;
         while(node.next != null){
@@ -156,10 +169,14 @@ class SinglyLinkedList<E> {
             node = node.next;
         }
 
+        // Removes reference to current tail
         prev.next = null;
+        // Set the new tail
         tail = prev;
 
+        // Decrements size
         size--;
+
         return node;
     }
 
@@ -171,32 +188,42 @@ class SinglyLinkedList<E> {
      * @throws IllegalArgumentException if the position given does not exist for list
      */
     public E removeAtPosition(int n){
-        if (n > size){
+        // Checks if position exists
+        if (n < 1 || n > size){
             IllegalArgumentException("No such position");
         }
 
+        // Checks if element to be removed is head
         if(n == 0){
             removeFirst();
             return;
         }
 
+        // Checks if element to be removed is tail
         if(n == size){
             removeLast();
             return;
         }
 
-        int index = 0;
+        
+        int index = 1;
         Node<E> prev = null;
         Node<E> node = head;
 
+        // Traverse till we get to position
+        // PS: node != null check is not necessary because we already check if given index is valid
+        // using if (n > size) 
         while(index <= n && node != null){
             prev = node;
             node = node.next;
         }
 
+        // Remove reference to node to be deleted
         prev.next = node.next;
 
+        // Decrement size
         size--;
+
         return node;
     }
 }
