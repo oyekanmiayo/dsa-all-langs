@@ -12,6 +12,7 @@ class SinglyLinkedList<E> {
 
         public Node(E element){
             this.element = element;
+            next = null;
         }
     }
 
