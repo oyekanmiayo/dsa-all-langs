@@ -100,11 +100,11 @@ DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
    | Time to traverse linkedlist | Time to remove references to item at position n | Worst Case for `removeAtPosition(n)` |
    |-----------------------------|-------------------------------------------------|--------------------------------------|
    | Linear Time/O(N)            | Constant Time/O(1)                              | Linear Time/O(N)                     |
-   
-## Other Definitions
 
 ## Reference(s)
 1. [Computer Science Distilled](https://www.amazon.co.uk/Computer-Science-Distilled-Computational-Problems/dp/0997316020/ref=sr_1_1?adgrpid=52658140545&dchild=1&gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr6bz1aEFd_X517mpcZBAGaDJaeg-WARxB6mwEMMtupTPnTGI0a-1SIaAmH5EALw_wcB&hvadid=259122221401&hvdev=c&hvlocint=9041110&hvlocphy=1010294&hvnetw=g&hvqmt=e&hvrand=6311385300851562426&hvtargid=kwd-297429021778&hydadcr=17613_1817768&keywords=computer+science+distilled&qid=1602170396&sr=8-1&tag=googhydr-21)
+
+2. [What is a doubly linked list](https://www.educative.io/edpresso/what-is-a-doubly-linked-list)
 
 ## Author(s)
 * [Ayomide Oyekanmi](https://github.com/oyekanmiayo)
