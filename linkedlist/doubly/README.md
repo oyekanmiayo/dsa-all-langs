@@ -16,6 +16,12 @@ Each element in a DLL is wrapped by a node. A single node contains data, a point
 
 DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
 
+1. How does adding an item to the front (`addFirst(e)`) of a singly linkedlist work?
+    a. Create new node to wrap element **e** 
+    b. Set the new node's **next** pointer to the current head, if current head exists
+    c. Set the current head's **previous** pointer to new node, if current head exists
+    d. Set new node as head
+
 ## Time Complexity
 
 ## Other Definitions

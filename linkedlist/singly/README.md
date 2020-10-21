@@ -25,7 +25,7 @@ How does adding an item to the back (`addLast(e)` of a singly linkedlist work?
 3. Set the current tail node's pointer to the new node
 4. Set new node as tail
 
-How does adding an item to a specific position (`addAtPosition(n, e)`) in a singly linkedlist work?
+How does adding an item to a specific position (`addAtPosition(n, e)`) in an SLL work?
 1. Starting at head node, traverse the linkedlist until position **n** is reached. Keep track of the **preceding node**
 2. Create a new node to wrap element **e** 
 3. Follow the insertion step for the condition that applies:
@@ -36,15 +36,15 @@ How does adding an item to a specific position (`addAtPosition(n, e)`) in a sing
         - The two steps above perform the **insertion**
     ##### PS: It is not possible to get a condition to `addLast(e)` here because technically that position does not exist yet. To add element to back of the list, call `addLast(e)` directly.
 
-How does removing an item from the front (`removeFirst()`) of a singly linkedlist work?
+How does removing an item from the front (`removeFirst()`) of an SLL work?
 1. Set head as the node the current head node points to
 
-How does removing an item from the back (`removeLast()`) of a singly linkedlist work?
-1. Starting at head, traverse  the list until one node before the current tail
-2. Set this node's pointer to null. This ensures that nothing references the current tail, and that it will be garbage collected
-3. Set this node as tail
+How does removing an item from the back (`removeLast()`) of an SLL work?
+1. Starting at head, traverse  the list until current tail node is reached. Keep track of the **preceding node**.
+2. Set preceding node's pointer to null. This ensures that nothing references the current tail, and that it will be garbage collected
+3. Set this preceding node as tail
 
-How does removing an item from a specific position (`removeAtPosition(n)`) in a singly linkedlist work?
+How does removing an item from a specific position (`removeAtPosition(n)`) in an SLL work?
 1. Starting at head node, traverse the linkedlist until position **n** is reached. Keep track of the **preceding node**
 2. Follow the removal step for the condition that applies:
     * If there there is no preceding node, it means the node being deleted is the head node. Therefore, follow steps to `removeFirst()` above
