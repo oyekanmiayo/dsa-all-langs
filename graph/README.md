@@ -8,7 +8,7 @@ There are two types of graphs: **Directed** and **Undirected**.
 ### Directed Graphs
 In a directed graph, nodes are connected by directed edges – they only go in one direction. For example, if an edge connects node 1 and 2, but the arrow head points towards 2, we can only traverse from node 1 to node 2 – not in the opposite direction<sup>[1]()</sup>. 
 
-<img src="images/directed-graph.png" width="200" height="200">
+<img src="images/directed-graph.png" height="200">
 ![alt text](images/directed-graph.png)
 
 ### Undirected Graphs
