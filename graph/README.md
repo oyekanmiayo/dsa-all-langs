@@ -13,7 +13,7 @@ In a directed graph, nodes are connected by directed edges – they only go in o
 ### Undirected Graphs
 In an undirected graph the edges are bidirectional, with no direction associated with them. Hence, the graph can be traversed in either direction. For example, in the image below, the graph can be traversed from node A to node B as well as from node B to node A<sup>[1]()</sup>.
 
-<img src="images/undirected-graph.png"/>
+<img src="images/undirected-graph.png" height="200"/>
 
 ## Internals (Representation of Graphs)
 
