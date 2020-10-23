@@ -49,7 +49,7 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
 ### Adjacency List
 An **adjacency list** represents a graph as an array of lists. Each **index<sub>i</sub>** in this array represents a **vertex<sub>i</sub>** in the graph. Each **index<sub>i</sub>** contains a **list<sub>i</sub>** that contains all the nodes adjacent to **vertex<sub>i</sub>**. Whew, read that again if you need to (me sef I had to). The image below shows an **adjacency list** representation of the graph example.
 
-<img src="images/adjacency-list.png" height="300" width="500"/>
+<img src="images/adjacency-list.png" height="300" width="300"/>
 
 
 ## Internals (Graphs Traversals)
