@@ -8,12 +8,12 @@ There are two types of graphs: **Directed** and **Undirected**.
 ### Directed Graphs
 In a directed graph, nodes are connected by directed edges – they only go in one direction. For example, in the image below, an edge connects node A and B, but the arrow head points towards B, so, we can only traverse from node A to node B – not in the opposite direction<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>. 
 
-<img src="images/directed-graph.png" height="50" width="200"/>
+<img src="images/directed-graph.png" height="75" width="200"/>
 
 ### Undirected Graphs
 In an undirected graph the edges are bidirectional, with no direction associated with them. Hence, the graph can be traversed in either direction. For example, in the image below, the graph can be traversed from node A to node B as well as from node B to node A<sup>[1](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>.
 
-<img src="images/undirected-graph.png" height="50" width="200"/>
+<img src="images/undirected-graph.png" height="75" width="200"/>
 
 ## Internals (Representation of Graphs)
 There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
