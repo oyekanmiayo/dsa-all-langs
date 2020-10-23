@@ -39,7 +39,7 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 ### Adjacency Matrix
 For a graph with |V| vertices, an adjacency matrix is a |V| × ∣V∣ matrix of 0s and 1s, where the entry in row<sub>i</sub> and column<sub>j</sub> is 1 if and only if the **edge (i,j)** is in the graph.
 
-<img src="images/adjacency-matrix.png" height="100" width="100"/>
+<img src="images/adjacency-matrix.png" height="300" width="300"/>
 
 ### Adjacency List
 
