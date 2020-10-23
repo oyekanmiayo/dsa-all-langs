@@ -41,6 +41,11 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
 
 <img src="images/adjacency-matrix.png" height="300" width="300"/>
 
+#### Analysis
+* The amount of space used for this implementation is O(|V|<sup>2</sup>), where |V| = set of vertices. This implementation uses a lot of space that is especially inefficient if the graph has a small number of edges
+* Finding out if an edge exists is very straight forward. Suppose the adjacency matrix above was called graph; to find out if an edge exists between i and j, we simply need to check if `graph[i][j] == 1`. The time complexity for this is O(1)
+* Finding out all neighbours for an edge will require search |V| entries for that edge. The time complexity for that is O(|V|), where |V| = set of vertices
+
 ### Adjacency List
 
 ## Internals (Graphs Traversals)
