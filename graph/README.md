@@ -23,7 +23,7 @@ There are several ways to represent graphs, each with its advantages and disadva
 
 We will use the graph below as an example to explain each representation
 
-<img src="images/sample-graph.png"/>
+<img src="images/sample-graph.png" height="200" width="200"/>
 
 ### Edge List
 One simple way to represent a graph is just a list, or array, of |E| edges, which we call an **edge list**. To represent an edge, we just have an array of two vertex numbers, or an array of objects containing the vertex numbers of the vertices that the edges are incident on<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>. The image below shows an edge list with three edges.
