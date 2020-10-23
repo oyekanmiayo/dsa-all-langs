@@ -1,7 +1,7 @@
 ## Introduction
-A graph is a non-linear data structure that consists of vertices and edges that link these vertices. A graph can be represented by the symbol **G(V,E)**, where V = vertices and E = edges.
+A graph is a non-linear data structure that consists of vertices and edges that link these vertices. A graph can be represented by the symbol **G(V,E)**, where V = vertices and E = edges. We denote an edge connecting vertices u and v by the pair **(u,v)**<sup>[4]()</sup>.
 
-Graphs are used to solve real-world problems that involve the representation of the problem space as a network e.g. telephone network, social networks, neural networks and so on. In the case of a social network, users can be represented as vertices and friendship between users can be represented using edges. You can generalize this examples to the other problems a graph can model.
+Graphs are used to solve real-world problems that involve the representation of the problem space as a network e.g. telephone network, social networks, neural networks and so on. In the case of a social network, users can be represented as vertices (or nodes) and friendship between users can be represented using edges. You can generalize this example to the other problems that a graph can model.
 
 There are two types of graphs: **Directed** and **Undirected**.
 
@@ -17,14 +17,20 @@ In an undirected graph the edges are bidirectional, with no direction associated
 
 ## Internals (Representation of Graphs)
 
+
 ## Internals (Graphs Traversals)
 
 ## Terminologies
 1. **Indegree**: This is the number of incoming edges for a node in a graph. For an edge to be counted as incoming, the node must be the destination. For directed graphs, an edge is incoming for a node if the edge is directed at that node. For undirected graphs, the edge can be counted as incoming for the two linked node since, there is no direction associated with it.
 
-1. **Outdegree**: This is the number of outgoing edges for a node in a graph.
+2. **Outdegree**: This is the number of outgoing edges for a node in a graph.
+
+3. **Degree**: Indegree + Outdegree.
+
+4. **Adjacent Nodes**: Two nodes are adjacent to each other if there is an edge linking them. Adjacent nodes are also called **neighbours**.
 
 ## References
 1. [What is a graph](https://www.educative.io/edpresso/what-is-a-graph-data-structure)
 2. [Directed vs Undirected Graphs](https://www.educative.io/edpresso/directed-graphs-vs-undirected-graphs)
 3. [Graphs](https://www.educative.io/edpresso/graphs-basics-representation-traversals-and-applications)
+4. [Describing Graphs](https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/describing-graphs)

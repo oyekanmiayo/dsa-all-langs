@@ -87,7 +87,7 @@ Time complexities for the operations mentioned [here](https://github.com/oyekanm
    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)    | Constant Time/O(1) |
 
 
-## Other Definitions
+## Terminologies
 * **Amortized Time**: Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time. Read more [here](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
 
 * **Load Factor**: The number of allowed entries per bucket. This isn't necessarily equal to the capacity of the bucket.
