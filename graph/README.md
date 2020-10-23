@@ -26,6 +26,12 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 
 <img src="images/edge-list.png" height="50" width="300"/>
 
+Analysis
+* The amount of space that this graph implementation uses is O(|E|), where |E| = set of edges 
+* Finding out if an edge exists will require searching through all available edges. The time complexity for  that is O(|E|), where |E| = set of edges
+* Finding out all the neighbours for an edge will also require searching  through all available edges. The time complexity for that is O(|E|), where |E| = set of edges
+* To find all the neighbours for an edge in a more efficient manner, we can sort the edge list. The time complexity for the last two operations will reduce  to O(log|E|), where |E| = set of edges
+
 ### Adjacency Matrix
 
 ### Adjacency List
