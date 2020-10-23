@@ -124,7 +124,7 @@ class List<E> {
      */
     public void sort(){
         // Sort using quicksort or mergesort
-        Collections.sort(this);
+        Collections.sort(self);
     }
 
     /**
