@@ -37,6 +37,9 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 * To find all the neighbours for an edge in a more efficient manner, we can sort the edge list. The time complexity for the last two operations will reduce  to O(log|E|), where |E| = set of edges
 
 ### Adjacency Matrix
+For a graph with |V| vertices, an adjacency matrix is a |V| × ∣V∣ matrix of 0s and 1s, where the entry in row<sub>i</sub> and column<sub>j</sub> is 1 if and only if the **edge (i,j)** is in the graph.
+
+<img src="images/adjacency-matrix.png" height="100" width="100"/>
 
 ### Adjacency List
 
@@ -51,7 +54,7 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 
 4. **Adjacent Nodes**: Two nodes are adjacent to each other if there is an edge linking them. Adjacent nodes are also called **neighbours**.
 
-5. **Cycle**:
+5. **Cycle**: A cycle exists in a graph when a node is seen twice in the same path.
 
 6. **Weighted Graph**: A graph whose edges have weights<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>.
 
