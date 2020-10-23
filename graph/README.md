@@ -44,13 +44,17 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
 #### Analysis
 * The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, where |V| = set of vertices. This implementation uses a lot of space that is especially inefficient if the graph has a small number of edges
 * Finding out if an edge exists is very straight forward. Suppose the adjacency matrix above was called graph; to find out if an edge exists between i and j, we simply need to check if `graph[i][j] == 1`. The time complexity for this is **O(1)**
-* Finding out all neighbours for an edge will require search |V| entries for that edge. The time complexity for this is **O(|V|)**, where |V| = set of vertices
+* Finding out all neighbours for a vertex will require searching |V| entries for that vertex. The time complexity for this is **O(|V|)**, where |V| = set of vertices
 
 ### Adjacency List
 An **adjacency list** represents a graph as an array of lists. Each **index<sub>i</sub>** in this array represents a **vertex<sub>i</sub>** in the graph. Each **index<sub>i</sub>** contains a **list<sub>i</sub>** that contains all the nodes adjacent to **vertex<sub>i</sub>**. Whew, read that again if you need to (me sef I had to). The image below shows an **adjacency list** representation of the graph example.
 
 <img src="images/adjacency-list.png" height="300" width="300"/>
 
+#### Analysis
+* The amount of space used for this implementation is **O(|V| + |E|)**, where |V| = set of vertices and |E| = set of edges 
+* Finding out if an edge exists involved getting to the index of a vertex O(1) + traversing the list of neighbours at the index **O(d)**, where d = degree of current vertex. In the worst case d can be equal to |V| - 1 if a vertex is connected to all other vertices in the graph
+* Finding all the neighbors for a vertex requires returning the list at the index of the vertex. This time complexity for this is **O(1)**
 
 ## Internals (Graphs Traversals)
 
