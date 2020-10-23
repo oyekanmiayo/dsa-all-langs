@@ -65,8 +65,8 @@ An **adjacency list** represents a graph as an array of lists. Each **index<sub>
 4. **Adjacent Nodes**: Two nodes are adjacent to each other if there is an edge linking them. Adjacent nodes are also called **neighbours**.
 5. **Cycle**: A cycle exists in a graph when a node is seen twice in the same path.
 6. **Weighted Graph**: A graph whose edges have weights<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>.
-
 7. **Direct Acyclic Graph**: A directed graph that has no cycles.
+
 ## References
 1. [What is a graph](https://www.educative.io/edpresso/what-is-a-graph-data-structure)
 2. [Directed vs Undirected Graphs](https://www.educative.io/edpresso/directed-graphs-vs-undirected-graphs)
