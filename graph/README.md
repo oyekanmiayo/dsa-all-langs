@@ -16,12 +16,24 @@ In an undirected graph the edges are bidirectional, with no direction associated
 <img src="images/undirected-graph.png" height="200"/>
 
 ## Internals (Representation of Graphs)
+There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
+1. Edge List
+2. Adjacency Matrix
+3. Adjacency List
 
+### Edge List
+One simple way to represent a graph is just a list, or array, of |E| edges, which we call an **edge list**. To represent an edge, we just have an array of two vertex numbers, or an array of objects containing the vertex numbers of the vertices that the edges are incident on<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>. The image below shows an edge list with three edges.
+
+<img src="images/edge-list.png" height="200"/>
+
+### Adjacency Matrix
+
+### Adjacency List
 
 ## Internals (Graphs Traversals)
 
 ## Terminologies
-1. **Indegree**: This is the number of incoming edges for a node in a graph. For an edge to be counted as incoming, the node must be the destination. For directed graphs, an edge is incoming for a node if the edge is directed at that node. For undirected graphs, the edge can be counted as incoming for the two linked node since, there is no direction associated with it.
+1. **Indegree**: This is the number of incoming edges for a node in a directed graph. For an edge to be counted as incoming, the node must be the destination. An edge is incoming for a node if the edge is directed at that node.
 
 2. **Outdegree**: This is the number of outgoing edges for a node in a graph.
 
@@ -29,8 +41,13 @@ In an undirected graph the edges are bidirectional, with no direction associated
 
 4. **Adjacent Nodes**: Two nodes are adjacent to each other if there is an edge linking them. Adjacent nodes are also called **neighbours**.
 
+5. **Cycle**:
+
+6. **Weighted Graph**: A graph whose edges have weights<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>.
+
+7. **Direct Acyclic Graph**: A directed graph that has no cycles.
 ## References
 1. [What is a graph](https://www.educative.io/edpresso/what-is-a-graph-data-structure)
 2. [Directed vs Undirected Graphs](https://www.educative.io/edpresso/directed-graphs-vs-undirected-graphs)
-3. [Graphs](https://www.educative.io/edpresso/graphs-basics-representation-traversals-and-applications)
-4. [Describing Graphs](https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/describing-graphs)
+3. [Graphs: Educative](https://www.educative.io/edpresso/graphs-basics-representation-traversals-and-applications)
+4. [Graphs: Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/)
