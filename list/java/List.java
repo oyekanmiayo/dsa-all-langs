@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 /**
  * @author: Ayomide Oyekanmi
  */
@@ -82,7 +84,7 @@ class List<E> {
     public E remove(int n){
         // Checks if index is within range
         if(n >= entries.length){
-            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" start, len));
+            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" , start, len));
         }
 
         E element = entries[n];
@@ -113,7 +115,7 @@ class List<E> {
     public E get(int n){
         // Checks if index is within range
         if(n >= entries.length){
-            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" start, len));
+            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d", start, len));
         }
 
         return entries[n];
@@ -124,7 +126,7 @@ class List<E> {
      */
     public void sort(){
         // Sort using quicksort or mergesort
-        Collections.sort(self);
+        Collections.sort(this);
     }
 
     /**
@@ -135,16 +137,16 @@ class List<E> {
      * @return returns sublist containing slice
      */
     public List<E> slice(int start, int end){
-        int len = entries.length
+        int len = entries.length;
 
         // Checks if start index is within range
         if(start >= len){
-            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" start, len));
+            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d", start, len));
         }
 
         // Checks if end index is within range
         if(end >= len){
-            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d" end, len));
+            throw new IndexOutOfBoundsException(String.format("Index: %d, Size: %d", end, len));
         }
 
         List<E> slicedList = new List();
