@@ -19,6 +19,12 @@ In an undirected graph the edges are bidirectional, with no direction associated
 
 ## Internals (Graphs Traversals)
 
-## References
+## Terminologies
+1. **Indegree**: This is the number of incoming edges for a node in a graph. For an edge to be counted as incoming, the node must be the destination. For directed graphs, an edge is incoming for a node if the edge is directed at that node. For undirected graphs, the edge can be counted as incoming for the two linked node since, there is no direction associated with it.
 
+1. **Outdegree**: This is the number of outgoing edges for a node in a graph.
+
+## References
 1. [What is a graph](https://www.educative.io/edpresso/what-is-a-graph-data-structure)
+2. [Directed vs Undirected Graphs](https://www.educative.io/edpresso/directed-graphs-vs-undirected-graphs)
+3. [Graphs](https://www.educative.io/edpresso/graphs-basics-representation-traversals-and-applications)
