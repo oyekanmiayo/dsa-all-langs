@@ -47,6 +47,7 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
 * Finding out all neighbours for an edge will require search |V| entries for that edge. The time complexity for this is **O(|V|)**, where |V| = set of vertices
 
 ### Adjacency List
+An adjacency list represents a graph as an array of lists. Each index<sub>i</sub> in this array represents a vertex<sub>i</sub> in the graph. Each index<sub>i</sub> contains a list<sub>i</sub> that contains all the nodes adjacent to vertex<sub>i</sub>. I hope you got that :)
 
 ## Internals (Graphs Traversals)
 
