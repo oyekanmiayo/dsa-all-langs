@@ -9,6 +9,7 @@ There are two types of graphs: **Directed** and **Undirected**.
 In a directed graph, nodes are connected by directed edges – they only go in one direction. For example, in the image below, an edge connects node A and B, but the arrow head points towards B, so, we can only traverse from node A to node B – not in the opposite direction<sup>[1]()</sup>. 
 
 <img src="images/directed-graph.png" height="200"/>
+
 ### Undirected Graphs
 In an undirected graph the edges are bidirectional, with no direction associated with them. Hence, the graph can be traversed in either direction. For example, in the image below, the graph can be traversed from node A to node B as well as from node B to node A<sup>[1]()</sup>.
 
