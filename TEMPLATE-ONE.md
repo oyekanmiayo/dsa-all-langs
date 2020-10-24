@@ -44,7 +44,7 @@ Space Complexity: small description of what is involved
 **Create table to show space complexity here**
 | Sample operation       | Worst Case for `secondOperation()` |
 |------------------------|------------------------------------|
-| Constant Space/O(1)     | Constant Space/O(1)               |
+| Constant Space/O(1)    | Constant Space/O(1)                |
 
 ## Terminologies
 1. Term 1: describe it
