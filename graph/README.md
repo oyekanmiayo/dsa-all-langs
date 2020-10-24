@@ -51,14 +51,14 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
     ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
-    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)` |
-    |------------------------|---------------------------------------------|
-    | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
+    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)`     |
+    |------------------------|-------------------------------------------------|
+    | Linear Time / O(\|E\|) | Linear Time / **O(\|E\|)**                      |
 
     **Space  Complexity**: Space used  to store all  edges. Linear Space or **O(|E|)**, where **|E|** = array or set of edges
-    | Array of Edges          | Worst Case for `findEdge(vertex1, vertex2)` |
-    |-------------------------|---------------------------------------------|
-    | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
+    | Array of Edges          | Worst Case for `findEdge(vertex1, vertex2)`     |
+    |-------------------------|-------------------------------------------------|
+    | Linear Space / O(\|E\|) | Linear Space / **O(\|E\|)**                     |
 
 2. **`findNeighbours(vertex)`**
 
