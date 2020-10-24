@@ -7,10 +7,10 @@ Small description to explain what this section entails for the data structure in
 ### Structure 1 as underlying data structure
 
 1. #### `firstOperation()`
-Pseudocode for operation
-* Step 1
-* Step 2
-* Step 3
+    Pseudocode for operation
+    * Step 1
+    * Step 2
+    * Step 3
 
 **Time Complexity**
 
