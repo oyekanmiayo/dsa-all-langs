@@ -155,7 +155,7 @@ The descriptions below assume we use a map.
     ```
     Pseudocode:
     * Access list of edges associated with vertex1 key
-    * Traverse list to look for vertex2
+    * Traverse list of edges to look for vertex2
     ```
 
     **Time Complexity**: Access value associated with vertex1 key + Traverse list of edges. Linear Time or **O(|E|)**, where **|E|** = array or set of edges
@@ -169,7 +169,10 @@ The descriptions below assume we use a map.
     | Constant Space / O(1)                       |
 
 2. **`findNeighbours(vertex)`**
-* Return list return by key vertex key from map
+    ```
+    Pseudocode:
+    * Return list return by key vertex key from map
+    ```
 
     **Time Complexity**: Access value associated with vertex key
     | Access value         | Worst Case for `findNeighbours(vertex)` |
