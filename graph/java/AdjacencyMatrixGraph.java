@@ -8,6 +8,14 @@ class AdjacencyMatrixGraph {
         graph = new ArrayList<>();
     }
 
+    /**
+     * Returns true if the edge exists, and false otherwise
+     * 
+     * @param v1 The first of the vertices we want to check if an edge exists for
+     * @param v2 The second of the vertices we want to check if an edge exists for
+     * 
+     * @return boolean true if edge exists, and false otherwise
+     */
     public boolean hasEdge(int v1, int v2){
         if (v1 >= graph.size()|| v2 >= graph.get(v1).size()){
             // throw exception
@@ -17,7 +25,10 @@ class AdjacencyMatrixGraph {
     }
 
     /**
+     * Returns all the neighbours (or adjacent nodes) for given vertex
      * 
+     * @param v Vertex whose neighbours we want to return
+     * @return List<Integer> a list of neighbours for given vertex
      */
     public List<Integer> findNeighbours(int v){
         if (v >= graph.size()){
