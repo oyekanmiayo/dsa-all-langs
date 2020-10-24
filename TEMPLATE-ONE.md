@@ -12,15 +12,11 @@ Pseudocode for operation
 
 #### Complexity Analysis
 Time Complexity: small description of what is involved
-
-**Create table to show time complexity here**
 | Sample operation       | Worst Case for `firstOperation()`  |
 |------------------------|------------------------------------|
 | Constant Time/O(1)     | Constant Time/O(1)                 |
 
 Space Complexity: small description of what is involved
-
-**Create table to show space complexity here**
 | Sample operation       | Worst Case for `firstOperation()`  |
 |------------------------|------------------------------------|
 | Constant Space/O(1)     | Constant Space/O(1)               |
@@ -33,15 +29,11 @@ Pseudocode for operation
 
 #### Complexity Analysis
 Time Complexity: small description of what is involved
-
-**Create table to show time complexity here**
 | Sample operation       | Worst Case for `secondOperation()` |
 |------------------------|------------------------------------|
 | Constant Time/O(1)     | Constant Time/O(1)                 |
 
 Space Complexity: small description of what is involved
-
-**Create table to show space complexity here**
 | Sample operation       | Worst Case for `secondOperation()` |
 |------------------------|------------------------------------|
 | Constant Space/O(1)    | Constant Space/O(1)                |
