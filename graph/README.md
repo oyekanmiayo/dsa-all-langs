@@ -217,6 +217,30 @@ The descriptions below assume we use a map.
 If we assume that `addVertex(vertex)` is only called for vertices that will have neighbours, then we can assume that some vertices will exist in this graph but won't be keys in the map. Therefore, we must search all the neighbours for each vertex that is a key. We can do this using **depth-first search** or **breadth-first search**.
     ```
     Pseudocode:
+
+    Breadth-first Search (Iterative)
+    * Define a Queue
+    * Define a Set (to store visited vertices)
+    * Add all the keys from the map into the Queue
+    * For each vertex in the Queue,
+        - Retrieve all its neighbours and add them to the Queue (to be visited too)
+        - If any neighbour has been visited before, don't add it to the Queue again
+        - Add all neighbours that haven't been visited before to the Set
+    * During traversal, check if vertex is seen
+        - If yes, return true
+    * Return false if traversal is complete and vertex was not found
+
+    Depth-first Search (Iterative)
+    * Define a Stack
+    * Define a Set (to store visited vertices)
+    * Add all the keys from the map into the Stack
+    * For each vertex in the Stack,
+        - Retrieve all its neighbours and add them to the Stack (to be visited too)
+        - If any neighbour has been visited before, don't add it to the Stack again
+        - Add all neighbours that haven't been visited before to the Set
+    * During traversal, check if vertex is seen
+        - If yes, return true
+    * Return false if traversal is complete and vertex was not found
     ```
 3. **`addEdge(vertex1, vertex2)`**
 4. **`hasEdge(vertex1, vertex2)`**
