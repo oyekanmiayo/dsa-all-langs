@@ -18,6 +18,7 @@ In an undirected graph the edges are bidirectional, with no direction associated
 Some operations we can perform on a graph include:
 * `addVertex(vertex)`
 * `addEdge(vertex1, vertex2)`
+* `findEdge(vertex1, vertex2)`
 * `findNeighbours(vertex)`
 * `findAllPaths(vertex1, vertex2)`
 * `findShortestPath(vertex1, vertex2)`
@@ -36,6 +37,21 @@ We will use the graph below as an example to explain each representation
 One simple way to represent a graph is just a list, or array, of |E| edges, which we call an **edge list**. To represent an edge, we just have an array of two vertex numbers, or an array of objects containing the vertex numbers of the vertices that the edges are incident on<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>. The image below shows an **edge list** representation of the graph example.
 
 <img src="images/edge-list.png" height="50" width="400"/>
+
+#### Operations
+1. **`findEdge(vertex1, vertex2)`
+    Pseudocode:
+    *  Traverese array of edges and compare each one
+
+    **Time Complexity**: Linear Time /  O(|E|), where |E| = array/set of edges
+    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)`  |
+    |------------------------|----------------------------------------------|
+    | Linear Time /  O(|E|)  | Linear Time /  O(|E|)                        |
+
+    **Space  Complexity**: Space used  to store all  edges. Linear Space /  O(|E|), where |E| = array/set of edges
+    | Array of Edges         | Worst Case for `findEdge(vertex1, vertex2)`  |
+    |------------------------|----------------------------------------------|
+    | Linear Space /  O(|E|) | Linear Space /  O(|E|)                       |
 
 #### Analysis
 * The amount of space that this graph implementation uses is **O(|E|)**, where |E| = set of edges 
