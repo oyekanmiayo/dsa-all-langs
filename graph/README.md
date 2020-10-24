@@ -34,9 +34,11 @@ We will use the graph below as an example to explain each representation
 <img src="images/sample-graph.png" height="200" width="300"/>
 
 ### Edge List
-One simple way to represent a graph is just a list, or array, of |E| edges, which we call an **edge list**. To represent an edge, we just have an array of two vertex numbers, or an array of objects containing the vertex numbers of the vertices that the edges are incident on<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>. The image below shows an **edge list** representation of the graph example.
+One simple way to represent a graph is just a list, or array, of |E| edges, which we call an **edge list**. To represent an edge, we just have an array of two vertex numbers, or an array of objects containing the vertex numbers of the vertices that the edges are incident on<sup>[4](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#references)</sup>. The image below shows an **edge list** representation of the graph example. 
 
 <img src="images/edge-list.png" height="50" width="400"/>
+
+The amount of space that this graph implementation uses is **O(|E|)**, where |E| = set of edges.
 
 #### Operations
 1. **`findEdge(vertex1, vertex2)`**
@@ -82,11 +84,9 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
     |-------------------------|---------------------------------------------|
     | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
 
-#### Analysis
-* The amount of space that this graph implementation uses is **O(|E|)**, where |E| = set of edges 
-* Finding out if an edge exists will require searching through all available edges. The time complexity for  this is **O(|E|)**, where |E| = set of edges
-* Finding out all the neighbours for an edge will also require searching  through all available edges. The time complexity for this is **O(|E|)**, where |E| = set of edges
-* To find all the neighbours for an edge in a more efficient manner, we can sort the edge list. The time complexity for the last two operations will reduce  to **O(log|E|)**, where |E| = set of edges
+
+#### Additional Notes
+* To find edge and all the neighbours for an edge in a more efficient manner, we can sort the edge list. The time complexity for  `findEdge(vertex1, vertex2)` and `findNeighbours(vertex)` will reduce  to **O(log|E|)**, where |E| = set of edges
 
 ### Adjacency Matrix
 For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of 0s and 1s, where the entry in row<sub>i</sub> and column<sub>j</sub> is 1 if and only if the **edge (i,j)** is in the graph. The image below shows an **adjacency matrix** representation of the graph example.
