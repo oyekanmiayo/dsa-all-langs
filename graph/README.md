@@ -43,7 +43,7 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
 #### Operations
 1. **`addVertex(vertex)`**
 2. **`addEdge(vertex1, vertex2)`**
-1. **`findEdge(vertex1, vertex2)`**
+3. **`findEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Traverese array of edges and compare each one until edge is found
@@ -59,7 +59,7 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
-2. **`findNeighbours(vertex)`**
+4. **`findNeighbours(vertex)`**
     ```
     Pseudocode:
     * Traverse array of edges
@@ -89,7 +89,9 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
 The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, where |V| = set of vertices. This implementation uses a lot of space that is especially inefficient if the graph has a small number of edges.
 
 #### Operations
-1. **`findEdge(vertex1, vertex2)`**
+1. **`addVertex(vertex)`**
+2. **`addEdge(vertex1, vertex2)`**
+3. **`findEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Assume the 2-D array shown in the image above is called `graph`
@@ -106,7 +108,7 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
-2. **`findNeighbours(vertex)`**
+4. **`findNeighbours(vertex)`**
     ```
     Pseudocode:
     * Assume the 2-D array shown in the image above is called `graph`
@@ -142,7 +144,9 @@ Before we talk go into the detail of operations, let's note some things. It is p
 
 The descriptions below assume we use a map.
 
-1. **`findEdge(vertex1, vertex2)`**
+1. **`addVertex(vertex)`**
+2. **`addEdge(vertex1, vertex2)`**
+3. **`findEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Access list of edges associated with vertex1 key
@@ -159,7 +163,7 @@ The descriptions below assume we use a map.
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
-2. **`findNeighbours(vertex)`**
+4. **`findNeighbours(vertex)`**
     ```
     Pseudocode:
     * Return list return by key vertex key from map
