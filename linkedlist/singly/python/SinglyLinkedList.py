@@ -86,7 +86,6 @@ class SinglyLinkedList:
 
         # Check if position is valid
         if position < 1 or position > self.size:
-            # if not (not (position < 1) and not (position > self.size))
             raise IndexError("Position is invalid")
 
         # Check of element to be added will be the new head
