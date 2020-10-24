@@ -18,7 +18,7 @@ class AdjacencyListGraph<E> {
      */
     public boolean hasEdge(E v1, E v2){
         if(!graph.containsKey(v1)){
-            // throw exception
+            return false;
         }
         
         List<E> neighbours = graph.get(v1);
@@ -39,7 +39,7 @@ class AdjacencyListGraph<E> {
      */
     public List<E> findNeighbours(E v){
         if(!graph.containsKey(v)){
-            // throw exception
+            return new ArrayList<>();
         }
 
         return graph.get(v);

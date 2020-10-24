@@ -18,7 +18,7 @@ class AdjacencyMatrixGraph {
      */
     public boolean hasEdge(int v1, int v2){
         if (v1 >= graph.size()|| v2 >= graph.get(v1).size()){
-            // throw exception
+            return false;
         }
 
         return graph.get(v1).get(v2) == 1;
@@ -32,7 +32,7 @@ class AdjacencyMatrixGraph {
      */
     public List<Integer> findNeighbours(int v){
         if (v >= graph.size()){
-            // throw exception
+            return new ArrayList<>();
         }
 
         List<Integer> neighbours = new ArrayList<>();
