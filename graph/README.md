@@ -19,8 +19,9 @@ The rest of this README and the implementations for graphs in this repo assumes 
 
 Some operations we can perform on a graph include:
 * `addVertex(vertex)`
+* `hasVertex(vertex)`
 * `addEdge(vertex1, vertex2)`
-* `findEdge(vertex1, vertex2)`
+* `hasEdge(vertex1, vertex2)`
 * `findNeighbours(vertex)`
 
 ## Internals : Representation of Graphs
@@ -42,8 +43,45 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
 
 #### Operations
 1. **`addVertex(vertex)`**
-2. **`addEdge(vertex1, vertex2)`**
-3. **`findEdge(vertex1, vertex2)`**
+    ```
+    This operation isn't valid for this implementation because it we can only add edges
+    ```
+
+2. **`hasVertex(vertex)`**
+    ```
+    Pseudocode:
+    * Traverse the array of edges
+        - If either vertex on an edge matches the vertex being sought for, return true
+    * Return false if no match is found
+    ```
+    **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
+    | Array Traversal        | Worst Case for `hasVertex(vertex)` |
+    |------------------------|------------------------------------|
+    | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)             |
+
+    **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
+    | Worst Case for `hasVertex(vertex)`|
+    |-----------------------------------|
+    | Constant Space / O(1)             |
+
+3. **`addEdge(vertex1, vertex2)`**
+    ```
+    Pseudocode:
+    * Create a new array containing both vertices
+    * Insert new array into 2-D array or list of edges
+    ```
+
+    **Time Complexity**: Time to insert array into 2-D array or list. Worst case is Linear Time or **O(|E|)**, where **|E|** = array or set of edges; Amortized time is Constant Time or **O(1)**.
+    | Worst Case for `addEdge(vertex1, vertex2)` | Amortized Time for `addEdge(vertex1, vertex2)` |
+    |--------------------------------------------|------------------------------------------------|
+    | Linear Time / O(\|E\|)                     | Constant Space / O(1)                          |
+
+    **Space  Complexity**: Worst case is if a new underlying array needs to be created because the list is filled. Worst case is Linear Space or **O(|E|)**, where **|E|** = array or set of edges; Amortized Space is Constant Space or **O(1)**.
+    | Worst Case for `addEdge(vertex1, vertex2)` | Amortized Space for `addEdge(vertex1, vertex2)` |
+    |--------------------------------------------|-------------------------------------------------|
+    | Linear Space / O(\|E\|)                    | Constant Space / O(1)                           |
+
+4. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Traverese array of edges and compare each one until edge is found
@@ -59,7 +97,7 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
-4. **`findNeighbours(vertex)`**
+5. **`findNeighbours(vertex)`**
     ```
     Pseudocode:
     * Traverse array of edges
@@ -91,7 +129,7 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
 #### Operations
 1. **`addVertex(vertex)`**
 2. **`addEdge(vertex1, vertex2)`**
-3. **`findEdge(vertex1, vertex2)`**
+3. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Assume the 2-D array shown in the image above is called `graph`
@@ -146,7 +184,7 @@ The descriptions below assume we use a map.
 
 1. **`addVertex(vertex)`**
 2. **`addEdge(vertex1, vertex2)`**
-3. **`findEdge(vertex1, vertex2)`**
+3. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Access list of edges associated with vertex1 key
