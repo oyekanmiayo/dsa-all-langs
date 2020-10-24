@@ -55,10 +55,10 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
     |------------------------|---------------------------------------------|
     | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
 
-    **Space  Complexity**: Space used  to store all  edges. Linear Space or **O(|E|)**, where **|E|** = array or set of edges
-    | Array of Edges          | Worst Case for `findEdge(vertex1, vertex2)` |
-    |-------------------------|---------------------------------------------|
-    | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
+    **Space  Complexity**: No extra space is used in this method. Space used  to store all  edges. Constant Space or **O(1)**
+    | Worst Case for `findEdge(vertex1, vertex2)` |
+    |---------------------------------------------|
+    | Constant Space / O(1)                       |
 
 2. **`findNeighbours(vertex)`**
     ```
@@ -73,14 +73,14 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
     ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
-    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)` |
+    | Array Traversal        | Worst Case for `findNeighbours(vertex)` |
     |------------------------|---------------------------------------------|
     | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
 
-    **Space  Complexity**: Space used  to store all edges and neighbours. Linear Space or **O(|E|)**, where **|E|** = array or set of edges
-    | Array of Edges          | Worst Case for `findEdge(vertex1, vertex2)` |
-    |-------------------------|---------------------------------------------|
-    | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
+    **Space  Complexity**: Space used  to store all neighbours. Linear Space or **O(|E|)**, where **|E|** = array or set of edges
+    | Array of Neighbours     | Worst Case for `findNeighbours(vertex)` |
+    |-------------------------|-----------------------------------------|
+    | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                 |
 
 
 #### Additional Notes
@@ -91,12 +91,13 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
 
 <img src="images/adjacency-matrix.png" height="300" width="300"/>
 
+The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, where |V| = set of vertices. This implementation uses a lot of space that is especially inefficient if the graph has a small number of edges.
 
 #### Operations
 1. **`findEdge(vertex1, vertex2)`**
     ```
     # Constant time lookup in 2D array
-    # Suppose 2-D array shown in image above is called **graph**
+    # Suppose 2-D array shown in image above is called `graph`
     def findEdge(v1, v2):
         return graph[v1][v2]
     ```
@@ -106,10 +107,34 @@ For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of
     |----------------------|---------------------------------------------|
     | Constant Time / O(1) | Constant Time / O(1)                        |
 
-    **Space  Complexity**: Space for 2-D Array. Quadratic Space or **O(|V|<sup>2</sup>)**, where **|V|** = array or set of vertices
-    | Space for 2-D Array                   | Worst Case for `findEdge(vertex1, vertex2)` |
-    |---------------------------------------|---------------------------------------------|
-    | Quadratic Space /O(\|V\|<sup>2</sup>) | Quadratic Space /O(\|V\|<sup>2</sup>)       |
+    **Space  Complexity**: No extra space is used in this method. Space used  to store all  edges. Constant Space or **O(1)**
+    | Worst Case for `findEdge(vertex1, vertex2)` |
+    |---------------------------------------------|
+    | Constant Space / O(1)                       |
+
+2. **`findNeighbours(vertex)`**
+    ```
+    # Traverse row at the vertex's column index in the 2-D array
+    # Suppose 2-D array shown in image above is called `graph`
+    def findNeighbours(vertex):
+        vertexRow = graph[vertex]
+        neighbours = []
+        for vertex in vertexRow:
+            if vertex == 1
+                neighbours.append(vertex)
+
+        return neighbours
+    ```
+
+    **Time Complexity**: Qua Time or **O(|E|)**, where **|E|** = array or set of edges
+    | Array Traversal        | Worst Case for `findNeighbours(vertex)` |
+    |------------------------|---------------------------------------------|
+    | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
+
+    **Space  Complexity**: Space used  to store all neighbours. Linear Space or **O(|E|)**, where **|E|** = array or set of edges
+    | Array of Neighbours     | Worst Case for `findNeighbours(vertex)` |
+    |-------------------------|-----------------------------------------|
+    | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                 |
 
 #### Analysis
 * The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, where |V| = set of vertices. This implementation uses a lot of space that is especially inefficient if the graph has a small number of edges
