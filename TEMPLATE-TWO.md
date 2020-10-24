@@ -13,6 +13,7 @@ Pseudocode for operation
     * Step 3
 
 **Complexity Analysis**
+
 Time Complexity: small description of what is involved
 | Sample operation       | Worst Case for `firstOperation()`  |
 |------------------------|------------------------------------|
