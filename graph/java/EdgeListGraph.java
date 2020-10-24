@@ -2,17 +2,17 @@
  * @author Ayomide Oyekanmi
  */
 class EdgeListGraph {
-    List<int[]> edges;
+    private List<int[]> graph;
 
     public EdgeListGraph() {
-        edges = new ArrayList<>();
+        graph = new ArrayList<>();
     }
 
     /**
      * 
      */
     public boolean hasEdge(int v1, int v2){
-        for(int[] edge : edges){
+        for(int[] edge : graph){
             if (edge[0] == v1 && edge[1] == v2){
                 return true;
             }
@@ -31,7 +31,7 @@ class EdgeListGraph {
     public List<Integer> findNeighbours(int v){
         List<Integer> neighbours = new ArrayList<>();
 
-        for(int[] edge : edges){
+        for(int[] edge : graph){
             if (edge[0] == v){
                 neighbours.add(edge[1]);
             }
