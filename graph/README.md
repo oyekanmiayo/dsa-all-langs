@@ -44,14 +44,14 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
     *  Traverese array of edges and compare each one
 
     **Time Complexity**: Linear Time /  O(|E|), where |E| = array/set of edges
-    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)`  |
-    |------------------------|----------------------------------------------|
-    | Linear Time /  O(|E|)  | Linear Time /  O(|E|)                        |
+    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)` |
+    |------------------------|---------------------------------------------|
+    | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
 
     **Space  Complexity**: Space used  to store all  edges. Linear Space /  O(|E|), where |E| = array/set of edges
-    | Array of Edges         | Worst Case for `findEdge(vertex1, vertex2)`  |
-    |------------------------|----------------------------------------------|
-    | Linear Space /  O(|E|) | Linear Space /  O(|E|)                       |
+    | Array of Edges          | Worst Case for `findEdge(vertex1, vertex2)` |
+    |-------------------------|---------------------------------------------|
+    | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
 
 #### Analysis
 * The amount of space that this graph implementation uses is **O(|E|)**, where |E| = set of edges 
