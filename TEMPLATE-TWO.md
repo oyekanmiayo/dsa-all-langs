@@ -12,14 +12,14 @@ Pseudocode for operation
     * Step 2
     * Step 3
 
-**Complexity Analysis**
-
-Time Complexity: small description of what is involved
+**Time Complexity**
+Small description of what is involved
 | Sample operation       | Worst Case for `firstOperation()`  |
 |------------------------|------------------------------------|
 | Constant Time/O(1)     | Constant Time/O(1)                 |
 
-Space Complexity: small description of what is involved
+**Space Complexity**
+Small description of what is involved
 | Sample operation       | Worst Case for `firstOperation()`  |
 |------------------------|------------------------------------|
 | Constant Space/O(1)     | Constant Space/O(1)               |
