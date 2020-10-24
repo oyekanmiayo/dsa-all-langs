@@ -55,7 +55,7 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
     |------------------------|---------------------------------------------|
     | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
 
-    **Space  Complexity**: No extra space is used in this method. Space used  to store all  edges. Constant Space or **O(1)**
+    **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
     | Worst Case for `findEdge(vertex1, vertex2)` |
     |---------------------------------------------|
     | Constant Space / O(1)                       |
@@ -107,7 +107,7 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
     |----------------------|---------------------------------------------|
     | Constant Time / O(1) | Constant Time / O(1)                        |
 
-    **Space  Complexity**: No extra space is used in this method. Space used  to store all  edges. Constant Space or **O(1)**
+    **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
     | Worst Case for `findEdge(vertex1, vertex2)` |
     |---------------------------------------------|
     | Constant Space / O(1)                       |
@@ -126,8 +126,8 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
         return neighbours
     ```
 
-    **Time Complexity**: Qua Time or **O(|E|)**, where **|E|** = array or set of edges
-    | Array Traversal        | Worst Case for `findNeighbours(vertex)` |
+    **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
+    | Array Traversal        | Worst Case for `findNeighbours(vertex)`     |
     |------------------------|---------------------------------------------|
     | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
 
@@ -142,10 +142,41 @@ An **adjacency list** represents a graph as an array of lists. Each **index<sub>
 
 <img src="images/adjacency-list.png" height="300" width="300"/>
 
-#### Analysis
-* The amount of space used for this implementation is **O(|V| + |E|)**, where |V| = set of vertices and |E| = set of edges 
-* Finding out if an edge exists involved getting to the index of a vertex O(1) + traversing the list of neighbours at the index **O(d)**, where d = degree of current vertex. In the worst case d can be equal to |V| - 1 if a vertex is connected to all other vertices in the graph
-* Finding all the neighbors for a vertex requires returning the list at the index of the vertex. This time complexity for this is **O(1)**
+The amount of space used for this implementation is **O(|V| + |E|)**, where |V| = set of vertices and |E| = set of edges.
+
+#### Operations
+Before, we talk go into the detail of operations, let's note some things. It is possible to represent adjancency lists in different ways programmatically:
+* We can use a map so that each key-value mapping is a vertex-edges  mapping
+* We can use an array, so that each index, representing a vertex, will contain a list of edges
+
+The descriptions below assume we use a map.
+
+1. **`findEdge(vertex1, vertex2)`**
+* Using list of edges associated with vertex1 key
+* Traverse list to look for vertex2
+
+    **Time Complexity**: Access value associated with vertex1 key + Traverse list of edges. Linear Time or **O(|E|)**, where **|E|** = array or set of edges
+    | Access value         | Traverse list of edges  | Worst Case for `findEdge(vertex1, vertex2)` |
+    |----------------------|-------------------------|---------------------------------------------|
+    | Constant Time / O(1) | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
+
+    **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
+    | Worst Case for `findEdge(vertex1, vertex2)` |
+    |---------------------------------------------|
+    | Constant Space / O(1)                       |
+
+2. **`findNeighbours(vertex)`**
+* Return list return by key vertex key from map
+
+    **Time Complexity**: Access value associated with vertex key
+    | Access value         | Worst Case for `findNeighbours(vertex)` |
+    |----------------------|-----------------------------------------|
+    | Constant Time / O(1) | Constant Time / O(1)                    |
+
+    **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
+    | Worst Case for `findNeighbours(vertex)` |
+    |-----------------------------------------|
+    | Constant Space / O(1)                   |
 
 (Make a note here about how graphs don't usually come pre-packaged in a language like other data structures.)
 
