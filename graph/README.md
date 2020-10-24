@@ -43,6 +43,14 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 
     Pseudocode
     *  Traverese array of edges and compare each one
+    ```
+    def findEdge(v1, v2):
+        for edge in edges:
+            if edge[0] = v1 && edge[1] = v2:
+                return edge
+
+        return nil
+    ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
     | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)` |
