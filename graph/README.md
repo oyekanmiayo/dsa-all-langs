@@ -213,12 +213,17 @@ The descriptions below assume we use a map.
     * Add vertex as a key in the map
     ```
 2. **`hasVertex(vertex)`**
+For an undirected graph, this is a pretty simple: We just need to check if the vertex exists as a key in the map. This reason this works is that in an undirected graph, if a **vertex2** is adjacent to **vertex1**, then the **vertex1** is also adjacent to **vertex2**. So both vertices will be keys in the map.
 
-If we assume that `addVertex(vertex)` is only called for vertices that will have neighbours, then we can assume that some vertices will exist in this graph but won't be keys in the map. Therefore, we must search all the neighbours for each vertex that is a key. We can do this using **depth-first search** or **breadth-first search**.
+The above may not work in a directed graph - because vertex2 is adjacent to vertex1 doesn't necessarily mean that vertex1 is adjacent to vertex2. This means that is possible that one of the vertices is not a key in the map. What this means is that we must search through all the adjacent nodes for each given vertex key in the map. We can do this using **depth-first search** or **breadth-first search**.
+    
     ```
-    Pseudocode:
+    Pseudocode (Undirected Graph):
+    * Check if vertex exists a key in the map
 
-    Breadth-first Search (Iterative)
+    Pseudocode (Directed Graph):
+    
+    Breadth-first Search (Iterative) 
     * Define a Queue
     * Define a Set (to store visited vertices)
     * Add all the keys from the map into the Queue
@@ -242,7 +247,15 @@ If we assume that `addVertex(vertex)` is only called for vertices that will have
         - If yes, return true
     * Return false if traversal is complete and vertex was not found
     ```
+
 3. **`addEdge(vertex1, vertex2)`**
+    ```
+    Pseudocode:
+    * Check if both vertices exist in the map as keyx
+        - If they don't exist, add them
+    * Add vertex1 as a neighbour to vertex2
+    * Add vertex2 as a neighbour to vertex1
+    ```
 4. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
