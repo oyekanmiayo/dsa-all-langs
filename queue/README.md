@@ -48,7 +48,6 @@ We will consider the internals for both underlying structures.
     | Time to copy elements to bigger array | Time to insert item at index | Worst Case for `enqueue(e)` | Amortized Time for `enqueue(e)` |
     |---------------------------------------|------------------------------|-----------------------------|---------------------------------|
     | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)                 | Constant Time/O(1)              |
-  
 
 * `dequeue()`: time to access element at index 0 + time to shift all elements left by one index
     | Time to access element | Time to shift all elements left by one index | Worst Case for `dequeue()` |

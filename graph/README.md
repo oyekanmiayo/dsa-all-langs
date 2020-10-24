@@ -15,7 +15,14 @@ In an undirected graph the edges are bidirectional, with no direction associated
 
 <img src="images/undirected-graph.png" height="75" width="200"/>
 
-## Internals (Representation of Graphs)
+Some operations we can perform on a graph include:
+* `addVertex(vertex)`
+* `addEdge(vertex1, vertex2)`
+* `findNeighbours(vertex)`
+* `findAllPaths(vertex1, vertex2)`
+* `findShortestPath(vertex1, vertex2)`
+
+## Internals : Representation of Graphs
 There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
 1. Edge List
 2. Adjacency Matrix
@@ -56,6 +63,8 @@ An **adjacency list** represents a graph as an array of lists. Each **index<sub>
 * Finding out if an edge exists involved getting to the index of a vertex O(1) + traversing the list of neighbours at the index **O(d)**, where d = degree of current vertex. In the worst case d can be equal to |V| - 1 if a vertex is connected to all other vertices in the graph
 * Finding all the neighbors for a vertex requires returning the list at the index of the vertex. This time complexity for this is **O(1)**
 
+(Make a note here about how graphs don't usually come pre-packaged in a language like other data structures.)
+
 ## Internals (Graphs Traversals)
 
 ## Terminologies
@@ -70,5 +79,5 @@ An **adjacency list** represents a graph as an array of lists. Each **index<sub>
 ## References
 1. [What is a graph](https://www.educative.io/edpresso/what-is-a-graph-data-structure)
 2. [Directed vs Undirected Graphs](https://www.educative.io/edpresso/directed-graphs-vs-undirected-graphs)
-3. [Graphs: Educative](https://www.educative.io/edpresso/graphs-basics-representation-traversals-and-applications)
+3. [Graphs: Educative[dot]io](https://www.educative.io/edpresso/graphs-basics-representation-traversals-and-applications)
 4. [Graphs: Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/)
