@@ -46,7 +46,7 @@ Small description of what is involved
 |------------------------|------------------------------------|
 | Constant Space/O(1)    | Constant Space/O(1)                |
 
-***
+---
 
 
 ### Structure 2 as underlying data structure
