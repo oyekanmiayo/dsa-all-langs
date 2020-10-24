@@ -152,8 +152,11 @@ Before, we talk go into the detail of operations, let's note some things. It is 
 The descriptions below assume we use a map.
 
 1. **`findEdge(vertex1, vertex2)`**
-* Using list of edges associated with vertex1 key
-* Traverse list to look for vertex2
+    ```
+    Pseudocode:
+    * Access list of edges associated with vertex1 key
+    * Traverse list to look for vertex2
+    ```
 
     **Time Complexity**: Access value associated with vertex1 key + Traverse list of edges. Linear Time or **O(|E|)**, where **|E|** = array or set of edges
     | Access value         | Traverse list of edges  | Worst Case for `findEdge(vertex1, vertex2)` |
