@@ -20,8 +20,6 @@ Some operations we can perform on a graph include:
 * `addEdge(vertex1, vertex2)`
 * `findEdge(vertex1, vertex2)`
 * `findNeighbours(vertex)`
-* `findAllPaths(vertex1, vertex2)`
-* `findShortestPath(vertex1, vertex2)`
 
 ## Internals : Representation of Graphs
 There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
@@ -92,6 +90,26 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
 For a graph with |V| vertices, an **adjacency matrix** is a |V| × |V| matrix of 0s and 1s, where the entry in row<sub>i</sub> and column<sub>j</sub> is 1 if and only if the **edge (i,j)** is in the graph. The image below shows an **adjacency matrix** representation of the graph example.
 
 <img src="images/adjacency-matrix.png" height="300" width="300"/>
+
+
+#### Operations
+1. **`findEdge(vertex1, vertex2)`**
+    ```
+    # Constant time lookup in 2D array
+    # Suppose 2-D array shown in image above is called **graph**
+    def findEdge(v1, v2):
+        return graph[v1][v2]
+    ```
+
+    **Time Complexity**: Constant Time or **O(1)**
+    | 2-D Array Lookup     | Worst Case for `findEdge(vertex1, vertex2)` |
+    |----------------------|---------------------------------------------|
+    | Constant Time / O(1) | Constant Time / O(1)                        |
+
+    **Space  Complexity**: Space for 2-D Array. Quadratic Space or **O(|V|<sup>2</sup>)**, where **|V|** = array or set of vertices
+    | Space for 2-D Array                   | Worst Case for `findEdge(vertex1, vertex2)` |
+    |---------------------------------------|---------------------------------------------|
+    | Quadratic Space /O(\|V\|<sup>2</sup>) | Quadratic Space /O(\|V\|<sup>2</sup>)       |
 
 #### Analysis
 * The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, where |V| = set of vertices. This implementation uses a lot of space that is especially inefficient if the graph has a small number of edges
