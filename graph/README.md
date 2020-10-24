@@ -85,17 +85,19 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
     ```
     Pseudocode:
     * Traverese array of edges and compare each one until edge is found
+        - if edge is, return true
+    * Return false if edge is not found
     ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
-    | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)` |
-    |------------------------|---------------------------------------------|
-    | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
+    | Array Traversal        | Worst Case for `hasEdge(vertex1, vertex2)` |
+    |------------------------|--------------------------------------------|
+    | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                     |
 
     **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
-    | Worst Case for `findEdge(vertex1, vertex2)` |
-    |---------------------------------------------|
-    | Constant Space / O(1)                       |
+    | Worst Case for `hasEdge(vertex1, vertex2)` |
+    |--------------------------------------------|
+    | Constant Space / O(1)                      |
 
 5. **`findNeighbours(vertex)`**
     ```
@@ -128,12 +130,35 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
 
 #### Operations
 1. **`addVertex(vertex)`**
-2. **`addEdge(vertex1, vertex2)`**
-3. **`hasEdge(vertex1, vertex2)`**
+    ```
+    Pseudocode:
+    * Add a new row and a new column to the matrix
+    * Fill all new empty cells with 0, because new vertex has no edges yet
+    ```
+2. **`hasVertex(vertex)`**
+    ```
+    Pseudocode:
+    * Check if vertex < matrix's size
+        - If true, then vertex exists
+        - If false, then vertex does not exist
+    ```
+3. **`addEdge(vertex1, vertex2)`**
+    ```
+    Pseudocode:
+    * Check vertex1 exists
+        - If it doesn't, call addVertex(vertex1)
+    * Check vertex2 exists
+        - If it doesn't, call addVertex(vertex2)
+    * graph[vertex1][vertex2] = 1  
+    * graph[vertex2][vertex1] = 1 (This is necessay because the graph is undirected)
+    ```
+4. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Assume the 2-D array shown in the image above is called `graph`
-    * Return graph[vertex1][vertex2] (it returns 1 if there's an edge, and 0 if there isn't)
+    * Get graph[vertex1][vertex2]
+        - Return true if it equals 1
+        - Return false otherwise
     ```
 
     **Time Complexity**: Constant Time or **O(1)**
@@ -146,7 +171,7 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
-4. **`findNeighbours(vertex)`**
+5. **`findNeighbours(vertex)`**
     ```
     Pseudocode:
     * Assume the 2-D array shown in the image above is called `graph`
@@ -183,8 +208,17 @@ Before we talk go into the detail of operations, let's note some things. It is p
 The descriptions below assume we use a map.
 
 1. **`addVertex(vertex)`**
-2. **`addEdge(vertex1, vertex2)`**
-3. **`hasEdge(vertex1, vertex2)`**
+    ```
+    Pseudocode:
+    * Add vertex as a key in the map
+    ```
+2. **`hasVertex(vertex)`**
+If we assume that `addVertex(vertex)` is only called for vertices that will have neighbours, then we can assume that some vertices will exist in this graph but won't be keys in the map. Therefore, we must search all the neighbours for each vertex that is a key. We can do this using **depth-first search** or **breadth-first search**.
+    ```
+    Pseudocode:
+    ```
+3. **`addEdge(vertex1, vertex2)`**
+4. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
     * Access list of edges associated with vertex1 key
@@ -201,7 +235,7 @@ The descriptions below assume we use a map.
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
-4. **`findNeighbours(vertex)`**
+5. **`findNeighbours(vertex)`**
     ```
     Pseudocode:
     * Return list return by key vertex key from map
