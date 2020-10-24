@@ -22,24 +22,23 @@ Small description to explain what this section entails for the data structure in
     |------------------------|------------------------------------|
     | Constant Space/O(1)    | Constant Space/O(1)                |
 
-#### `secondOperation()`
-Pseudocode for operation
-* Step 1
-* Step 2
-* Step 3
+2. #### `secondOperation()`
+    Pseudocode for operation
+    * Step 1
+    * Step 2
+    * Step 3
 
-**Time Complexity** : Small description of what is involved
-| Sample operation       | Worst Case for `secondOperation()` |
-|------------------------|------------------------------------|
-| Constant Time/O(1)     | Constant Time/O(1)                 |
+    **Time Complexity** : Small description of what is involved
+    | Sample operation       | Worst Case for `secondOperation()` |
+    |------------------------|------------------------------------|
+    | Constant Time/O(1)     | Constant Time/O(1)                 |
 
-**Space Complexity** : Small description of what is involved
-| Sample operation       | Worst Case for `secondOperation()` |
-|------------------------|------------------------------------|
-| Constant Space/O(1)    | Constant Space/O(1)                |
+    **Space Complexity** : Small description of what is involved
+    | Sample operation       | Worst Case for `secondOperation()` |
+    |------------------------|------------------------------------|
+    | Constant Space/O(1)    | Constant Space/O(1)                |
 
 ---
-
 
 ### Structure 2 as underlying data structure
 
