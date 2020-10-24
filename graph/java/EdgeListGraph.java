@@ -8,6 +8,10 @@ class EdgeListGraph {
         graph = new ArrayList<>();
     }
 
+    public static void main(){
+        EdgeListGraph graph = new EdgeListGraph();
+    }
+
     /**
      * Returns true if the edge exists, and false otherwise
      * 

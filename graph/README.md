@@ -15,11 +15,13 @@ In an undirected graph the edges are bidirectional, with no direction associated
 
 <img src="images/undirected-graph.png" height="75" width="200"/>
 
+The rest of this README and the implementations for graphs in this repo assumes we are using an undirected graphs. This will be true except otherwise stated.
+
 Some operations we can perform on a graph include:
-* `findEdge(vertex1, vertex2)`
-* `findNeighbours(vertex)`
 * `addVertex(vertex)`
 * `addEdge(vertex1, vertex2)`
+* `findEdge(vertex1, vertex2)`
+* `findNeighbours(vertex)`
 
 ## Internals : Representation of Graphs
 There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
@@ -39,6 +41,8 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 The amount of space that this graph implementation uses is **O(|E|)**, where |E| = set of edges.
 
 #### Operations
+1. **`addVertex(vertex)`**
+2. **`addEdge(vertex1, vertex2)`**
 1. **`findEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
