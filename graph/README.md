@@ -39,8 +39,9 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 <img src="images/edge-list.png" height="50" width="400"/>
 
 #### Operations
-1. **`findEdge(vertex1, vertex2)`** <br/>
-    Pseudocode:
+1. **`findEdge(vertex1, vertex2)`**
+
+    Pseudocode
     *  Traverese array of edges and compare each one
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
