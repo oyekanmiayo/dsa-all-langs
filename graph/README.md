@@ -43,12 +43,12 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
     Pseudocode:
     *  Traverese array of edges and compare each one
 
-    **Time Complexity**: Linear Time /  O(|E|), where |E| = array/set of edges
+    **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
     | Array Traversal        | Worst Case for `findEdge(vertex1, vertex2)` |
     |------------------------|---------------------------------------------|
     | Linear Time / O(\|E\|) | Linear Time / O(\|E\|)                      |
 
-    **Space  Complexity**: Space used  to store all  edges. Linear Space /  O(|E|), where |E| = array/set of edges
+    **Space  Complexity**: Space used  to store all  edges. Linear Space or **O(|E|)**, where **|E|** = array or set of edges
     | Array of Edges          | Worst Case for `findEdge(vertex1, vertex2)` |
     |-------------------------|---------------------------------------------|
     | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
