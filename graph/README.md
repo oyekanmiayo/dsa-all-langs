@@ -145,7 +145,7 @@ An **adjacency list** represents a graph as an array of lists. Each **index<sub>
 The amount of space used for this implementation is **O(|V| + |E|)**, where |V| = set of vertices and |E| = set of edges.
 
 #### Operations
-Before, we talk go into the detail of operations, let's note some things. It is possible to represent adjancency lists in different ways programmatically:
+Before we talk go into the detail of operations, let's note some things. It is possible to represent adjancency lists in different ways programmatically:
 * We can use a map so that each key-value mapping is a vertex-edges  mapping
 * We can use an array, so that each index, representing a vertex, will contain a list of edges
 
