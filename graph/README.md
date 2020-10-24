@@ -213,6 +213,7 @@ The descriptions below assume we use a map.
     * Add vertex as a key in the map
     ```
 2. **`hasVertex(vertex)`**
+
 For an undirected graph, this is a pretty simple: We just need to check if the vertex exists as a key in the map. This reason this works is that in an undirected graph, if a **vertex2** is adjacent to **vertex1**, then the **vertex1** is also adjacent to **vertex2**. So both vertices will be keys in the map.
 
      The above may not work in a directed graph - because vertex2 is adjacent to vertex1 doesn't necessarily mean that vertex1 is adjacent to vertex2. This means that is possible that one of the vertices is not a key in the map. What this means is that we must search through all the adjacent nodes for each given vertex key in the map. We can do this using **depth-first search** or **breadth-first search**.
