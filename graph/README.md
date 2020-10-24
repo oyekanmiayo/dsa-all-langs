@@ -213,6 +213,7 @@ The descriptions below assume we use a map.
     * Add vertex as a key in the map
     ```
 2. **`hasVertex(vertex)`**
+
 If we assume that `addVertex(vertex)` is only called for vertices that will have neighbours, then we can assume that some vertices will exist in this graph but won't be keys in the map. Therefore, we must search all the neighbours for each vertex that is a key. We can do this using **depth-first search** or **breadth-first search**.
     ```
     Pseudocode:
