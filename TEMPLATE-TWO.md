@@ -88,3 +88,13 @@ Small description of what is involved
 | Sample operation       | Worst Case for `secondOperation()` |
 |------------------------|------------------------------------|
 | Constant Space/O(1)    | Constant Space/O(1)                |
+
+## Terminologies
+1. Term 1: describe it
+2. Term 2: describe it
+
+## References
+1. [Reference 1](link-to-reference)
+2. [Reference 2](link-to-reference)
+
+PS: This template assumes that this data structure has more than one implementation
