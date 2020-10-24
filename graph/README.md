@@ -171,10 +171,6 @@ The descriptions below assume we use a map.
     |-----------------------------------------|
     | Constant Space / O(1)                   |
 
-(Make a note here about how graphs don't usually come pre-packaged in a language like other data structures.)
-
-## Internals (Graphs Traversals)
-
 ## Terminologies
 1. **Indegree**: This is the number of incoming edges for a node in a directed graph. For an edge to be counted as incoming, the node must be the destination. An edge is incoming for a node if the edge is directed at that node.
 2. **Outdegree**: This is the number of outgoing edges for a node in a graph.
