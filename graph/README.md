@@ -40,13 +40,11 @@ One simple way to represent a graph is just a list, or array, of |E| edges, whic
 
 #### Operations
 1. **`findEdge(vertex1, vertex2)`**
-
-    Pseudocode
-    *  Traverese array of edges and compare each one
     ```
+    # Traverese array of edges and compare each one until edge is found
     def findEdge(v1, v2):
         for edge in edges:
-            if edge[0] = v1 && edge[1] = v2:
+            if edge[0] = v1 && edge[1] = v2
                 return edge
 
         return nil
