@@ -16,10 +16,10 @@ In an undirected graph the edges are bidirectional, with no direction associated
 <img src="images/undirected-graph.png" height="75" width="200"/>
 
 Some operations we can perform on a graph include:
-* `addVertex(vertex)`
-* `addEdge(vertex1, vertex2)`
 * `findEdge(vertex1, vertex2)`
 * `findNeighbours(vertex)`
+* `addVertex(vertex)`
+* `addEdge(vertex1, vertex2)`
 
 ## Internals : Representation of Graphs
 There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
@@ -41,13 +41,8 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
 #### Operations
 1. **`findEdge(vertex1, vertex2)`**
     ```
-    # Traverese array of edges and compare each one until edge is found
-    def findEdge(v1, v2):
-        for edge in edges:
-            if edge[0] = v1 && edge[1] = v2
-                return edge
-
-        return nil
+    Pseudocode:
+    * Traverese array of edges and compare each one until edge is found
     ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
@@ -62,14 +57,10 @@ The amount of space that this graph implementation uses is **O(|E|)**, where |E|
 
 2. **`findNeighbours(vertex)`**
     ```
-    # Traverse array of edges and store all edges for given vertex
-    def findEdge(v):
-        neighbours = []
-        for edge in edges:
-            if edge[0] = v or edge[1] = v
-                neighbours.append(edge)
-
-        return neighbours
+    Pseudocode:
+    * Traverse array of edges
+        - If an edge contains a the passed-in vertex, add it to a list
+    * Return the list
     ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
@@ -96,10 +87,9 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
 #### Operations
 1. **`findEdge(vertex1, vertex2)`**
     ```
-    # Constant time lookup in 2D array
-    # Suppose 2-D array shown in image above is called `graph`
-    def findEdge(v1, v2):
-        return graph[v1][v2]
+    Pseudocode:
+    * Assume the 2-D array shown in the image above is called `graph`
+    * Return graph[vertex1][vertex2] (it returns 1 if there's an edge, and 0 if there isn't)
     ```
 
     **Time Complexity**: Constant Time or **O(1)**
@@ -114,16 +104,13 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
 
 2. **`findNeighbours(vertex)`**
     ```
-    # Traverse row at the vertex's column index in the 2-D array
-    # Suppose 2-D array shown in image above is called `graph`
-    def findNeighbours(vertex):
-        vertexRow = graph[vertex]
-        neighbours = []
-        for vertex in vertexRow:
-            if vertex == 1
-                neighbours.append(vertex)
-
-        return neighbours
+    Pseudocode:
+    * Assume the 2-D array shown in the image above is called `graph`
+    * Access row associated with vertex by calling graph[vertex]
+    * Traverse this row
+        - If the value at index is 1, then the index is a valid neighbour. Add to a list
+        - If the value at index is 0, ignore it
+    * Return list
     ```
 
     **Time Complexity**: Linear Time or **O(|E|)**, where **|E|** = array or set of edges
