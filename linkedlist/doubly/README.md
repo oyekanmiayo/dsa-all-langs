@@ -14,7 +14,7 @@ The double pointers contained by each node in a DLL (as described in the previou
 ## Internals
 Each element in a DLL is wrapped by a node. A single node contains data, a pointer to the previous node and a pointer to the next node - because of the extra pointer, DLLs use more space that SLLs. The first node in the linkedlist is called the **head** and the last node is called the **tail**.
 
-DLLs can be used to implement **Stacks**, **Lists** and **Queues**<sup>.
+DLLs can be used to implement **Stacks**, **Lists** and **Queues**.
 
 ### Operations' Details
 1. How does adding an item to the front (`addFirst(e)`) of a DLL work?
