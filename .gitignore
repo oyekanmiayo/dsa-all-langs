@@ -38,3 +38,4 @@ hs_err_pid*
 ### Macs ###
 .DS_Store
 *.DS_Store
+.idea
