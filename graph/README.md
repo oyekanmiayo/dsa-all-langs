@@ -174,6 +174,9 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
     * graph[vertex1][vertex2] = 1  
     * graph[vertex2][vertex1] = 1 (This is necessay because the graph is undirected)
     ```
+
+    **Time  Complexity**: Assuming the vertices  already  exist, this method has a Constant Time complexity or **O(1)**. However, if any of the vertices doesn't exist, the time complexity is **O(|V|<sup>2</sup>)**, where |V| = set of vertices
+
 4. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
@@ -234,6 +237,12 @@ The descriptions below assume we use a map.
     Pseudocode:
     * Add vertex as a key in the map
     ```
+
+    **Time Complexity**: Constant Time or **O(1)**
+    | Worst Case for `addVertex(vertex)`  |
+    |-------------------------------------|
+    | Constant Time / O(1)                |
+
 2. **`hasVertex(vertex)`**
 
     For an undirected graph, this is a pretty simple: We just need to check if the vertex exists as a key in the map. This reason this works is that in an undirected graph, if a **vertex2** is adjacent to **vertex1**, then the **vertex1** is also adjacent to **vertex2**. So both vertices will be keys in the map.
@@ -271,6 +280,15 @@ The descriptions below assume we use a map.
     * Return false if traversal is complete and vertex was not found
     ```
 
+    **Time Complexity (Undirected Graph)**: Constant Time or **O(1)**
+    | Worst Case for `hasVertex(vertex)`  |
+    |-------------------------------------|
+    | Constant Time / O(1)                |
+
+    **Time Complexity (Directed Graph)**: Linear Time or **O(|V| + |E|)**, where |V| = set of vertices and |E| = set of edges
+    | Worst Case for `hasVertex(vertex)`  |
+    |-------------------------------------|
+    | Constant Time / O(1)                |
 
 
 3. **`addEdge(vertex1, vertex2)`**
@@ -281,6 +299,12 @@ The descriptions below assume we use a map.
     * Add vertex1 as a neighbour to vertex2
     * Add vertex2 as a neighbour to vertex1
     ```
+
+    **Time Complexity**: Constant Time or **O(1)**
+    | Worst Case for `addEdge(vertex1, vertex2)`  |
+    |---------------------------------------------|
+    | Constant Time / O(1)                        |
+
 4. **`hasEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
