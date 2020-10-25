@@ -135,6 +135,17 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
     * Add a new row and a new column to the matrix
     * Fill all new empty cells with 0, because new vertex has no edges yet
     ```
+
+    **Time Complexity**: The worst case is that we create a new, bigger matrix because the current matrix cannot accommodate the new vertex. The time complexity for this is **O(|V|<sup>2</sup>)**, where |V| = set of vertices
+    | Time to create & fill bigger 2-D array  | Worst Case for `addVertex(vertex)`    |
+    |-----------------------------------------|---------------------------------------|
+    | Quadratic Time / O(\|V\|<sup>2</sup>)   | Quadratic Time / O(\|V\|<sup>2</sup>) |
+
+    **Space Complexity**: If a new 2-D array is created, then we use Quadratic Space or **O(|V|<sup>2</sup>)**, where |V| = set of vertices
+    | Space for bigger 2-D array              | Worst Case for `addVertex(vertex)`     |
+    |-----------------------------------------|----------------------------------------|
+    | Quadratic Space / O(\|V\|<sup>2</sup>)  | Quadratic Space / O(\|V\|<sup>2</sup>) |
+
 2. **`hasVertex(vertex)`**
     ```
     Pseudocode:
