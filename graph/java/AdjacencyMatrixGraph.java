@@ -1,11 +1,55 @@
 /**
  * @author Ayomide Oyekanmi
+ * 
+ * @note Deleting a vertex will be a complex operation with this implementation. It may be easier to just remove all edges 
+ * that involve the vertex we wish to delete :)
  */
 class AdjacencyMatrixGraph {
-    List<List<Integer>> graph;
+    private int[][] graph;
 
-    public AdjacencyMatrixGraph(){
-        graph = new ArrayList<>();
+    public AdjacencyMatrixGraph(int vertexCount){
+        graph = new int[vertexCount][vertexCount];
+    }
+
+    /**
+     * Adds vertex to graph
+     * 
+     * @param v vertex to add to graph
+     */
+    public void addVertex(int v){
+        // Don't use this implementation if you don't know number of vertices (a.k.a vertexCount) beforehand
+        // It's too inefficient :')
+    }
+    
+    /**
+     * Returns true if the vertex exists, and false otherwise
+     * 
+     * @param v The vertex whose presence in the graph we want to ascertain
+     * @return boolean true if vertex exists, and false otherwise
+     */
+    public boolean hasVertex(int v){
+        return v < graph.length;
+    }
+
+    /**
+     * Adds edge to graph
+     * 
+     * @param v1 The first of the adjacent vertices whose edge we want to add to the graph
+     * @param v2 The second of the adjacent vertices whose edge we want to add to the graph
+     */
+    public void addEdge(int v1, int v2){
+        if (v1 >= graph.length|| v2 >= graph.length){
+            // throw exception
+            return;
+        }
+
+        if (v1 >= graph[v2].length|| v2 >= graph[v1].length){
+            // throw exception
+            return;
+        }
+
+        graph[v1][v2] = 1;
+        graph[v2][v1] = 1;
     }
 
     /**
@@ -17,11 +61,15 @@ class AdjacencyMatrixGraph {
      * @return boolean true if edge exists, and false otherwise
      */
     public boolean hasEdge(int v1, int v2){
-        if (v1 >= graph.size()|| v2 >= graph.get(v1).size()){
+        if (v1 >= graph.length|| v2 >= graph.length){
             return false;
         }
 
-        return graph.get(v1).get(v2) == 1;
+        if (v1 >= graph[v2].length|| v2 >= graph[v1].length){
+            return false;
+        }
+
+        return graph[v1][v2] == 1;
     }
 
     /**
@@ -31,13 +79,13 @@ class AdjacencyMatrixGraph {
      * @return List<Integer> a list of neighbours for given vertex
      */
     public List<Integer> findNeighbours(int v){
-        if (v >= graph.size()){
+        if (v >= graph.length){
             return new ArrayList<>();
         }
 
         List<Integer> neighbours = new ArrayList<>();
-        List<Integer> vertices = graph.get(v);
-        for(Integer vertex : vertices){
+        int[] vertices = graph[v];
+        for(int vertex : vertices){
             if(vertex == 1){
                 neighbours.add(vertex);
             }
