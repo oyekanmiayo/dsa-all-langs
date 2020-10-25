@@ -142,6 +142,17 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
         - If true, then vertex exists
         - If false, then vertex does not exist
     ```
+
+    **Time Complexity**: Constant Time or **O(1)**
+    | Worst Case for `hasVertex(vertex)`  |
+    |-------------------------------------|
+    | Constant Time / O(1)                |
+
+    **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
+    | Worst Case for `hasVertex(vertex)` |
+    |------------------------------------|
+    | Constant Space / O(1)              |
+
 3. **`addEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
@@ -162,12 +173,12 @@ The amount of space used for this implementation is **O(|V|<sup>2</sup>)**, wher
     ```
 
     **Time Complexity**: Constant Time or **O(1)**
-    | 2-D Array Lookup     | Worst Case for `findEdge(vertex1, vertex2)` |
+    | 2-D Array Lookup     | Worst Case for `hasEdge(vertex1, vertex2)`  |
     |----------------------|---------------------------------------------|
     | Constant Time / O(1) | Constant Time / O(1)                        |
 
     **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
-    | Worst Case for `findEdge(vertex1, vertex2)` |
+    | Worst Case for `hasEdge(vertex1, vertex2)`  |
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
@@ -220,7 +231,7 @@ The descriptions below assume we use a map.
    
     ``` 
     Pseudocode (Undirected Graph):
-    * Check if vertex exists a key in the map
+    * Check if vertex exists as a key in the map
 
     Pseudocode (Directed Graph):
     
@@ -249,6 +260,8 @@ The descriptions below assume we use a map.
     * Return false if traversal is complete and vertex was not found
     ```
 
+
+
 3. **`addEdge(vertex1, vertex2)`**
     ```
     Pseudocode:
@@ -265,12 +278,12 @@ The descriptions below assume we use a map.
     ```
 
     **Time Complexity**: Access value associated with vertex1 key + Traverse list of edges. Linear Time or **O(|E|)**, where **|E|** = array or set of edges
-    | Access value         | Traverse list of edges  | Worst Case for `findEdge(vertex1, vertex2)` |
+    | Access value         | Traverse list of edges  | Worst Case for `hasEdge(vertex1, vertex2)`  |
     |----------------------|-------------------------|---------------------------------------------|
     | Constant Time / O(1) | Linear Space / O(\|E\|) | Linear Space / O(\|E\|)                     |
 
     **Space  Complexity**: No extra space is used in this method. Constant Space or **O(1)**
-    | Worst Case for `findEdge(vertex1, vertex2)` |
+    | Worst Case for `hasEdge(vertex1, vertex2)`  |
     |---------------------------------------------|
     | Constant Space / O(1)                       |
 
