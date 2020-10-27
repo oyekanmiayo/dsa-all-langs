@@ -2,6 +2,7 @@
 Author: Abdulazeez Abdulazeez Adeshina
 """
 
+
 class Node:
     """
     This represents the template for the node object that is used for the linkedlist.
@@ -203,7 +204,6 @@ class DoublyLinkedList:
 
         return nodeToRemove.element
 
-
     def removeAtPosition(self, position):
         """
         The `removeAtPosition` method removes a node at the specified postion.
@@ -247,14 +247,11 @@ class DoublyLinkedList:
 
         return current.element
 
-
-"""
-    The DoublyLinkedList() object will be instantiated and called as such:
+if __name__ == '__main__':
     x = DoublyLinkedList()
     x.addFirst(1) # 1
     x.addLast(2) # 1 -> 2
     x.addFirst(3) # 3 -> 1 -> 2
     x.addAtPosition(2, 10) # 3 -> 10 -> 1 -> 2
     x.removeAtPosition(2) # 3 -> 1 -> 2
-    len(x) # 3
-"""
+    print(len(x)) # 3
