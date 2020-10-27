@@ -10,20 +10,52 @@ Some important operations for a map include:
 *PS: An **array** is the underlying data structure used by a map.*
 
 ## Internals
-How does storing a value (`put(key, value)`) in a map work?
-1. Generate a hash (a.k.a memory address) for **key**, using a hash function
-2. Store **value** at the hash (a.k.a memory address)
-3. Handle collision, if necessary
 
-How does removing a value (`delete(key)`) from a map work?
-1. Generate hash (a.k.a memory address) for **key**, using a hash function
-2. Delete **value**  at hash (if there's no collision)
-3. If there's a collision, traverse bucket to find the correct object and delete it
+#### Operations
+1. **`put(key, value)`**
+    ```
+    Pseudocode:
+    * Generate a hash (a.k.a memory address) for **key**, using a hash function
+    * Store **value** at the hash (a.k.a memory address)
+    * Handle collision, if necessary
+    ```
 
-How does retrieving a value (`get(key)`) from a map work?
-1. Generate hash (a.k.a memory address) for **key**, using a hash function
-2. Get **value**  at hash (if there's no collision)
-3. If there's a collision, traverse bucket to find the correct object and get it
+    **Time Complexity** : time to find address (always constant) + time to traverse bucket (depends on the data structure)                     
+    | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `put(K key, V value)` | Amortized Time     |
+    |----------------------|--------------------|--------------------------|--------------------------------------|--------------------|
+    | Constant Time/O(1)   | List               | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
+    | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
+    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)             | Constant Time/O(1) |
+
+2. **`delete(key)`**
+    ```
+    Pseudocode:
+    * Generate hash (a.k.a memory address) for **key**, using a hash function
+    * Delete **value**  at hash (if there's no collision)
+    * If there's a collision, traverse bucket to find the correct object and delete it
+    ```
+
+    **Time Complexity** : time to find address (always constant) + time to delete from bucket (depends on the data structure)
+    | Time to find address | Bucket             | Time to delete from bucket | Worst Case for `delete(K key)` | Amortized Time     |
+    |----------------------|--------------------|----------------------------|--------------------------------|--------------------|
+    | Constant Time/O(1)   | List               | Linear Time/O(N)           | Linear Time/O(N)               | Constant Time/O(1) |
+    | Constant Time/O(1)   | LinkedList         | Constant Time/O(1)         | Constant Time/O(1)             | Constant Time/O(1) |
+    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN)   | Logarithmic Time/O(LogN)       | Constant Time/O(1) |
+    
+3. **`get(key)`**
+    ```
+    Pseudocode:
+    * Generate hash (a.k.a memory address) for **key**, using a hash function
+    * Get **value**  at hash (if there's no collision)
+    * If there's a collision, traverse bucket to find the correct object and get it
+    ```
+
+    **Time Complexity** : time to find address (always constant) + time to retrieve from bucket when index is not known (depends on the data structure)
+    | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `get(K key)` | Amortized Time     |
+    |----------------------|--------------------|--------------------------|-----------------------------|--------------------|
+    | Constant Time/O(1)   | List               | Linear Time/O(N)         | Linear Time/O(N)            | Constant Time/O(1) |
+    | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)            | Constant Time/O(1) |
+    | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)    | Constant Time/O(1) |
 
 Let's explain **Hash Function** and **Collision** a bit more.
 
@@ -59,48 +91,15 @@ stored in isn't the hash.
 3. **2-Choice Hashing**: Here we compute the hash for a value using two hash functions and insert the value into the address
 with less collisions.
 
-## Time Complexity
-Time complexities for the operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/add-map-impl/map#introduction)
-
-* `put(key, value)` - time to find address (always constant) + time to traverse bucket (depends on the data structure)
-
-   | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `put(K key, V value)` | Amortized Time     |
-   |----------------------|--------------------|--------------------------|--------------------------------------|--------------------|
-   | Constant Time/O(1)   | List               | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
-   | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)                     | Constant Time/O(1) |
-   | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)             | Constant Time/O(1) |
-
-* `delete(key)` - time to find address (always constant) + time to delete from bucket (depends on the data structure)
-
-   | Time to find address | Bucket             | Time to delete from bucket | Worst Case for `delete(K key)` | Amortized Time     |
-   |----------------------|--------------------|----------------------------|--------------------------------|--------------------|
-   | Constant Time/O(1)   | List               | Linear Time/O(N)           | Linear Time/O(N)               | Constant Time/O(1) |
-   | Constant Time/O(1)   | LinkedList         | Constant Time/O(1)         | Constant Time/O(1)             | Constant Time/O(1) |
-   | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN)   | Logarithmic Time/O(LogN)       | Constant Time/O(1) |
-   
-* `get(key)` - time to find address (always constant) + time to retrieve from bucket when index is not known (depends on the data structure)
-
-   | Time to find address | Bucket             | Time to traverse bucket  | Worst Case for `get(K key)` | Amortized Time     |
-   |----------------------|--------------------|--------------------------|-----------------------------|--------------------|
-   | Constant Time/O(1)   | List               | Linear Time/O(N)         | Linear Time/O(N)            | Constant Time/O(1) |
-   | Constant Time/O(1)   | LinkedList         | Linear Time/O(N)         | Linear Time/O(N)            | Constant Time/O(1) |
-   | Constant Time/O(1)   | Binary Search Tree | Logarithmic Time/O(LogN) | Logarithmic Time/O(LogN)    | Constant Time/O(1) |
-
-
 ## Terminologies
-* **Amortized Time**: Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time. Read more [here](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
-
-* **Load Factor**: The number of allowed entries per bucket. This isn't necessarily equal to the capacity of the bucket.
+1. **Amortized Time**: Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time. Read more [here](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
+2. **Load Factor**: The number of allowed entries per bucket. This isn't necessarily equal to the capacity of the bucket.
 
 ## References
 1. [Computer Science Distilled](https://www.amazon.co.uk/Computer-Science-Distilled-Computational-Problems/dp/0997316020/ref=sr_1_1?adgrpid=52658140545&dchild=1&gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr6bz1aEFd_X517mpcZBAGaDJaeg-WARxB6mwEMMtupTPnTGI0a-1SIaAmH5EALw_wcB&hvadid=259122221401&hvdev=c&hvlocint=9041110&hvlocphy=1010294&hvnetw=g&hvqmt=e&hvrand=6311385300851562426&hvtargid=kwd-297429021778&hydadcr=17613_1817768&keywords=computer+science+distilled&qid=1602170396&sr=8-1&tag=googhydr-21)
-
 2. [Why do hash functions use prime numbers](https://computinglife.wordpress.com/2008/11/20/why-do-hash-functions-use-prime-numbers/)
-
 3. [Seperate Chaining (a technique to handle collisions)](https://en.wikipedia.org/wiki/Hash_table#Separate_chaining)
-
 4. [Amortized Time Complexity of Algorithms](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
-
 5. [How hashmaps work in Java](https://howtodoinjava.com/java/collections/hashmap/how-hashmap-works-in-java/)
 
 ## Author(s)
