@@ -215,14 +215,11 @@ class SinglyLinkedList:
 
         return current.element
 
-
-"""
-    The SinglyLinkedList() object will be instantiated and called as such:
+if __name__ == '__main__':
     x = SinglyLinkedList()
     x.addFirst(1) # 1
     x.addLast(2) # 1 -> 2
     x.addFirst(3) # 3 -> 1 -> 2
     x.addAtPosition(2, 10) # 3 -> 10 -> 1 -> 2
     x.removeAtPosition(2) # 3 -> 1 -> 2
-    len(x) # 3
-"""
+    print(len(x)) # 3
