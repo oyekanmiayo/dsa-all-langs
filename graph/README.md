@@ -26,9 +26,9 @@ Some operations we can perform on a graph include:
 
 ## Internals : Representation of Graphs
 There are several ways to represent graphs, each with its advantages and disadvantages. Some situations or algorithms that we want to run with graphs as input, call for one representation, and others call for a different representation. Graphs are commonly represented in three ways:
-1. [Edge List]()
-2. [Adjacency Matrix]()
-3. [Adjacency List]()
+1. [Edge List](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#edge-list)
+2. [Adjacency Matrix](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#adjacency-matrix)
+3. [Adjacency List](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/graph#adjacency-list)
 
 We will use the graph below as an example to explain each representation
 
