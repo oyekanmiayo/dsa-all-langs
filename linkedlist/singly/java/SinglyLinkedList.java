@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * @author Ayomide Oyekanmi
  */
@@ -79,7 +81,7 @@ class SinglyLinkedList<E> {
     public void addAtPosition(int n, E element){
         // Checks if position exists
         if (n < 1 || n > size){
-            IllegalArgumentException("No such position");
+            throw new IllegalArgumentException("No such position");
         }
 
         // Checks if element to be added will be the new head
@@ -99,6 +101,7 @@ class SinglyLinkedList<E> {
         while(index != n){
             prev = node;
             node = node.next;
+            index++;
         }
 
         // Update pointers to reference new node
@@ -121,16 +124,17 @@ class SinglyLinkedList<E> {
             throw new NoSuchElementException();
         }
 
+        // Removes reference to head element
+        Node<E> nodeToRemove = head;
+
         // Checks if head element is the only element in the list
         if(head.next == null){
             head = null;
             tail = null;
             size = 0;
-            return;
+            return nodeToRemove.element;
         }
 
-        // Removes reference to head element
-        Node<E> nodeToRemove = head;
         head = head.next;
 
         // Decrements size
@@ -154,10 +158,11 @@ class SinglyLinkedList<E> {
         // Checks if tail is the only element in the list
         // If head.next is null, it means head == tail :)
         if(head.next == null){
+            Node<E> nodeToRemove = tail;
             head = null;
             tail = null;
             size = 0;
-            return;
+            return nodeToRemove.element;
         }
 
         // Traverses to the end of the list
@@ -188,20 +193,18 @@ class SinglyLinkedList<E> {
      */
     public E removeAtPosition(int n){
         // Checks if position exists
-        if (n < 1 || n > size){
-            IllegalArgumentException("No such position");
+        if (n < 0 || n > size){
+            throw new IllegalArgumentException("No such position");
         }
 
         // Checks if element to be removed is head
         if(n == 0){
-            removeFirst();
-            return;
+            return removeFirst();
         }
 
         // Checks if element to be removed is tail
         if(n == size){
-            removeLast();
-            return;
+            return removeLast();
         }
 
         int index = 1;
