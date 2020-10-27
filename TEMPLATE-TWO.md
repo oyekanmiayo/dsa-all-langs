@@ -6,7 +6,8 @@ Small description to explain what this section entails for the data structure in
 
 ### Structure 1 as underlying data structure
 
-1. #### `firstOperation()`
+#### Operations
+1. **`firstOperation()`**
     ```
     Pseudocode:
     Step 1
@@ -24,7 +25,7 @@ Small description to explain what this section entails for the data structure in
     |------------------------|------------------------------------|
     | Constant Space/O(1)    | Constant Space/O(1)                |
 
-2. #### `secondOperation()`
+2. **`secondOperation()`**
     ```
     Pseudocode:
     Step 1
@@ -44,7 +45,8 @@ Small description to explain what this section entails for the data structure in
 
 ### Structure 2 as underlying data structure
 
-1. #### `firstOperation()`
+#### Operations
+1. **`firstOperation()`**
     ```
     Pseudocode:
     Step 1
@@ -62,7 +64,7 @@ Small description to explain what this section entails for the data structure in
     |------------------------|------------------------------------|
     | Constant Space/O(1)     | Constant Space/O(1)               |
 
-2. #### `secondOperation()`
+2. **`secondOperation()`**
     ```
     Pseudocode:
     Step 1

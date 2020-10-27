@@ -10,7 +10,9 @@ Processing data this way is know as **LIFO (Last-In, First-Out)**; we only ever 
 We can use an **array** or a **linkedlist** as the underlying data structure used by a Stack. Since arrays have a fixed size, if the number of elements being inserted into the stack exceeds this size, we will need to copy out all elements into a bigger array. Using a linkedlist helps avoid this extra overhead because linkedlists allocate space as needed (Read more [here]()). We will consider the internals for both underlying structures.
 
 ### Array as underlying structure
-1. #### `push(e)`
+
+#### Operations
+1. **`push(e)`**
     ```
     Pseudocode:
     * Check if size limit of underlying array has been reached
@@ -23,7 +25,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)              | Constant Time/O(1)           |
    
 
-2. #### `pop()`
+2. **`pop()`**
     ```
     Pseudocode:
     * Retrieve item from the last filled index in the underlying array and remove the reference to it
@@ -33,7 +35,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     |------------------------------------------|-------------------------|
     | Constant Time/O(1)                       | Constant Time/O(1)      |
 
-3. ####  `peek()` 
+3. **`peek()`**
     ```
     Pseudocode:
     * Retrieve item from the last filled index in the underlying array
@@ -44,7 +46,9 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     | Constant Time/O(1)               | Constant Time/O(1)      |
 
 ### Doubly LinkedList as underlying structure
-1. #### `push(e)`
+
+#### Operations
+1. **`push(e)`**
     ```
     Pseudocode:
     * Add element to head of the linkedlist
@@ -54,7 +58,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     |--------------------------------------------|--------------------------|
     | Constant Time/O(1)                         | Constant Time/O(1)       |
 
-2. #### `pop()`
+2. **`pop()`**
     ```
     Pseudocode:
     * Remove element from head of the linkedlist
@@ -64,7 +68,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     |----------------------------------------------------|------------------------|
     | Constant Time/O(1)                                 | Constant Time/O(1)     |
    
-3. ####  `peek()` 
+3. **`peek()`**
     ```
     Pseudocode:
     * Return element at the head of the linkedlist
