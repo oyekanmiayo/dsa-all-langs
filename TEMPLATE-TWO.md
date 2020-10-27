@@ -25,10 +25,12 @@ Small description to explain what this section entails for the data structure in
     | Constant Space/O(1)    | Constant Space/O(1)                |
 
 2. #### `secondOperation()`
-    Pseudocode for operation
-    * Step 1
-    * Step 2
-    * Step 3
+    ```
+    Pseudocode:
+    Step 1
+    Step 2
+    Step 3
+    ```
 
     **Time Complexity** : Small description of what is involved
     | Sample operation       | Worst Case for `secondOperation()` |
@@ -43,10 +45,12 @@ Small description to explain what this section entails for the data structure in
 ### Structure 2 as underlying data structure
 
 1. #### `firstOperation()`
-    Pseudocode for operation
-    * Step 1
-    * Step 2
-    * Step 3
+    ```
+    Pseudocode:
+    Step 1
+    Step 2
+    Step 3
+    ```
 
     **Time Complexity** : Small description of what is involved
     | Sample operation       | Worst Case for `firstOperation()`  |
@@ -59,10 +63,12 @@ Small description to explain what this section entails for the data structure in
     | Constant Space/O(1)     | Constant Space/O(1)               |
 
 2. #### `secondOperation()`
-    Pseudocode for operation
-    * Step 1
-    * Step 2
-    * Step 3
+    ```
+    Pseudocode:
+    Step 1
+    Step 2
+    Step 3
+    ```
 
     **Time Complexity** : Small description of what is involved
     | Sample operation       | Worst Case for `secondOperation()` |
