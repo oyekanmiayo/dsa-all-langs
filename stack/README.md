@@ -43,38 +43,37 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     |----------------------------------|-------------------------|
     | Constant Time/O(1)               | Constant Time/O(1)      |
 
-How does retrieving the top item (`peek()`) from a stack work?
-1. Retrieve item from the last filled index in the underlying array
+### Doubly LinkedList as underlying structure
+1. #### `push(e)`
+    ```
+    Pseudocode:
+    * Add element to head of the linkedlist
+    ```
+    **Time Complexity** : time to add item to tail of the linkedlist
+    | Time to add item to head of the linkedlist | Worst Case for `push(e)` |
+    |--------------------------------------------|--------------------------|
+    | Constant Time/O(1)                         | Constant Time/O(1)       |
 
-### Linkedlist as underlying structure
-How does inserting an item (`push(e)`) into a stack work?
-1. Add element to tail of the linkedlist
-
-How does removing an item (`pop()`) from a stack work?
-1. Remove element from tail of the linkedlist
-
-How does retrieving the top item (`peek()`) from a stack work?
-1. Return element at the tail of the linkedlist
-
-## Time Complexity
-Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/stack#introduction).
-
-### Linkedlist as underlying structure
-* `push(e)`: time to add item to tail of the linkedlist
-  | Time to add item to tail of the linkedlist | Worst Case for `push(e)` |
-  |--------------------------------------------|--------------------------|
-  | Constant Time/O(1)                         | Constant Time/O(1)       |
-
-* `pop()`: time to remove element from tail of the linkedlist
-  | Time to remove element from tail of the linkedlist | Worst Case for `pop()` |
-  |----------------------------------------------------|------------------------|
-  | Constant Time/O(1)                                 | Constant Time/O(1)     |
-  
-* `peek()`: time to return element at the tail of the linkedlist
-  | Time to return element at the tail of the linkedlist | Worst Case for `peek()` |
-  |------------------------------------------------------|-------------------------|
-  | Constant Time/O(1)                                   | Constant Time/O(1)      |
-
+2. #### `pop()`
+    ```
+    Pseudocode:
+    * Remove element from head of the linkedlist
+    ```
+    **Time Complexity** : time to remove element from tail of the linkedlist
+    | Time to remove element from head of the linkedlist | Worst Case for `pop()` |
+    |----------------------------------------------------|------------------------|
+    | Constant Time/O(1)                                 | Constant Time/O(1)     |
+   
+3. ####  `peek()` 
+    ```
+    Pseudocode:
+    * Return element at the head of the linkedlist
+    ```
+    **Time Complexity** : time to return element at the tail of the linkedlist
+    | Time to return element at the tail of the linkedlist | Worst Case for `peek()` |
+    |------------------------------------------------------|-------------------------|
+    | Constant Time/O(1)                                   | Constant Time/O(1)      |
+    
 ## Reference(s)
 1. [Computer Science Distilled](https://www.amazon.co.uk/Computer-Science-Distilled-Computational-Problems/dp/0997316020/ref=sr_1_1?adgrpid=52658140545&dchild=1&gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr6bz1aEFd_X517mpcZBAGaDJaeg-WARxB6mwEMMtupTPnTGI0a-1SIaAmH5EALw_wcB&hvadid=259122221401&hvdev=c&hvlocint=9041110&hvlocphy=1010294&hvnetw=g&hvqmt=e&hvrand=6311385300851562426&hvtargid=kwd-297429021778&hydadcr=17613_1817768&keywords=computer+science+distilled&qid=1602170396&sr=8-1&tag=googhydr-21)
 
