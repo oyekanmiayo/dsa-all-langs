@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author Ayomide Oyekanmi
  */
@@ -6,6 +11,18 @@ class AdjacencyListGraph<E> {
 
     AdjacencyListGraph(){
         graph = new HashMap<>();
+    }
+
+    public static void main(String[] args) {
+        AdjacencyListGraph<String> obj = new AdjacencyListGraph<>();
+        obj.addVertex("Ayo");
+        System.out.println(obj.hasVertex("Ayo")); // True
+        obj.addVertex("Yuwa");
+        System.out.println(obj.hasVertex("Yuwa")); // True
+        obj.addEdge("Ayo", "Yuwa");
+        System.out.println(obj.hasEdge("Ayo", "Yuwa")); // True
+        System.out.println(obj.findNeighbours("Ayo")); // Yuwa
+        System.out.println(obj.findNeighbours("Yuwa")); //  Ayo
     }
 
     /**
@@ -19,7 +36,7 @@ class AdjacencyListGraph<E> {
         }
 
         List<E> list = new ArrayList<>();
-        graph.put(v, new list);
+        graph.put(v, list);
     }
 
     /**
@@ -41,12 +58,12 @@ class AdjacencyListGraph<E> {
     public void addEdge(E v1, E v2){
         if(!graph.containsKey(v1)){
             List<E> list = new ArrayList<>();
-            graph.put(v1, new list);
+            graph.put(v1, list);
         }
 
         if(!graph.containsKey(v1)){
             List<E> list = new ArrayList<>();
-            graph.put(v2, new list);
+            graph.put(v2, list);
         }
 
         graph.get(v1).add(v2);

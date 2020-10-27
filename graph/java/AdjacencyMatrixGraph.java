@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Ayomide Oyekanmi
  * 
@@ -9,6 +12,17 @@ class AdjacencyMatrixGraph {
 
     public AdjacencyMatrixGraph(int vertexCount){
         graph = new int[vertexCount][vertexCount];
+    }
+
+    public static void main(String[] args) {
+        AdjacencyMatrixGraph obj = new AdjacencyMatrixGraph(3);
+        System.out.println(obj.hasVertex(0)); // True
+        System.out.println(obj.hasVertex(1)); // True
+        System.out.println(obj.hasVertex(2)); // True
+        System.out.println(obj.hasVertex(3)); // False
+        obj.addEdge(0, 1);
+        System.out.println(obj.hasEdge(0, 1)); // True
+        System.out.println(obj.hasEdge(1, 0)); // True
     }
 
     /**
