@@ -15,65 +15,82 @@ Because of how doubly linked lists [work](https://github.com/oyekanmiayo/data-st
 
 We will consider the internals for both underlying structures.
 
-### Operation Details
+### Array as underlying structure
 
-#### Array as underlying structure
-1. How does inserting an item (`enqueue(e)`) into a queue work?
+#### Operations
+1. **`enqueue(e)`**
+    ```
+    Pseudocode:
     * Check if size limit of underlying array has been reached
     * If it has, copy all elements in the current underlying array to a bigger array
     * Insert item in next available index in underlying array
-
-2. How does removing an item (`dequeue()`) from a queue work?
-    * Remove item at index 0 in the underlying array 
-    * Shift all the elements left by one index
-    * Return removed item 
-
-3. How does retrieving the top item (`peek()`) from a stack work?
-    * Retrieve item at index 0 in the underlying array 
-
-#### DLL as underlying structure
-1. How does inserting an item (`enqueue(e)`) into a queue work?
-    * Add item to back of list by calling [`addLast(element)`](https://github.com/oyekanmiayo/data-structures-all-langs/blob/main/linkedlist/doubly/java/DoublyLinkedList.java#L63) on the DLL
-
-2. How does removing an item (`dequeue()`) from a queue work?
-    * Remove item from front of list by calling [`removeFirst()`](https://github.com/oyekanmiayo/data-structures-all-langs/blob/main/linkedlist/doubly/java/DoublyLinkedList.java#L136) on the DLL
-
-3. How does retrieving the item at the front (`peek()`) from a queue work?
-    * Return the head of the DLL
-
-## Time Complexity
-
-### Array as underlying structure
-* `enqueue(e)`: time to copy to bigger array + time to insert at index
+    ```
+   
+    **Time Complexity** : time to copy to bigger array + time to insert at index
     | Time to copy elements to bigger array | Time to insert item at index | Worst Case for `enqueue(e)` | Amortized Time for `enqueue(e)` |
     |---------------------------------------|------------------------------|-----------------------------|---------------------------------|
     | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)                 | Constant Time/O(1)              |
-
-* `dequeue()`: time to access element at index 0 + time to shift all elements left by one index
+    
+    
+2. **`dequeue()`**
+    ```
+    Pseudocode:
+    * Remove item at index 0 in the underlying array 
+    * Shift all the elements left by one index
+    * Return removed item 
+    ```
+    
+    **Time Complexity** : time to access element at index 0 + time to shift all elements left by one index
     | Time to access element | Time to shift all elements left by one index | Worst Case for `dequeue()` |
     |------------------------|----------------------------------------------|----------------------------|
     | Constant Time/O(1)     | Linear Time/O(N)                             | Linear Time/O(N)           |
-
-* `peek()`: time to access element at index 0
+    
+3. **`peek()`**
+    ```
+    Pseudocode:
+    * Retrieve item at index 0 in the underlying array  
+    ```
+    **Time Complexity** : time to access element at index 0
     | Time to access element | Worst Case for `peek()` |
     |------------------------|-------------------------|
     | Constant Time/O(1)     | Constant Time/O(1)      |
 
 ### DLL as underlying structure
-* `enqueue(e)`: time to add element to back of DLL
-   | Time to add element to back of DLL  | Worst Case for `enqueue(e)` |
-   |-------------------------------------|-----------------------------|
-   | Constant Time/O(1)                  | Constant Time/O(1)          |
 
-* `dequeue()`: time to remove element from front of DLL
-   | Time to remove element from front of DLL | Worst Case for `dequeue()`  |
-   |------------------------------------------|-----------------------------|
-   | Constant Time/O(1)                       | Constant Time/O(1)          |
+#### Operations
+1. **`enqueue(e)`**
+    ```
+    Pseudocode:
+    * Add item to back of doubly linkedlist
+    ```
+   
+    **Time Complexity** : time to add element to back of DLL
+    | Time to add element to back of DLL  | Worst Case for `enqueue(e)` |
+    |-------------------------------------|-----------------------------|
+    | Constant Time/O(1)                  | Constant Time/O(1)          |
 
-* `peek()`: time to get element at the front of DLL
-   | Time to get element at the front of DLL | Worst Case for `peek()` |
-   |-----------------------------------------|-------------------------|
-   | Constant Time/O(1)                      | Constant Time/O(1)      |
+
+2. **`dequeue()`**
+    ```
+    Pseudocode:
+    * Remove item from front of doubly linkedlist
+    ```
+   
+    **Time Complexity** : time to remove element from front of DLL
+    | Time to remove element from front of DLL | Worst Case for `dequeue()`  |
+    |------------------------------------------|-----------------------------|
+    | Constant Time/O(1)                       | Constant Time/O(1)          |
+    
+3. **`peek()`**
+    ```
+    Pseudocode:
+    * Return the head of the doubly linkedlist
+    ```
+   
+    **Time Complexity** : time to get element at the front of DLL
+    | Time to get element at the front of DLL | Worst Case for `peek()` |
+    |-----------------------------------------|-------------------------|
+    | Constant Time/O(1)                      | Constant Time/O(1)      |
 
 As you can see, it is more efficient to use a DLL to implement a Queue.
 
