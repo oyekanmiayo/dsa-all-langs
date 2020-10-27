@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * @author Ayomide Oyekanmi
  */
@@ -92,7 +94,7 @@ class DoublyLinkedList<E> {
     public void addAtPosition(int n, E element){
         // Checks if position exists
         if (n < 1 || n > size){
-            IllegalArgumentException("No such position");
+            throw new IllegalArgumentException("No such position");
         }
 
         // Checks if element to be added will be the new head
@@ -139,16 +141,16 @@ class DoublyLinkedList<E> {
            throw new NoSuchElementException();
         }
 
+        // Current head node
+        Node<E> nodeToRemove = head;
+
         // Check if there's only one element in the list
         if(head.next == null){
             head = null;
             tail = null;
             size = 0;
-            return;
+            return nodeToRemove.element;
         }
-
-        // Current head node
-        Node<E> nodeToRemove = head;
 
         Node<E> newHead = head.next;
         // Set current head's next pointer to null
@@ -193,15 +195,15 @@ class DoublyLinkedList<E> {
             throw new NoSuchElementException();
         }
 
+        Node<E> nodeToRemove = tail;
+
         // Checks if tail is the only element in the list
         if(tail.prev == null){
             head = null;
             tail = null;
             size = 0;
-            return;
+            return tail.element;
         }
-
-        Node<E> nodeToRemove = tail;
 
         Node<E> newTail = tail.prev;
         // Set current tail's previous pointer to null
@@ -226,20 +228,18 @@ class DoublyLinkedList<E> {
      */
     public E removeAtPosition(int n){
         // Checks if position exists
-        if (n < 1 || n > size){
-            IllegalArgumentException("No such position");
+        if (n < 0 || n > size){
+            throw new IllegalArgumentException("No such position");
         }
 
         // Checks if element to be removed is head
         if(n == 0){
-            removeFirst();
-            return;
+            return removeFirst();
         }
 
         // Checks if element to be removed is tail
         if(n == size){
-            removeLast();
-            return;
+            return removeLast();
         }
 
         int index = 1;
@@ -250,6 +250,7 @@ class DoublyLinkedList<E> {
         // using if (n > size) 
         while(index != n){
             node = node.next;
+            index++;
         }
 
         Node<E> prev = node.prev;

@@ -10,13 +10,38 @@ Processing data this way is know as **LIFO (Last-In, First-Out)**; we only ever 
 We can use an **array** or a **linkedlist** as the underlying data structure used by a Stack. Since arrays have a fixed size, if the number of elements being inserted into the stack exceeds this size, we will need to copy out all elements into a bigger array. Using a linkedlist helps avoid this extra overhead because linkedlists allocate space as needed (Read more [here]()). We will consider the internals for both underlying structures.
 
 ### Array as underlying structure
-How does inserting an item (`push(e)`) into a stack work?
-1. Check if size limit of underlying array has been reached
-2. If it has, copy all elements in the current underlying array to a bigger array
-3. Insert item in next available index in underlying array
+1. #### `push(e)`
+    ```
+    Pseudocode:
+    * Check if size limit of underlying array has been reached
+    * If it has, copy all elements in the current underlying array to a bigger array
+    * Insert item in next available index in underlying array
+    ```
+    **Time Complexity** : time to copy elements to bigger array + time to insert item at index
+    | Time to copy elements to bigger array | Time to insert item at index | Worst Case for `push(e)` | Amortized Time for `push(e)` |
+    |---------------------------------------|------------------------------|--------------------------|------------------------------|
+    | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)              | Constant Time/O(1)           |
+   
 
-How does removing an item (`pop()`) from a stack work?
-1. Retrieve item from the last filled index in the underlying array and remove the reference to it
+2. #### `pop()`
+    ```
+    Pseudocode:
+    * Retrieve item from the last filled index in the underlying array and remove the reference to it
+    ```
+    **Time Complexity** : time to remove item reference from index
+    | Time to remove item reference from index | Worst Case for `pop()`  |
+    |------------------------------------------|-------------------------|
+    | Constant Time/O(1)                       | Constant Time/O(1)      |
+
+3. ####  `peek()` 
+    ```
+    Pseudocode:
+    * Retrieve item from the last filled index in the underlying array
+    ```
+    **Time Complexity** : time to retrieve item from index
+    | Time to retrieve item from index | Worst Case for `peek()` |
+    |----------------------------------|-------------------------|
+    | Constant Time/O(1)               | Constant Time/O(1)      |
 
 How does retrieving the top item (`peek()`) from a stack work?
 1. Retrieve item from the last filled index in the underlying array
@@ -33,22 +58,6 @@ How does retrieving the top item (`peek()`) from a stack work?
 
 ## Time Complexity
 Time Complexities for operations mentioned [here](https://github.com/oyekanmiayo/data-structures-all-langs/tree/main/stack#introduction).
-
-### Array as underlying structure
-* `push(e)`: time to copy elements to bigger array + time to insert item at index
-  | Time to copy elements to bigger array | Time to insert item at index | Worst Case for `push(e)` | Amortized Time for `push(e)` |
-  |---------------------------------------|------------------------------|--------------------------|------------------------------|
-  | Linear/O(N)                           | Constant Time/O(1)           | Linear/O(N)              | Constant Time/O(1)           |
-  
-* `pop()`: time to remove item reference from index
-  | Time to remove item reference from index | Worst Case for `pop()`  |
-  |------------------------------------------|-------------------------|
-  | Constant Time/O(1)                       | Constant Time/O(1)      |
-
-* `peek()`: time to retrieve item from index
-  | Time to retrieve item from index | Worst Case for `peek()` |
-  |----------------------------------|-------------------------|
-  | Constant Time/O(1)               | Constant Time/O(1)      |
 
 ### Linkedlist as underlying structure
 * `push(e)`: time to add item to tail of the linkedlist
