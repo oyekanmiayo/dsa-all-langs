@@ -1,3 +1,4 @@
+// Queue is an implementation of a queue using a doubly-linked list.
 class Queue {
   constructor() {
     this.linkedList = new DoublyLinkedList();
