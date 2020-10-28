@@ -16,7 +16,7 @@ class ArrayStack {
     push(element)   {
         // Adds a new 
         this.entries[this.top] = element;
-        ++this.top;
+        this.top++;
     }
 
     /**
@@ -60,7 +60,7 @@ class ArrayStack {
      */
     view() {
         let top = this.top - 1;
-        while(top > 0) {
+        while(top >= 0) {
             console.log(this.entries[top]);
             top--;
         }
@@ -77,6 +77,7 @@ const main = () => {
     let stack = new ArrayStack();
     stack.push(1);
     stack.push(2);
+    stack.push(3);
     stack.view();
     stack.pop();
     stack.pop();
