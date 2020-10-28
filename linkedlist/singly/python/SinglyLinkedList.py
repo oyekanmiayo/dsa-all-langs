@@ -66,10 +66,33 @@ class SinglyLinkedList:
     def addLast(self, element):
         """
         The `addLast` method adds a new node to the end of the list.
-
         :param element: the value held in the Node.
         """
 
+        # Starting at the head node, travserse the linkedlist until we get to the tail node
+        node = self.head
+
+        while node.next != None:
+            node = node.next
+
+        # Set the current tail node's pointer to the new tail node
+
+        node.next = Node(element)
+        # Set the new tail node
+
+        self.tail = node.next
+
+        # Increment size
+        self.size += 1
+
+    def addLastConstantTime(self, element: Any) -> None:
+        """Add a Node object storing `element` to the end of the SinglyLinkedList instance in constant time.
+
+        Parameters
+        ----------
+        element: Any
+            data to be stored in Node object.
+        """
         # Create new node to store element.
         newNode = Node(element)
 
