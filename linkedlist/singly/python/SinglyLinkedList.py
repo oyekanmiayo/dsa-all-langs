@@ -31,6 +31,17 @@ class SinglyLinkedList:
         """
         return self.size
 
+    def __str__(self):
+        linkedlist = ""
+        current = self.head
+
+        while current and current.next is not None:
+            linkedlist += str(current.element) + "->"
+            current = current.next
+
+        linkedlist += str(current.element)
+        return linkedlist
+
     def addFirst(self, element):
         """
         The `addFirst` method adds a new node to the front of the list making it the head of the linkedlist.
@@ -188,7 +199,7 @@ class SinglyLinkedList:
             raise IndexError("Invalid position!")
 
         # Check if element to be removed is the head
-        if position == 0:
+        if position == 1:
             self.removeFirst()
             return
 
@@ -220,6 +231,9 @@ if __name__ == '__main__':
     x.addFirst(1) # 1
     x.addLast(2) # 1 -> 2
     x.addFirst(3) # 3 -> 1 -> 2
+    print(x) # 3 -> 1 -> 2
     x.addAtPosition(2, 10) # 3 -> 10 -> 1 -> 2
+    print(x)
     x.removeAtPosition(2) # 3 -> 1 -> 2
     print(len(x)) # 3
+    x.removeAtPosition(0) # Raises "IndexError: Invalid position!" and exit.
