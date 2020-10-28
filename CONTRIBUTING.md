@@ -16,3 +16,9 @@ As a contributor you can:
 - Mark yourself as the author at the top of the file like [this](https://github.com/oyekanmiayo/data-structures-all-langs/blob/main/stack/java/ArrayStack.java#L2). Find the best way to do this for the langauge you are using
 - Add a comment explaining the parameters and the return type of each method
 - Add driver code (i.e. code in the "main" function to test the implementation)
+
+## Creating PRs
+- If a PR is directly addressing an issue, the name of the PR should follow the format **[IS-{issue.number}] {pr.name}**. E.g. [IS-17] add driver code for linked lists
+  - {issue.number} is the number of the issue bring addressed
+  - {pr.name} is the name of the PR. Typically summarizes what the PRs is doing. E.g. 'Add driver code for lists'
+- If a PR is directly addressing an issue, the issue link should be added as a comment in the PR
