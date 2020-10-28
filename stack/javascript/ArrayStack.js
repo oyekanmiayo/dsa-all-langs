@@ -75,12 +75,13 @@ class ArrayStack {
 
 const main = () => {
     let stack = new ArrayStack();
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.view();
-    stack.pop();
-    stack.pop();
+    stack.push(1) // push 1 to stack;
+    stack.push(2) // push 2 to stack ;
+    stack.push(3) // push 3 to stack;
+    stack.view(); // prints 3 2 1;
+    stack.pop(); // removes 3;
+    stack.pop(); // removes 2;
+    stack.view(); // prints 1
 }
 
 main();
