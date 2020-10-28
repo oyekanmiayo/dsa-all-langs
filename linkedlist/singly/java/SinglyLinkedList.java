@@ -28,6 +28,22 @@ class SinglyLinkedList<E> {
         size = 0;
     }
 
+    public static void main(String[] args) {
+        SinglyLinkedList<Integer> obj = new SinglyLinkedList<>();
+        obj.addFirst(2);
+        System.out.println(obj); // [2]
+        obj.addLast(3);
+        System.out.println(obj); // [2] <=> [3]
+        obj.addAtPosition(2, 9);
+        System.out.println(obj); // [2] <=> [9] <=> [3]
+        System.out.println(obj.removeAtPosition(1)); // 2
+        System.out.println(obj); // [9] <=> [3]
+        System.out.println(obj.removeFirst()); // 9
+        System.out.println(obj); // [3]
+        System.out.println(obj.removeLast()); // 3
+        System.out.println(obj); // Linkedlist is empty!
+    }
+
     /**
      * Add element to front of the list, so that it becomes new head node
      * 
@@ -193,12 +209,12 @@ class SinglyLinkedList<E> {
      */
     public E removeAtPosition(int n){
         // Checks if position exists
-        if (n < 0 || n > size){
+        if (n < 1 || n > size){
             throw new IllegalArgumentException("No such position");
         }
 
         // Checks if element to be removed is head
-        if(n == 0){
+        if(n == 1){
             return removeFirst();
         }
 
@@ -227,17 +243,24 @@ class SinglyLinkedList<E> {
 
         return node.element;
     }
-}
 
-/**
- * The SinglyLinkedList object will be instantiated and called as such:
- * SinglyLinkedList<String> obj = new SinglyLinkedList<>();
- * obj.addFirst('Ayo'); # Ayo
- * obj.addFirst('Yuwa'); # Yuwa -> Ayo
- * obj.addLast('Jess'); # Yuwa -> Ayo -> Jess
- * obj.addLast('Shay'); # Yuwa -> Ayo -> Jess -> Shay
- * obj.addAtPosition(3, 'Vee') # Yuwa -> Ayo -> Vee -> Jess -> Shay
- * obj.removeFirst() # Ayo -> Vee -> Jess -> Shay
- * obj.removeLast() # Ayo -> Vee -> Jess
- * obj.removeAtPosition(2) # Ayo -> Jess
- */
+    @Override
+    public String toString() {
+        Node<E> node = head;
+        if (node == null) {
+            return "Linkedlist is empty!";
+        }
+
+        String linkedList = "";
+        while (true) {
+            if (node.next == null) {
+                linkedList += "[" + node.element + "]";
+                break;
+            }
+
+            linkedList += "[" + node.element + "] <=> ";
+            node = node.next;
+        }
+        return linkedList;
+    }
+}
