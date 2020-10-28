@@ -276,6 +276,9 @@ class DoublyLinkedList<E> {
         // Set the next node's previous pointer to the previous node
         node.next.prev = prev;
 
+        // Decrement size
+        size--;
+
         return node.element;
     }
 
