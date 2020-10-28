@@ -36,7 +36,7 @@ class DoublyLinkedList:
         current  = self.head
 
         while current and current.next is not None:
-            linkedlist += str(current.element) + "->"
+            linkedlist += str(current.element) + "<->"
             current = current.next
         linkedlist += str(current.element)
         return linkedlist
@@ -260,11 +260,11 @@ class DoublyLinkedList:
 if __name__ == '__main__':
     x = DoublyLinkedList()
     x.addFirst(1) # 1
-    x.addLast(2) # 1 -> 2
-    x.addFirst(3) # 3 -> 1 -> 2
-    print(x) # 3 -> 1 -> 2
-    x.addAtPosition(2, 10) # 3 -> 10 -> 1 -> 2
-    print(x) # 3 -> 10 -> 1 -> 2
-    x.removeAtPosition(2) # 3 -> 1 -> 2
-    print(x) # 3 -> 1 -> 2
+    x.addLast(2) # 1 <-> 2
+    x.addFirst(3) # 3 <-> 1 <-> 2
+    print(x) # 3 <-> 1 <-> 2
+    x.addAtPosition(2, 10) # 3 <-> 10 <-> 1 <-> 2
+    print(x) # 3 <-> 10 <-> 1 <-> 2
+    x.removeAtPosition(2) # 3 <-> 1 <-> 2
+    print(x) # 3 <-> 1 <-> 2
     x.removeAtPosition(0) # Raises IndexError: Invalid position! and exits.
