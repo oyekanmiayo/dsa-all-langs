@@ -33,11 +33,11 @@ class SinglyLinkedList<E> {
         obj.addFirst(2);
         System.out.println(obj); // [2]
         obj.addLast(3);
-        System.out.println(obj); // [2] <=> [3]
+        System.out.println(obj); // [2] => [3]
         obj.addAtPosition(2, 9);
-        System.out.println(obj); // [2] <=> [9] <=> [3]
+        System.out.println(obj); // [2] => [9] => [3]
         System.out.println(obj.removeAtPosition(1)); // 2
-        System.out.println(obj); // [9] <=> [3]
+        System.out.println(obj); // [9] => [3]
         System.out.println(obj.removeFirst()); // 9
         System.out.println(obj); // [3]
         System.out.println(obj.removeLast()); // 3
@@ -258,7 +258,7 @@ class SinglyLinkedList<E> {
                 break;
             }
 
-            linkedList += "[" + node.element + "] <=> ";
+            linkedList += "[" + node.element + "] => ";
             node = node.next;
         }
         return linkedList;
