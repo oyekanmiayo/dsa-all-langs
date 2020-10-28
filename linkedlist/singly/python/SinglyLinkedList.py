@@ -70,20 +70,19 @@ class SinglyLinkedList:
         :param element: the value held in the Node.
         """
 
-        # Starting at the head node, travserse the linkedlist until we get to the tail node
-        node = self.head
+        # Create new node to store element.
+        newNode = Node(element)
 
-        while node.next != None:
-            node = node.next
-
-        # Set the current tail node's pointer to the new tail node
-
-        node.next = Node(element)
-        # Set the new tail node
-
-        self.tail = node.next
-
-        # Increment size
+        # If tail pointer and head pointers have not been set.
+        # Else set the current tail next pointer to the new node and set new node as tail.
+        if self.tail is None:
+            self.tail = newNode
+            self.head = self.tail
+        else:
+            self.tail.next = newNode
+            self.tail = newNode
+        
+        # increase size of SLL
         self.size += 1
 
     def addAtPosition(self, position, element):
