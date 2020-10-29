@@ -58,7 +58,7 @@ mutable struct Node{T}
   element::T
   prev::Union{Node{T}, Nothing}
   next::Union{Node{T}, Nothing}
-  Node{T}(e :: T) where {T<:Any} = new(e, nothing, nothing)
+  Node{T}(e :: T) where T = new(e, nothing, nothing)
 end
 
 """
@@ -71,7 +71,7 @@ mutable struct LinkedList{T}
   the number of nodes in the list
   """
   size::Int
-  LinkedList{T}() where {T<:Any} = new(nothing, nothing, 0)
+  LinkedList{T}() where T = new(nothing, nothing, 0)
 end
 
 """
@@ -82,7 +82,7 @@ Adds element `e` at position `pos` in the list
 - `pos::Int`: the position at which a node should be removed
 - `e::T`: the element to be added to the list
 """
-function addAtPosition!(d :: LinkedList{T}, pos :: Int, e :: T) :: Nothing where {T<:Any}
+function addAtPosition!(d :: LinkedList{T}, pos :: Int, e :: T) :: Nothing where T
   (pos < 1 || pos > d.size + 1) && throw(BoundsError("no such position"))
 
   index::Int = 1
@@ -113,16 +113,16 @@ Add element `e` to front (position `1`) of the list, so that it becomes new head
 
 same as `addAtPosition!(d, 1, e)`
 """
-@inline function addFirst!(d :: LinkedList{T}, e :: T) :: Nothing where {T<:Any} addAtPosition!(d, 1, e) end
+@inline function addFirst!(d :: LinkedList{T}, e :: T) :: Nothing where T addAtPosition!(d, 1, e) end
 
 """
 Add element `e` to back (position `size + 1`) of the list, so that it becomes new tail node
 
 same as `addAtPosition!(d, d.size + 1, e)`
 """
-@inline function addLast!(d :: LinkedList{T}, e :: T) :: Nothing where {T<:Any} addAtPosition!(d, d.size + 1, e) end
+@inline function addLast!(d :: LinkedList{T}, e :: T) :: Nothing where T addAtPosition!(d, d.size + 1, e) end
 
-function peek(d :: LinkedList{T}) :: T where {T<:Any}
+function peek(d :: LinkedList{T}) :: T where T
   isnothing(d.head) && throw(BoundsError("list has no more entries"))
   d.head.element
 end
@@ -134,7 +134,7 @@ Removes element at position `pos` in the list and returns it
 - `d::LinkedList{T}`: the linked list
 - `pos::Int`: the position at which a node should be removed
 """
-function removeAtPosition!(d :: LinkedList{T}, pos :: Int) :: T where {T<:Any}
+function removeAtPosition!(d :: LinkedList{T}, pos :: Int) :: T where T
   (pos < 1 || pos > d.size) && throw(BoundsError("no such position"))
 
   index::Int = 1
@@ -166,16 +166,16 @@ Removes head of the list and returns it
 
 same as `removeAtPosition!(d, 1)`
 """
-@inline function removeFirst!(d :: LinkedList{T}) :: T where {T<:Any} removeAtPosition!(d, 1) end
+@inline function removeFirst!(d :: LinkedList{T}) :: T where T removeAtPosition!(d, 1) end
 
 """
 Removes tail of the list and returns it
 
 same as `removeAtPosition!(d, d.size)`
 """
-@inline function removeLast!(d :: LinkedList{T}) :: T where {T<:Any} removeAtPosition!(d, d.size) end
+@inline function removeLast!(d :: LinkedList{T}) :: T where T removeAtPosition!(d, d.size) end
 
-Base.convert(::Type{String}, d :: LinkedList{T}) where {T<:Any} = begin
+Base.convert(::Type{String}, d :: LinkedList{T}) where T = begin
   buffer = IOBuffer()
   node::Union{Node{T}, Nothing} = d.head
   isnothing(node) && return "Linkedlist is empty!"
@@ -186,8 +186,8 @@ Base.convert(::Type{String}, d :: LinkedList{T}) where {T<:Any} = begin
   end
   String(take!(buffer))
 end
-Base.string(d :: LinkedList{T}) where {T<:Any} = convert(String, d)
-Base.show(io::IO, d::LinkedList{T}) where {T<:Any} = print(io, string(d))
+Base.string(d :: LinkedList{T}) where T = convert(String, d)
+Base.show(io::IO, d::LinkedList{T}) where T = print(io, string(d))
 Base.peek(d :: LinkedList{T}, ::Type{T}) where T = peek(d)
 Base.peek(d:: LinkedList{T}) where T = Base.peek(d, T)
 
