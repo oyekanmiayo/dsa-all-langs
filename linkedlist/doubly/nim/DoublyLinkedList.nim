@@ -2,6 +2,7 @@
 
 from streams import readAll, close, newStringStream, write, setPosition, getPosition
 
+{.push experimental: "notnil".}
 type
   Node*[T] = ref NodeObj[T] ## This represents the template for the node object that is used in the linkedlist
   NodeObj*[T] {.acyclic.} = object
@@ -19,13 +20,14 @@ func newNode*[T](e : T) : Node[T] {.inline.} =
   ## Returns a new node of type `T` with element `e`
   result = Node[T](element : e)
 
-func newDoublyLinkedList*[T] : DoublyLinkedList[T] {.inline.} =
+{.push inline}
+func newDoublyLinkedList*[T] : DoublyLinkedList[T] not nil =
   ## Returns a new doubly linedlist of type `T`
   result = DoublyLinkedList[T](size: 0)
+{.pop.}
 
-proc `$`*(d : DoublyLinkedList) : string =
+proc `$`*[T](d : DoublyLinkedList[T] not nil) : string =
   ## stringer for linkedlist type
-  assert not d.isNil
   result = "Linkedlist is empty!"
   var buffer = newStringStream("")
   defer: buffer.close()
@@ -38,9 +40,8 @@ proc `$`*(d : DoublyLinkedList) : string =
   buffer.setPosition(0)
   result = buffer.readAll()
 
-func addAtPosition*[T](d : DoublyLinkedList[T], pos : int, e : T) : void {.raises: [].} =
+func addAtPosition*[T](d : DoublyLinkedList[T] not nil, pos : int, e : T) : void {.raises: [].} =
   ## Adds element `e` at position `pos` in the list
-  assert not d.isNil
 
   # Checks if position is valid in the list's context
   if (pos < 1) or (pos > (d.size + 1)): raise newException(IndexDefect, "no such position")
@@ -77,29 +78,27 @@ func addAtPosition*[T](d : DoublyLinkedList[T], pos : int, e : T) : void {.raise
   # Increment list size
   inc(d.size)
 
-func addFirst*[T](d : DoublyLinkedList[T], e : T) : void {.inline,raises: [].} =
+func addFirst*[T](d : DoublyLinkedList[T] not nil, e : T) : void {.inline,raises: [].} =
   ## Add element `e` to front (position `1`) of the list, so that it becomes new head node
   ## 
   ## same as `addAtPosition(d, 1, e)`
   d.addAtPosition(1, e)
 
-func addLast*[T](d : DoublyLinkedList[T], e : T) : void {.inline,raises: [].} =
+func addLast*[T](d : DoublyLinkedList[T] not nil, e : T) : void {.inline,raises: [].} =
   ## Add element `e` to back (position `size + 1`) of the list, so that it becomes new tail node
   ## 
   ## same as `addAtPosition(d, d.size + 1, e)`
   d.addAtPosition(d.size + 1, e)
 
-func peek*[T](d : DoublyLinkedList[T]) : T {.raises: [ResourceExhaustedError].} =
+func peek*[T](d : DoublyLinkedList[T] not nil) : T {.raises: [ResourceExhaustedError].} =
   ## Returns the head of the list
-  assert not d.isNil
 
   # check if list is empty
   if d.head.isNil: raise newException(ResourceExhaustedError, "list has no more entries")
   result = d.head.element
 
-func removeAtPosition*[T](d : DoublyLinkedList[T], pos : int) : T {.raises: [].} =
+func removeAtPosition*[T](d : DoublyLinkedList[T] not nil, pos : int) : T {.raises: [].} =
   ## Removes element at position `pos` in the list and returns it
-  assert not d.isNil
 
   # Checks if position exists
   if (pos < 1) or (pos > d.size): raise newException(IndexDefect, "no such position")
@@ -139,13 +138,13 @@ func removeAtPosition*[T](d : DoublyLinkedList[T], pos : int) : T {.raises: [].}
 
   result = node.element
 
-func removeFirst*[T](d : DoublyLinkedList[T]) : T {.inline,raises: [].} =
+func removeFirst*[T](d : DoublyLinkedList[T] not nil) : T {.inline,raises: [].} =
   ## Removes head of the list and returns it
   ## 
   ## same as `removeAtPosition(d, 1)`
   result = d.removeAtPosition(1)
 
-func removeLast*[T](d : DoublyLinkedList[T]) : T {.inline,raises: [].} =
+func removeLast*[T](d : DoublyLinkedList[T] not nil) : T {.inline,raises: [].} =
   ## Removes tail of the list and returns it
   ## 
   ## same as `removeAtPosition(d, d.size)`
@@ -168,3 +167,4 @@ runnableExamples:
   doAssert ($obj == "[3]")
   doAssert (obj.removeLast() == 3)
   doAssert ($obj == "Linkedlist is empty!")
+{.pop.}
