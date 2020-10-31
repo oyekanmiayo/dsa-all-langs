@@ -17,15 +17,7 @@ func (n *DllNode) String() string {
 	if n == nil {
 		return "nil"
 	}
-	prev := "nil"
-	if n.prev != nil {
-		prev = fmt.Sprint(n.prev.element)
-	}
-	next := "nil"
-	if n.next != nil {
-		next = fmt.Sprint(n.next.element)
-	}
-	return fmt.Sprintf("(%s)%s(%s)", prev, n.element, next)
+	return fmt.Sprintf("%s", n.element)
 }
 
 // NewDllNode returns a new node
@@ -208,10 +200,10 @@ func main() {
 	fmt.Println(list)
 
 	// nil
-	// (nil)1(nil)
-	// (nil)1(2)<->(1)2(nil)
-	// (nil)1(3)<->(1)3(2)<->(3)2(nil)
-	// (nil)1(2)<->(1)2(nil)
-	// (nil)2(nil)
+	// 1
+	// 1<->2
+	// 1<->3<->2
+	// 1<->2
+	// 2
 	// nil
 }

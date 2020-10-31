@@ -16,10 +16,7 @@ func (n *SllNode) String() string {
 	if n == nil {
 		return "nil"
 	}
-	if n.next == nil {
-		return fmt.Sprintf("%s(nil)", n.element)
-	}
-	return fmt.Sprintf("%s(%s)", n.element, n.next.element)
+	return fmt.Sprintf("%s", n.element)
 }
 
 // NewSllNode returns a new node
@@ -194,10 +191,10 @@ func main() {
 	fmt.Println(list)
 
 	// nil
-	// 1(nil)
-	// 1(2)->2(nil)
-	// 1(3)->3(2)->2(nil)
-	// 1(2)->2(nil)
-	// 2(nil)
+	// 1
+	// 1->2
+	// 1->3->2
+	// 1->2
+	// 2
 	// nil
 }
