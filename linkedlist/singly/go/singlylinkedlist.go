@@ -60,17 +60,17 @@ func (l *SinglyLinkedList) AddLast(element interface{}) {
 
 // AddAtPosition adds an element to a specified position in the list
 func (l *SinglyLinkedList) AddAtPosition(n int, element interface{}) error {
-	if n < 0 || n > l.size {
+	if n < 1 || n > l.size+1 {
 		return errors.New("no such position")
 	}
 
-	if n == 0 {
+	if n == 1 {
 		l.AddFirst(element)
 		return nil
 	}
 
 	prev, node := l.head, l.head
-	for i := 0; i < n; i++ {
+	for i := 1; i < n; i++ {
 		prev = node
 		node = node.next
 	}
@@ -131,11 +131,11 @@ func (l *SinglyLinkedList) RemoveLast() (interface{}, error) {
 
 // RemoveAtPosition removes the element at the specified position in the list and returns it
 func (l *SinglyLinkedList) RemoveAtPosition(n int) (interface{}, error) {
-	if n < 0 || n > l.size {
+	if n < 1 || n > l.size+1 {
 		return nil, errors.New("no such position")
 	}
 
-	if n == 0 {
+	if n == 1 {
 		return l.RemoveFirst()
 	}
 
@@ -145,7 +145,7 @@ func (l *SinglyLinkedList) RemoveAtPosition(n int) (interface{}, error) {
 
 	prev := l.head
 	node := l.head
-	for i := 0; i < n; i++ {
+	for i := 1; i < n; i++ {
 		prev = node
 		node = node.next
 	}
@@ -175,10 +175,10 @@ func main() {
 	printList(list) // 1
 	list.AddLast("2")
 	printList(list) // 1, 2
-	list.AddAtPosition(1, "3")
+	list.AddAtPosition(2, "3")
 	printList(list) // 1, 3, 2
 
-	list.RemoveAtPosition(1)
+	list.RemoveAtPosition(2)
 	printList(list) // 1, 2
 	list.RemoveFirst()
 	printList(list) // 2
