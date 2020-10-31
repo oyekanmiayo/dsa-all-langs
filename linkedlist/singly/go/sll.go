@@ -6,15 +6,25 @@ import (
 	"github.com/pkg/errors"
 )
 
-// Node is an element in the linked list
-type Node struct {
+// SllNode is an element in the linked list
+type SllNode struct {
 	element interface{}
-	next    *Node
+	next    *SllNode
 }
 
-// NewNode returns a new node
-func NewNode(element interface{}) *Node {
-	return &Node{
+func (n *SllNode) String() string {
+	if n == nil {
+		return "nil"
+	}
+	if n.next == nil {
+		return fmt.Sprintf("%s(nil)", n.element)
+	}
+	return fmt.Sprintf("%s(%s)", n.element, n.next.element)
+}
+
+// NewSllNode returns a new node
+func NewSllNode(element interface{}) *SllNode {
+	return &SllNode{
 		element: element,
 		next:    nil,
 	}
@@ -22,8 +32,8 @@ func NewNode(element interface{}) *Node {
 
 // SinglyLinkedList is a unidirectional linked list
 type SinglyLinkedList struct {
-	head *Node
-	tail *Node
+	head *SllNode
+	tail *SllNode
 	size int
 }
 
@@ -34,7 +44,7 @@ func NewSinglyLinkedList() *SinglyLinkedList {
 
 // AddFirst adds an element to the front of the list so that it becomes the new head node
 func (l *SinglyLinkedList) AddFirst(element interface{}) {
-	newHead := NewNode(element)
+	newHead := NewSllNode(element)
 	newHead.next = l.head
 	l.head = newHead
 
@@ -47,12 +57,9 @@ func (l *SinglyLinkedList) AddFirst(element interface{}) {
 
 // AddLast adds an element to the back of the list so that it becomes the new tail node
 func (l *SinglyLinkedList) AddLast(element interface{}) {
-	node := l.head
-	for node.next != nil {
-		node = node.next
-	}
+	node := l.tail
 
-	node.next = NewNode(element)
+	node.next = NewSllNode(element)
 	l.tail = node.next
 
 	l.size++
@@ -75,7 +82,7 @@ func (l *SinglyLinkedList) AddAtPosition(n int, element interface{}) error {
 		node = node.next
 	}
 
-	newNode := NewNode(element)
+	newNode := NewSllNode(element)
 	newNode.next = node
 	prev.next = newNode
 
@@ -155,33 +162,42 @@ func (l *SinglyLinkedList) RemoveAtPosition(n int) (interface{}, error) {
 	return node.element, nil
 }
 
-func main() {
-	printList := func(list *SinglyLinkedList) {
-		fmt.Printf("length=%d: ", list.size)
-		curr := list.head
-		if curr != nil {
-			fmt.Printf("%s", curr.element)
-			for curr.next != nil {
-				curr = curr.next
-				fmt.Printf(" => %s", curr.element)
-			}
+func (l SinglyLinkedList) String() string {
+	var str string
+	curr := l.head
+	str += fmt.Sprint(curr)
+	if curr != nil {
+		for curr.next != nil {
+			curr = curr.next
+			str += fmt.Sprintf("->%s", curr)
 		}
-		fmt.Println()
 	}
+	return str
+}
 
+func main() {
 	list := NewSinglyLinkedList()
-	printList(list) //
+	fmt.Println(list)
+
 	list.AddFirst("1")
-	printList(list) // 1
+	fmt.Println(list)
 	list.AddLast("2")
-	printList(list) // 1, 2
+	fmt.Println(list)
 	list.AddAtPosition(2, "3")
-	printList(list) // 1, 3, 2
+	fmt.Println(list)
 
 	list.RemoveAtPosition(2)
-	printList(list) // 1, 2
+	fmt.Println(list)
 	list.RemoveFirst()
-	printList(list) // 2
+	fmt.Println(list)
 	list.RemoveLast()
-	printList(list) //
+	fmt.Println(list)
+
+	// nil
+	// 1(nil)
+	// 1(2)->2(nil)
+	// 1(3)->3(2)->2(nil)
+	// 1(2)->2(nil)
+	// 2(nil)
+	// nil
 }
