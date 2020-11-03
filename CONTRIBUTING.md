@@ -25,7 +25,4 @@ As a contributor you can:
 - Add driver code (i.e. code in the "main" function to test the implementation)
 
 ## Creating PRs
-- If a PR is directly addressing an issue, the name of the PR should follow the format **[IS-{issue.number}] {pr.name}**. E.g. [IS-17] add driver code for linked lists
-  - {issue.number} is the number of the issue bring addressed
-  - {pr.name} is the name of the PR. Typically summarizes what the PRs is doing. E.g. 'Add driver code for lists'
-- If a PR is directly addressing an issue, the issue link should be added as a comment in the PR
+- The relevant issue links should be referenced in the PR
