@@ -5,13 +5,13 @@
 #include "SinglyLinkedLists.h"
 
 TEST(linkedlist, instantiate_class_to_null_head) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 ASSERT_EQ(list->get_head_pointer(), nullptr);
 delete list;
 }
 
 TEST(linkedlist, check_append) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(5);
 ASSERT_NE(list->get_head_pointer(), nullptr);
 ASSERT_EQ(5,list->get_head_pointer()->data);
@@ -23,7 +23,7 @@ delete list;
 }
 
 TEST(linkedlist, check_prepend_changes_head_to_new_pointer) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(5);
 ASSERT_EQ(list->get_head_pointer()->data, 5);
 list->add_last(7);
@@ -32,7 +32,7 @@ ASSERT_EQ(list->get_head_pointer()->next->data, 5);
 }
 
 TEST(linkedlist, check_list_size) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(6);
 list->add_first(7);
 list->add_first(8);
@@ -41,7 +41,7 @@ delete list;
 }
 
 TEST(linkedlist, insert_data_at_position) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(6);
 list->add_first(7);
 list->add_first(8);
@@ -68,7 +68,7 @@ delete list;
 }
 
 TEST(linkedlist, remove_first_node) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(6);
 list->add_first(7);
 list->add_first(8);
@@ -83,7 +83,7 @@ delete list;
 }
 
 TEST(linkedlist, remove_last_node) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(6);
 list->add_first(7);
 list->add_first(8);
@@ -101,7 +101,7 @@ delete list;
 }
 
 TEST(linkedlist, remove_node_at_position) {
-auto list = new SinglyLinkedList;
+auto list = new SinglyLinkedList<int>;
 list->add_first(6);
 list->add_first(7);
 list->add_first(8);
