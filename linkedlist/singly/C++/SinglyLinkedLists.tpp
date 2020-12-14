@@ -8,11 +8,13 @@
 
 using namespace std;
 
+//Instantiate the class and set head_node pointer to null
 template <class T>
 SinglyLinkedList<T>::SinglyLinkedList() {
     head_node = nullptr;
 }
 
+//For every element added or removed from the list update the list size
 template <class T>
 void SinglyLinkedList<T>::update_list_size(bool increase) {
     if (increase){
@@ -22,6 +24,7 @@ void SinglyLinkedList<T>::update_list_size(bool increase) {
     }
 }
 
+//Add element too the head/beginning of the list
 template <class T>
 void SinglyLinkedList<T>::add_first(T data) {
     if (head_node == nullptr) {
@@ -44,6 +47,7 @@ void SinglyLinkedList<T>::add_first(T data) {
     update_list_size(true);
 }
 
+//Add element to the tail/end of the list
 template <class T>
 void SinglyLinkedList<T>::add_last(T data) {
     if (head_node == nullptr) {
@@ -60,6 +64,7 @@ void SinglyLinkedList<T>::add_last(T data) {
     update_list_size(true);
 }
 
+//Add element to any valid specified position in the list
 template <class T>
 void SinglyLinkedList<T>::add_at_position(int position, T data) {
     if (size+1 < position) {
@@ -82,6 +87,7 @@ void SinglyLinkedList<T>::add_at_position(int position, T data) {
     }
 }
 
+//Remove element for head/beginning of the list
 template <class T>
 void SinglyLinkedList<T>::remove_first() {
     if (size == 1){
@@ -97,6 +103,7 @@ void SinglyLinkedList<T>::remove_first() {
     }
 }
 
+//Remove element from the end/tail of the list
 template <class T>
 void SinglyLinkedList<T>::remove_last() {
     if (size == 1){
@@ -118,6 +125,7 @@ void SinglyLinkedList<T>::remove_last() {
 
 }
 
+//Remove element from specified valid position
 template <class T>
 void SinglyLinkedList<T>::remove_at_position(int position) {
     if (size-1 < position) {
@@ -139,16 +147,19 @@ void SinglyLinkedList<T>::remove_at_position(int position) {
     }
 }
 
+//Helper function to get head pointer
 template <class T>
 Node<T> *SinglyLinkedList<T>::get_head_pointer() {
     return head_node;
 };
 
+//Helper function to get the size of the list at any time
 template <class T>
 int SinglyLinkedList<T>::get_list_size() {
     return size;
 }
 
+//Clean up all memory allocated for the lists
 template <class T>
 void SinglyLinkedList<T>::delete_nodes() { //Free all the internally allocated memory for the lists
     Node<T> *temp = head_node;
@@ -159,6 +170,7 @@ void SinglyLinkedList<T>::delete_nodes() { //Free all the internally allocated m
     }
 }
 
+//Destructor for class. Cleans up memory allocated for the class
 template <class T>
 SinglyLinkedList<T>::~SinglyLinkedList() {
     delete_nodes();
