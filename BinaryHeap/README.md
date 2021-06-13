@@ -31,7 +31,7 @@ Since a [complete binary tree](https://web.cecs.pdx.edu/~sheard/course/Cs163/Doc
     its left child index: i * 2;
     its right child index: i * 2 + 1;
 
-    0 <= i < N where N is the number of nodes in the tree
+    0 < i < N where N is the number of nodes in the tree
 
 Note: index should start from 1
 
