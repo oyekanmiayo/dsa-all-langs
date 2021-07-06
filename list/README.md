@@ -34,7 +34,7 @@ How does removing an item (`remove(n)`) from a list work?
 2. Move elements from index **n+1** to the end backward by one index
 
 How does retrieving an item (`get(n)`) from a list work?
-1. Check if index exists, if it doesn't, return null
+1. Check if index exists, if it doesn't, throws an IndexOutOfBoundsException
 2. Return element at index **n**
 
 How does sorting (`sort()`) a list work?
