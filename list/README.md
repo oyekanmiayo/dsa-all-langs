@@ -60,7 +60,7 @@ An **array** is the underlying data structure used by a List. One important diff
 4. **`get(n)`**
     ```
     Pseudocode:
-    * Check if index exists, if it doesn't, throws IndexOutOfBoundException
+    * Check if index exists, if it doesn't, throws Exception
     * Return element at index **n**
     ```
     **Time Complexity** : time to retrieve item from an index
