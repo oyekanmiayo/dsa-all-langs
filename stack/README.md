@@ -53,7 +53,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     Pseudocode:
     * Add element to head of the linkedlist
     ```
-    **Time Complexity** : time to add item to tail of the linkedlist
+    **Time Complexity** : time to add item to head of the linkedlist
     | Time to add item to head of the linkedlist | Worst Case for `push(e)` |
     |--------------------------------------------|--------------------------|
     | Constant Time/O(1)                         | Constant Time/O(1)       |
@@ -63,7 +63,7 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     Pseudocode:
     * Remove element from head of the linkedlist
     ```
-    **Time Complexity** : time to remove element from tail of the linkedlist
+    **Time Complexity** : time to remove element from head of the linkedlist
     | Time to remove element from head of the linkedlist | Worst Case for `pop()` |
     |----------------------------------------------------|------------------------|
     | Constant Time/O(1)                                 | Constant Time/O(1)     |
@@ -73,8 +73,8 @@ We can use an **array** or a **linkedlist** as the underlying data structure use
     Pseudocode:
     * Return element at the head of the linkedlist
     ```
-    **Time Complexity** : time to return element at the tail of the linkedlist
-    | Time to return element at the tail of the linkedlist | Worst Case for `peek()` |
+    **Time Complexity** : time to return element at the head of the linkedlist
+    | Time to return element at the head of the linkedlist | Worst Case for `peek()` |
     |------------------------------------------------------|-------------------------|
     | Constant Time/O(1)                                   | Constant Time/O(1)      |
     
