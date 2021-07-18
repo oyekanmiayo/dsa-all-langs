@@ -7,7 +7,7 @@ Like LinkedLists, the Tree employs memory cells that do not need to be contiguou
 However, unlike LinkedLists, instead of pointing to a "next" cell linearly (i.e. with a linear abstraction), Trees point to the next cells hierarchically (i.e. with a hierarchical abstraction). Thinking about hierarchical data helps to visualize trees well. 
 See below a diagram representing a sample hierarchy in Company X.
 
-<img alt="A sample company hierarchy modeling a tree" src="tree/images/tree-hierarchy.png" height="350" width="500">
+<img alt="A sample company hierarchy modeling a tree" src="../images/tree-hierarchy.png" height="350" width="500">
 
 ## Important Terminologies
 
