@@ -1,6 +1,6 @@
 ## Introduction
 Let's begin with some definitions of a tree:
-- A tree is a nonlinear hierarchical data structure that consists of nodes connected by edges [^programiz-trees]
+- A tree is a nonlinear hierarchical data structure that consists of nodes connected by edges [programiz-trees]
 - A tree is a connected, acyclic, undirected graph
 
 Like LinkedLists, the Tree employs memory cells that do not need to be contiguous in physical memory to store objects [^cs-distilled];this means that each cell contains a pointer to other cells, therefore there's no need for them to be adjacent in memory.
