@@ -84,7 +84,7 @@ We will consider the internals for both underlying structures.
 3. **`peek()`**
     ```
     Pseudocode:
-    * Return the head of the doubly linkedlist
+    * Return the element at the front of the doubly linkedlist
     ```
    
     **Time Complexity** : time to get element at the front of DLL

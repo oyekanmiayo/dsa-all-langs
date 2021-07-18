@@ -71,7 +71,7 @@ class Map<K, V> {
         while(entry != null){
             // If key is found, return the value
             if(key.equals(entry.key)){
-                return entry.value;
+                return (V) entry.value;
             }
 
             entry = entry.next;

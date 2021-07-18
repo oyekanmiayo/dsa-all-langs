@@ -16,8 +16,8 @@ Some important operations for a map include:
     ```
     Pseudocode:
     * Generate a hash (a.k.a memory address) for **key**, using a hash function
-    * Store **value** at the hash (a.k.a memory address)
     * Handle collision, if necessary
+    * Store **value** at the hash (a.k.a memory address)
     ```
 
     **Time Complexity** : time to find address (always constant) + time to traverse bucket (depends on the data structure)                     
@@ -31,8 +31,9 @@ Some important operations for a map include:
     ```
     Pseudocode:
     * Generate hash (a.k.a memory address) for **key**, using a hash function
-    * Delete **value**  at hash (if there's no collision)
     * If there's a collision, traverse bucket to find the correct object and delete it
+    * If there's no collision, delete **value** at hash
+
     ```
 
     **Time Complexity** : time to find address (always constant) + time to delete from bucket (depends on the data structure)
@@ -46,8 +47,8 @@ Some important operations for a map include:
     ```
     Pseudocode:
     * Generate hash (a.k.a memory address) for **key**, using a hash function
-    * Get **value**  at hash (if there's no collision)
     * If there's a collision, traverse bucket to find the correct object and get it
+    * If there's no collision, get **value**  at hash
     ```
 
     **Time Complexity** : time to find address (always constant) + time to retrieve from bucket when index is not known (depends on the data structure)
@@ -78,18 +79,18 @@ When handling collision, we want our strategies to answer two questions:
    
    Some data structures that could be used as buckets include Lists (linear search), LinkedLists (linear search), Binary Search Trees (logarithmic search) and so on.
    
-   In the Java implemenation in this repository, a LinkedList is used because it's simple enough to add to and traverse and delete from. Additionally, since we assume that our hash function is very good, the number of items in each buckets should so small that the time to search the LinkedList is trivial - this is why the time complexity for retrieving from a map is popularly constant or O(1) (amortized). 
+   In the Java implementation in this repository, a LinkedList is used because it's simple enough to add to and traverse and delete from. Additionally, since we assume that our hash function is very good, the number of items in each buckets should so small that the time to search the LinkedList is trivial - this is why the time complexity for retrieving from a map is popularly constant or O(1) (amortized). 
    
    *PS: If there are too many items in a bucket, this is the cue to use a bigger array or improve the hash function.*
 
 2. **Open Addressing**: If there's a collision at the address (or hash or index), then we find the next available address to
-place the value. The reason why this is called "Open Addressing" is because it's possible that the address the value is
-stored in isn't the hash.
+place the value. The reason why this is called "Open Addressing" is because it's possible that the address the value will
+be stored in isn't the hash.
 
    Implementations: [Linear Probing](https://en.wikipedia.org/wiki/Linear_probing), [Quadratic Probing](https://en.wikipedia.org/wiki/Quadratic_probing) & [Double Hashing](https://en.wikipedia.org/wiki/Double_hashing).
 
 3. **2-Choice Hashing**: Here we compute the hash for a value using two hash functions and insert the value into the address
-with less collisions.
+with fewer collisions.
 
 ## Terminologies
 1. **Amortized Time**: Amortized time is the way to express the time complexity when an algorithm has the very bad time complexity only once in a while besides the time complexity that happens most of time. Read more [here](https://medium.com/@satorusasozaki/amortized-time-in-the-time-complexity-of-an-algorithm-6dd9a5d38045)
