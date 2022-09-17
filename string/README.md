@@ -18,7 +18,7 @@ In Java, all strings defined with the `String` data type are immutable. In Java 
 array of characters within. Java’s abstraction enforces immutability in this case.
 
 ```java
-String name="Ogbeni Owolabi";
+String name = "Ogbeni Owolabi";
 
 public final class String {
     private final char value[];
@@ -31,13 +31,13 @@ memory to store strings) and if any other string literal is defined with the sam
 pool, it will point to the address of the existing string.
 
 ```java
-String name="Ogbeni Owolabi";
-        String name1="Ogbeni Owolabi";
+String name = "Ogbeni Owolabi";
+String name1 = "Ogbeni Owolabi";
 
 // Both of these statements are comparing references, 
 // one is just doing it more clearly.
-        sout(name==name1); // True
-        sout(name.getHashCode()==name.getHashCode()); // True
+sout(name == name1); // True
+sout(name.getHashCode() == name.getHashCode()); // True
 ```
 
 One purpose of a string pool is to improve performance since we won’t have to create a new string object if it already
