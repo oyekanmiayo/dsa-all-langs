@@ -36,9 +36,8 @@ the actual String (or Object).
 
 (TODO: An image to illustrate)
 
-The maximum size of a reference is typically 32 bits (4 bytes) on a 32-bit machine and 64 bits (8 bytes) on a 64-bit
-machine. So `x` above could be 4 or 8. Note that other things could determine the max value of a reference, but as long
-as the compiler knows that, it can preallocate blocks for the array of String [references]:
+The size of a reference is typically 32 bits (4 bytes) on a 32-bit machine and 64 bits (8 bytes) on a 64-bit machine. 
+So `x` above could be 4 or 8.  (The JVM allows something called a compressed pointer which allows 32 bit references on 64 bit machines.)
 
 ```java
 // 10 * 4 bytes = 40 bytes (32-bit)
