@@ -66,7 +66,7 @@ worldwide. And all the 128 characters (0 -127) can be represented in memory usin
 
 To fix the limitation of ASCII, a plethora of encoding standards were born, most of which offered poor inter-language
 operability. For example the character code 130 would display as é, but on computers sold in Israel it was the Hebrew
-letter Gimel ([image:61A636FA-AF30-46B9-960C-A81FB73A2AA0-93535-0000D5C74D2A822E/gimel.png.webp]) [10]. This created a
+letter Gimel (ג) [10]. This created a
 mess.
 
 To really fix the problem, Unicode was created. It defines rules for 1,114,112 characters. Unicode defines code points (
