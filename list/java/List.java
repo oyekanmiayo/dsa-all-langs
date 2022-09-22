@@ -1,6 +1,7 @@
 /**
  * @author: Ayomide Oyekanmi
  */
+
 class List<E> {
     private E[] entries;
     // This variable keeps track of the next free index
