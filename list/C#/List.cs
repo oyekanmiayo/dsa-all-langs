@@ -3,7 +3,8 @@ AUTHOR: Kehinde Ojewale
 */
 
 
-class List<A>{
+class List<A> : IEnumerable<A>
+{
     A[] underlyingArray;
     int currentSize;
     double currentThreshhold; //this variable tracks 80% of the underlying array's size
@@ -49,7 +50,7 @@ class List<A>{
         }
     //Method to add an item at a particular index in the list
     public void Insert(int index, A item){
-        if(index>=currentIndex) {
+        if(index>=currentIndex || index<0) {
         throw new IndexOutOfRangeException(String.Format("Index {0:d} is out of the bounds of the list" , index));
         }
         if(currentIndex>=currentThreshhold) CreateBiggerArray(1);
@@ -73,7 +74,7 @@ class List<A>{
     
     //Method to add an array of items starting from a particular index in the list
     public void InsertRange(int index, A[] items){
-        if(index>=currentIndex) {
+        if(index>=currentIndex || index<0) {
         throw new IndexOutOfRangeException(String.Format("Index {0:d} is out of the bounds of the list", index));
         }
         
@@ -105,7 +106,7 @@ class List<A>{
         }
     //Method to retrieve an item from the list using its index
     public A Get(int index){
-        if(index>=currentIndex) {
+        if(index>=currentIndex || index<0) {
         throw new IndexOutOfRangeException(String.Format("Index {0:d} is out of the bounds of the list: no item with index {0:d}" , index));
         }
         else{
@@ -114,7 +115,7 @@ class List<A>{
          }
     //Method to remove an item from the list using its index
     public A Remove(int index){
-        if(index>=currentIndex) {
+        if(index>=currentIndex || index<0) {
         throw new IndexOutOfRangeException(String.Format("Index {0:d} is out of the bounds of the list: no item with index {0:d}" , index));
         }
         A item=underlyingArray[index];
@@ -142,10 +143,10 @@ class List<A>{
     //Generates a slice of the list from a start index to an end index(inclusive)
     public List<A> Slice(int startIndex, int endIndex){
 
-        if (startIndex>=currentIndex){
+        if (startIndex>=currentIndex || startIndex<0){
             throw new IndexOutOfRangeException(String.Format("Start index ({0:d}) is out of the bounds of the list" , n));
             }
-        if (endIndex>=currentIndex){
+        if (endIndex>=currentIndex || endIndex<0){
             throw new IndexOutOfRangeException(String.Format("End index ({0:d}) is out of the bounds of the list" , n));
             
             }
@@ -175,6 +176,20 @@ class List<A>{
     public int Count(){
         return currentIndex;
         }
+
+    //Makes the list object iterable
+    // public IEnumerator<A> GetEnumerator()
+    //     {
+    //         foreach (A item in this.array)
+    //         {
+    //             yield return item;
+    //         }
+    //     }
+
+    //     IEnumerator IEnumerable.GetEnumerator()
+    //     {
+    //         return GetEnumerator();
+    //     }
 
     }
 
