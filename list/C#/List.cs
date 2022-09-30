@@ -25,19 +25,19 @@ class Program
         Test.Count();// 8
         Test.Reverse();// {67,90,700,45,23,909,2,9}
         Test.Sort(); //sorted list is {2,9,23,45,67,90,700,909}
-        Test.Insert(8, 80);// Index 8 is out of the bounds of the list
-        Test.Insert(-3, 90);//Index -3 is out of the bounds of the list
-        Test.Get(16);//Index 16 is out of the bounds of the list: no item with index 16
-        Test.Remove(24);//Index 24 is out of the bounds of the list: no item with index 24
-        Test.Get(-4);//Index -4 is out of the bounds of the list: no item with index -4
-        Test.Get(-1);//Index -1 is out of the bounds of the list: no item with index -1
+        Test.Insert(8, 80);// Raises Index Error: Index 8 is out of the bounds of the list
+        Test.Insert(-3, 90);//Raises Index Error: Index -3 is out of the bounds of the list
+        Test.Get(16);//Raises Index Error: Index 16 is out of the bounds of the list: no item with index 16
+        Test.Remove(24);//Raises Index Error: Index 24 is out of the bounds of the list: no item with index 24
+        Test.Get(-4);//Raises Index Error: Index -4 is out of the bounds of the list: no item with index -4
+        Test.Get(-1);//Raises Index Error: Index -1 is out of the bounds of the list: no item with index -1
     }
 }
 class List<A> : IEnumerable<A>
 {
     A[] underlyingArray;
     int currentSize;
-    double currentThreshhold; //this variable tracks 80% of the underlying array's size
+    double currentThreshold; //this variable tracks 80% of the underlying array's size
     int listSize = 0; //this variable tracks the length of items in the list and tells the index a new item will be added to
 
 
@@ -46,13 +46,13 @@ class List<A> : IEnumerable<A>
 
         underlyingArray = new A[20]; //initializing an unserlying array to store the elements of the list
         currentSize = underlyingArray.Length;
-        currentThreshhold = 0.8 * currentSize;
+        currentThreshold = 0.8 * currentSize;
     }
 
     //Method to add an item to the list    
     public void Add(A item)
     {
-        if (listSize >= currentThreshhold) CreateBiggerArray(1);
+        if (listSize >= currentThreshold) CreateBiggerArray(1);
         underlyingArray[listSize] = item;
         listSize++;
     }
@@ -60,7 +60,7 @@ class List<A> : IEnumerable<A>
     //Method to add an array of items to the list
     public void AddRange(A[] items)
     {
-        if (listSize + items.Length >= currentThreshhold)
+        if (listSize + items.Length >= currentThreshold)
         {
             int sizeMultiple;
             sizeMultiple = (listSize + items.Length) / listSize;
@@ -76,7 +76,7 @@ class List<A> : IEnumerable<A>
     //Creates a bigger array once the underlying array's threshhol is reached
     void CreateBiggerArray(int sizeMultiple)
     {
-        //sizeMultiple
+        //Calculates the size of the array to be created
         int newSize = currentSize * 2 * sizeMultiple;
         A[] biggerArray = new A[newSize];
         for (int i = 0; i < listSize; i++)
@@ -93,7 +93,7 @@ class List<A> : IEnumerable<A>
         {
             throw new IndexOutOfRangeException(String.Format("Index {0:d} is out of the bounds of the list", index));
         }
-        if (listSize >= currentThreshhold) CreateBiggerArray(1);
+        if (listSize >= currentThreshold) CreateBiggerArray(1);
         A itemToBeReplaced = underlyingArray[index];
         underlyingArray[index] = item;
         int replacementIndex = index + 1;
@@ -115,10 +115,11 @@ class List<A> : IEnumerable<A>
             throw new IndexOutOfRangeException(String.Format("Index {0:d} is out of the bounds of the list", index));
         }
 
-        if (listSize + items.Length >= currentThreshhold)
+        if (listSize + items.Length >= currentThreshold)//checks if the addition of the new items will exceed the Threshold of the underlying array. If it does, a bigger array is craeted
         {
             int sizeMultiple;
-            sizeMultiple = (listSize + items.Length) / listSize;
+            sizeMultiple = (listSize + items.Length) / listSize;//the sizemultiple indicates by how much the size of the underlying array should be incremented to ensure that a much bigger array is created if the addition of the multiple items would exceed the threshold of twice the current array's size
+            //NB: The default size of a bigger array is twice the current array's size    
             CreateBiggerArray(sizeMultiple);
         }
 
