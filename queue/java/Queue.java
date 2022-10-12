@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * @author Ayomide Oyekanmi
  * @notes This implementation uses a Doubly Linked List as the underlying
@@ -27,7 +29,7 @@ class Queue<E> {
      * @return returns removed element
      * @throws NoSuchElementException if queue is empty
      */
-    public E dequeue()throws NoSuchElementException{
+    public E dequeue()throws NoSuchElementException {
         return linkedList.removeFirst();
     }
 
