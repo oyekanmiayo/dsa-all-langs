@@ -67,13 +67,13 @@ class BinarySeachTree:
             return
         # Find node
         # Remove
-            #   - if has no child, just remove
-            #   - one child, replace it with child
-            #   - if it has two children. either:
+            #   - if node has no child, just remove
+            #   - if node has one child, replace it with child
+            #   - if node has two children. either:
             #     - replace with the minimum on the right
             #     - replace with the maximum on the left
 
-        def deleteFromNode(value, node: Node):
+        def deleteFromNode(value: int, node: Node):
             if value > node.value:
                 node.right = deleteFromNode(value, node.right)
                 return node
@@ -109,7 +109,7 @@ class BinarySeachTree:
             return maxVal + 1
         return height(current)
 
-    def minHeight(self):
+    def minHeight(self) -> int:
         def nodeHeight(node):
             if not node:
                 return 0
@@ -119,8 +119,8 @@ class BinarySeachTree:
         return nodeHeight(self.head)
 
     def preOrder(self):
-        def traverse(node):
-            result = []
+        def traverse(node: Node):
+            result: list[int] = []
             if not node:
                 return result
             result.append(node.value)
@@ -131,8 +131,8 @@ class BinarySeachTree:
         return traverse(self.head)
 
     def inOrder(self):
-        def traverse(node):
-            result = []
+        def traverse(node: Node):
+            result: list[int] = []
             if not node:
                 return result
             result.extend(traverse(node.left))
@@ -143,8 +143,8 @@ class BinarySeachTree:
         return traverse(self.head)
 
     def postOrder(self):
-        def traverse(node):
-            result = []
+        def traverse(node: Node):
+            result: list[int] = []
             if not node:
                 return result
             result.extend(traverse(node.left))
