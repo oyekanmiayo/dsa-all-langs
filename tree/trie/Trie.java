@@ -4,11 +4,12 @@ import java.util.*;
 
 /**
  * @author: Ehis Edemakhiota
+ *
  * @notes: This is an implementation of a trie that can store words made from only lowercase letters
  * */
 
 public class Trie {
-    private List<Trie> children;
+    private final List<Trie> children;
     private boolean endOfWord;
 
     /*creating a trie that can store words created from only lowercase letters
