@@ -66,7 +66,7 @@ Index 0 still exists, but we skip it.
 * rightSibling(z) = `z + 1`, if z is odd and z  + 1 < n
 ```
 
-We can understand better with and example. [100, 40, 50, 10, 15, 50, 40] is a valid heap, draw it out yourself using the 0-indexed formulas above.
+We can understand better with and example. [100, 40, 50, 10, 15, 50, 40] is a valid heap, draw it out yourself using the 0-indexed formulas above. We can also visualize using using [OpenDSA's](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/Heaps.html) notes or [visual algo](https://visualgo.net/en/heap).
 
 ### Operations
 
@@ -183,7 +183,7 @@ We can understand better with and example. [100, 40, 50, 10, 15, 50, 40] is a va
 2. [complete binary tree](https://web.cecs.pdx.edu/~sheard/course/Cs163/Doc/FullvsComplete.html) 
 3. [Binary Trees](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/CompleteTree.html)
 4. [Heap: TutorialHorizon](https://algorithms.tutorialhorizon.com/binary-min-max-heap/)
-4. [Heap: Visual Algo](https://visualgo.net/en/heap)
+5. [Heap: Visual Algo](https://visualgo.net/en/heap)
 
 ## Author(s)
 * [Ogooluwa Akinola](https://github.com/rovilay)
