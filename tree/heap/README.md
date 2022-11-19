@@ -15,7 +15,7 @@ A normal queue data structure will not implement a priority queue efficiently be
 
 So, we need a _new_ data structure to implement the priority queue ADT - this structure is called a Heap!  A Heap is a data structure that makes it easy to access the highest priority element in a queue.
 
-(A Heap is implement as a [complete binary tree](https://web.cecs.pdx.edu/~sheard/course/Cs163/Doc/FullvsComplete.html) - more on that later - which means each node has at most 2 children. This means a Heap is analogous with a Binary Heap.)
+(A Heap is implemented as a [complete binary tree](https://web.cecs.pdx.edu/~sheard/course/Cs163/Doc/FullvsComplete.html) - more on that later - which means each node has at most 2 children. This means a Heap is analogous with a Binary Heap.)
 
 ## Types
 There are two types of heaps. The highest priority element (HPE) in a heap is determined by the type of heap it is. 
@@ -105,7 +105,7 @@ We can understand better with and example. [100, 40, 50, 10, 15, 50, 40] is a va
 
     **Space Complexity** :  No matter what the value being inserted is, only one node is used. This means the amount of space used doesn’t grow with the value being inserted. This is true for integer values (primary data types?)
 
-    This is a bit more interesting to think about in terms of objects tho. Remember that the node itself will only store pointers. But each pointer points to an area of memory storing the values. Say the objects store names (so strings), the amount of space being used by each name stored is dependent on the name being stored in the object. If I think about it this deeply, then space could be O(n). 
+    This is a bit more interesting to think about in terms of objects though. Remember that the node itself will only store pointers. But each pointer points to an area of memory storing the values. Say the objects store names (so strings), the amount of space being used by each name stored is dependent on the name being stored in the object. If I think about it this deeply, then space could be O(n). 
 
     So, my final answer is O(1) for primary data types and objects only storing primary data types and O(n) for objects storing anything else. 
 
