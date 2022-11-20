@@ -178,6 +178,10 @@ We can understand better with and example. [100, 40, 50, 10, 15, 50, 40] is a va
 * The heap itself has a Space Complexity of O(N) - where N is the number of nodes in the heap
 * Building a heap is an O(NlogN) operation
 
+## Examples
+* Java: https://replit.com/@oyekanmiayo/PriorityQueue#Main.java
+* Python: https://replit.com/@oyekanmiayo/PriorityQueuePython#main.py
+
 ## References
 1. [Heap Data structure](https://www.geeksforgeeks.org/heap-data-structure/)
 2. [complete binary tree](https://web.cecs.pdx.edu/~sheard/course/Cs163/Doc/FullvsComplete.html) 
