@@ -140,7 +140,7 @@ We can understand better with and example. [100, 40, 50, 10, 15, 50, 40] is a va
     Pseudocode:
     1. get the left and right children of the root node using the relevant formulas
     2. if left and right children are null, we're done
-    3. if root node < left && left < right, then swap with left. else swap with right
+    3. if root node < left && left > right, then swap with left. else swap with right
     4. repeat 1 - 3 until we get to the last index or a condition fails
     ```
 
