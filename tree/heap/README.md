@@ -48,7 +48,7 @@ Given a heap with n nodes and a node with an index z
 
 **0-indexed array**
 ```
-* parent(z) = `z - 1/2`, if z > 0
+* parent(z) = `(z - 1)/2`, if z > 0
 * leftChild(z) = `2z + 1`, if 2z + 1 < n
 * rightChild(z)  =  `2z + 2`, if 2z + 2 < n
 * leftSibling(z) = `z - 1`, if z is even and z > 0
