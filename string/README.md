@@ -34,10 +34,9 @@ pool, it will point to the address of the existing string.
 String name = "Ogbeni Owolabi";
 String name1 = "Ogbeni Owolabi";
 
-// Both of these statements are comparing references, 
-// one is just doing it more clearly.
+// This statement is comparing the addesses of both strings 
+// They both have the same address in memory because of the string pool mechanism
 sout(name == name1); // True
-sout(name.getHashCode() == name.getHashCode()); // True
 ```
 
 One purpose of a string pool is to improve performance since we won’t have to create a new string object if it already
