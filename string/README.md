@@ -106,3 +106,5 @@ These are probably better grouped into “classes” of operations
 15. [If == compares references in Java, why does it evaluate to true with these Strings? - Stack Overflow](https://stackoverflow.com/questions/4033625/if-compares-references-in-java-why-does-it-evaluate-to-true-with-these-strin)
 16. [Is the size of C “int” 2 bytes or 4 bytes? - Stack Overflow](https://stackoverflow.com/questions/11438794/is-the-size-of-c-int-2-bytes-or-4-bytes)
 17. [Where does Array stored in JVM memory in Java?](https://www.tutorialspoint.com/where-does-array-stored-in-jvm-memory-in-java)
+18. [Guide to Java String Pool](https://www.baeldung.com/java-string-pool)
+19. [String Pool in Java](https://www.scaler.com/topics/java/string-pool-in-java/)
