@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 /**
  * @author: Ayomide Oyekanmi
  * @notes: This implementation uses an **ARRAY** as the underlying data structure
