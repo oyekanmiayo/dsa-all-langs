@@ -95,7 +95,7 @@ class Set<E> {
 
         // Traverse every index in array
         for(int i = 0; i < entries.length; i++){
-            Entry entry = entries[hash];
+            Entry entry = entries[i];
             
             // Traverse bucket at each index
             while(entry != null){
