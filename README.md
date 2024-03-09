@@ -1,4 +1,4 @@
-# dsas-all-langs
+# dsa-all-langs
 A repository that contains explanations and (custom) implementations of the most popular data structures and algorithms in various languages.
 
 # The Goal
